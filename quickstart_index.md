@@ -1,4 +1,4 @@
-# Aptible Docs
+address: support.aptible.com/quickstart
 
 ### Quickstart Guides
 Ruby
