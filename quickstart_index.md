@@ -6,3 +6,5 @@ Python
 Node.js
 PHP
 Java
+Go
+Scala
