@@ -2,6 +2,9 @@
 
 Aptible's Support and Documentation Site
 
+## Contributing
+If you run into an issue that needs documentation, feel free to submit a pull request or open an issue. We send t-shirts and swag to contributors.
+
 ## Copyright
 
 Copyright (c) 2014 [Aptible](https://www.aptible.com). All rights reserved.
