@@ -1,4 +1,0 @@
-%ul.nav.nav-tabs.wizard
-  - for step in @steps
-    %li
-      %a{ href: "##{step.id}", data: { toggle: 'tab'}}= step.title
