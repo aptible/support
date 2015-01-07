@@ -1,0 +1,83 @@
+.modal {
+  &.modal-wizard {
+    .modal-dialog {
+      width: 980px;
+    }
+
+    .modal-content {
+      background: $color-bg-light-gray;
+      border: 0;
+      border-radius: 4px;
+    }
+
+    .modal-header,
+    .modal-steps {
+      padding: 10px 20px;
+      border-bottom: 1px solid $color-border-gray;
+      box-shadow: 0 1px 3px rgba(#000, .08);
+      background: #fff;
+
+      .close {
+        margin-top: 10px;
+      }
+    }
+
+    .modal-steps {
+      @extend %clearfix;
+    }
+
+    .modal-body-section {
+      border-bottom: 1px solid $color-border-gray;
+      padding: 20px 20px 0;
+
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 1px;
+      }
+    }
+  }
+
+  .modal-header {
+    border-radius: 3px 3px 0 0;
+    background: $color-bg-gray;
+    border-bottom: 1px solid $color-border-gray;
+
+    h4 {
+      font-weight: $weight-semibold;
+      color: $color-primary;
+    }
+
+    .close {
+      margin-top: 4px;
+    }
+  }
+
+  .modal-body {
+    .modal-subtitle {
+      margin: 13px 0 30px;
+    }
+
+    &.subdued {
+      background: $color-bg-gray;
+
+      &.bordered {
+        border-bottom: 1px solid $color-border-gray;
+      }
+    }
+
+    .sub-title {
+      margin: 0 0 30px;
+    }
+
+    .modal-footer {
+      padding: 20px 0 0;
+      margin: 20px 0 0;
+    }
+
+  }
+
+  .modal-footer {
+    padding: 20px;
+    margin: 0;
+  }
+}

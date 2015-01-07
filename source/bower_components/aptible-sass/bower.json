@@ -1,0 +1,24 @@
+{
+    "name": "aptible-sass",
+    "version": "1.3.17",
+    "authors": [
+        "Chas Ballew <chas@aptible.com>",
+        "Skylar Anderson <skylar@aptible.com>",
+        "Frank Macreery <frank@aptible.com>"
+    ],
+    "description": "Backbone, HAML, and SASS components for Aptible apps.",
+    "keywords": [
+        "Aptible",
+        "SASS",
+        "CSS"
+    ],
+    "license": "MIT",
+    "homepage": "https://www.aptible.com",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}

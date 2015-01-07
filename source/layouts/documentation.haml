@@ -1,0 +1,9 @@
+= wrap_layout :layout do
+  %header.primary-header
+    .primary-header-bg
+      = partial 'layouts/navbar'
+      .container.header-title-container
+        %h1.primary-title Documentation
+        %h2.primary-sub-title= current_page.data.title
+  .main
+    = yield

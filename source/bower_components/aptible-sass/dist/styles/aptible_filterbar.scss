@@ -1,0 +1,54 @@
+.panel.panel-default.panel-subdued {
+  .filter-bar {
+    background: none;
+    padding: 10px;
+    // border-bottom: 0;
+
+    .btn-group {
+      margin-right: 7px;
+
+      .incident-status-icon {
+        vertical-align: -2px;
+      }
+
+      .btn.btn-subdued {
+        border: 1px solid #cdcdcd;
+        @include linear-gradient(#fff, #eaeaea);
+        box-shadow: 0 1px 1px 0 rgba(#000, .06);
+        color: $color-primary;
+        font-size: 12px;
+        padding:6px 7px 4px;
+        height: auto;
+
+        &.active {
+          box-shadow: inset 0 0 8px rgba(black, 0.15);
+        }
+      }
+    }
+
+    .clear-filters {
+      font-size: 11px;
+      display: inline-block;
+      color: $color-light;
+      margin: 7px 0 0 0;
+      float: right;
+      text-align: right;
+
+      a {
+        display: inline-block;
+        margin: 0 0 0 4px;
+      }
+    }
+
+    .dropdown-menu {
+      width: 225px;
+    }
+
+    .dropdown-toggle {
+      i.fa {
+        font-size: 8px;
+        vertical-align: 1px;
+      }
+    }
+  }
+}

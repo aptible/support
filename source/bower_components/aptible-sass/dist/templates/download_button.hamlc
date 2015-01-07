@@ -1,0 +1,10 @@
+- if @model.get('s3_path')
+  .fact-title Download
+  .fact-value
+    %a.btn.btn-primary.btn-xs{ href: @download_url, target: '_blank' }
+      %i.fa.fa-download
+      %span Download
+- else
+  .fact-title Generating PDF...
+  .fact-value
+    %i.fa.fa-spinner.fa-spin

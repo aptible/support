@@ -1,0 +1,10 @@
+= wrap_layout :layout do
+  %header.primary-header.full-header
+    .primary-header-bg
+      = partial 'layouts/navbar'
+      .container.header-title-container
+        %h1.primary-title Getting Started on Aptible
+        %h2.primary-sub-title Step-by-step guides for deploying your app on Aptible.
+
+  .container
+    = yield

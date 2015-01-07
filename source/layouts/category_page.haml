@@ -1,0 +1,13 @@
+= wrap_layout :layout do
+  %header.primary-header
+    .primary-header-bg
+      = partial 'layouts/navbar'
+      .container.header-title-container
+        %h1.primary-title Category
+        %h2.primary-sub-title= current_page.data.title
+
+  .main
+    %ul
+    - current_page.children.each do |framework|
+      %li= link_to(framework.data.title, framework)
+    = yield

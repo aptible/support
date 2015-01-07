@@ -1,0 +1,78 @@
+.form-control {
+  font-size: 16px;
+  border-color: #ccc;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-group-addon {
+  background-color: $color-bg-gray;
+  border-color: $color-border-gray;
+
+  .fa,
+  .glyphicon {
+    color: $color-subdued;
+    margin: 0 2px;
+    width: 15px;
+    text-align: center;
+  }
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 10px;
+
+  &.block {
+    display: block;
+  }
+
+  .subdued {
+    font-size: 13px;
+    font-weight: $weight-normal;
+    color: $color-subdued;
+  }
+
+  .label-helper {
+    color: $color-light;
+    font-size: 12px;
+    float: right;
+    margin-top: 4px;
+    font-weight: $weight-lighter;
+  }
+
+  .label-helper-link {
+    font-size: 12px;
+    font-weight: $weight-lighter;
+    display: inline-block;
+    margin: 0 0 0 8px;
+  }
+}
+
+.focus-form {
+  .heading {
+    font-size: 16px;
+    font-weight: $weight-bold;
+    margin: 0 0 6px;
+    text-align: center;
+  }
+
+  .input-group {
+    margin: 0 0 20px;
+  }
+
+  .sub-heading {
+    margin: 0 0 25px;
+    font-size: 11px;
+    color: $color-light;
+    text-align: center;
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-top: 2px;
+}

@@ -1,0 +1,183 @@
+.compliance-document-fact {
+  .compliance-icon {
+    float: left;
+    margin: -5px 5px -5px 0;
+  }
+
+  .fact-title {
+    color: $color-light;
+    font-size: 13px;
+    margin: 0 0 6px;
+  }
+
+  .fact-value {
+    font-size: 14px;
+    font-weight: $weight-semibold;
+
+    &.progress-fact {
+      .progress-value {
+        float: left;
+        font-size: 12px;
+        font-weight: $weight-normal;
+        letter-spacing: -.7px;
+      }
+
+      .progress {
+        float: left;
+        width: 280px;
+      }
+    }
+  }
+}
+
+.compliance-document-field {
+  padding-bottom: 20px;
+
+  .formatted {
+    white-space: pre-line;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 15px 0;
+  }
+
+  .checkbox label,
+  .radio label {
+    font-size: 13px;
+  }
+}
+
+.compliance-body-section-title {
+  font-size: 15px;
+  font-weight: $weight-semibold;
+  color: $color-primary;
+  margin: 0 0 20px;
+}
+
+.compliance-body-title {
+  @extend %microheader;
+  background: none;
+  padding: 0;
+  border: 0;
+  margin: 0 0 15px;
+
+  a {
+    text-transform: none;
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0 0 0 8px;
+  }
+}
+
+.compliance-document-roles {
+  .modal-wizard & {
+    margin-bottom: 10px;
+  }
+}
+
+.compliance-document-created-at {
+  font-size: 12px;
+  color: $color-light;
+  padding: 4px 0;
+}
+
+.empty-compliance-field {
+  margin: 20px 0;
+  color: $color-subdued;
+  font-weight: $weight-semibold;
+  font-size: 12px;
+}
+
+.compliance-document-fieldset {
+  label.required:after {
+    content: '*';
+    font-weight: $weight-bold;
+    color: #ff6868;
+    display: inline-block;
+    margin: 0 0 0 5px;
+  }
+}
+
+.new-risk-analysis-modal {
+  .edit-contacts-link {
+  }
+}
+
+.edit-compliance-document-contact {
+
+  .panel.micro-panel {
+    border: 1px solid #ccc;
+  }
+  
+  .edit-contact-panel {
+    display: none;
+
+    .alert {
+      padding: 5px 8px;
+      margin-bottom: 10px;
+    }
+
+    .editing & {
+      display: block;
+
+      input.form-control {
+        padding: 3px 8px;
+        height: 32px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .editing & .compliance-document-contact {
+    display: none;
+  }
+
+  .dropdown-select {
+    display: block;
+
+    .dropdown-toggle {
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+      width: 100%;
+      color: $color-primary;
+
+      i.fa {
+        float: right;
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.panel.panel-default > header {
+  .compliance-label,
+  .compliance-icon {
+    float: left;
+  }
+
+  .compliance-icon {
+    margin-right: 10px;
+  }
+}
+
+.slider-wrapper {
+  .noUi-target {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .noUi-base {
+    background-color: $color-bright-blue;
+    border-radius: 6px;
+  }
+
+  .noUi-origin {
+    background-color: #fff;
+    border: 1px solid $color-border-gray;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 3px #f0f0f0;
+  }
+}

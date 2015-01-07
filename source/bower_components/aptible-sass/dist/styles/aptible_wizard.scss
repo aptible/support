@@ -1,0 +1,241 @@
+.nav.wizard-nav {
+  @extend %clearfix;
+  border: 0;
+
+  > li.disabled a {
+    pointer-events: none;
+  }
+
+  > li,
+  > li.disabled {
+    display: block;
+    position: relative;
+    float: left;
+
+    > span,
+    > a,
+    > a:link,
+    > a:active,
+    > a:visited, {
+      font-size: 16px;
+      font-weight: $weight-semibold;
+      color: $color-light;
+      background: none;
+      padding: 10px 15px 10px 23px;
+      display: inline-block;
+
+      &:hover {
+        background: none;
+        color: $color-primary;
+      }
+    }
+
+    &.active,
+    &.completed {
+      > span,
+      > a {
+        color: $color-primary;
+      }
+
+      &:before {
+        background: $color-bright-blue;
+      }
+    }
+
+    &.completed {
+      &:before {
+        @extend .fa;
+        @extend .fa-check;
+        background-color: $color-bright-blue;
+        font-size: 10px !important;
+        text-indent: 0;
+        text-align: center;
+        color: #fff;
+        line-height: 14px !important;
+      }
+    }
+
+    &:before,
+    &:after {
+      text-indent: -3000em;
+      z-index: 0;
+      display: inline-block;
+      position: absolute;
+    }
+
+    &:before {
+      content: '.';
+      height: 14px;
+      width: 14px;
+      top: 14px;
+      border-radius: 7px;
+      background-color: $color-bg-dark-gray;
+    }
+
+    .fa-chevron-right {
+      color: $color-bg-dark-gray;
+      font-size: 14px;
+      margin: 0 14px 0 0;
+      vertical-align: 0;
+    }
+
+    &:last-child {
+      .fa-chevron-right {
+        display: none;
+      }
+    }
+  }
+}
+
+.modal-steps {
+  .nav.wizard-nav {
+    float: left;
+  }
+
+  .nav.wizard-actions {
+    float: right;
+    margin: 5px 0 0;
+
+    > li {
+      > a.cancel {
+        padding: 4px 8px;
+        float: left;
+        margin: 3px 10px 0 0;
+      }
+    }
+  }
+}
+
+.modal-wizard {
+  label {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+
+  .checkbox,
+  .radio {
+    label {
+      font-size: 14px;
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
+.nav.wizard {
+  @extend %clearfix;
+  border: 0;
+  position: relative;
+  text-align: center;
+
+  &:before {
+    content: '.';
+    display: block;
+    text-indent: -3000em;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #f0f0f0;
+    z-index: 0;
+  }
+
+  > li {
+    display: block;
+    position: relative;
+    float: left;
+    margin-top: 20px;
+    width: 25%;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: '.';
+      text-indent: -3000em;
+      height: 14px;
+      width: 14px;
+      left: 50%;
+      top: -26px;
+      margin-left: -7px;
+      border-radius: 7px;
+      background: #f0f0f0;
+    }
+
+    &.active:before {
+      background-color: $color-bright-blue;
+    }
+
+    &.completed:before {
+      @extend .fa;
+      @extend .fa-check;
+      background-color: $color-bright-blue;
+      font-size: 10px;
+      text-indent: 0;
+      text-align: center;
+      color: #fff;
+      line-height: 14px !important;
+    }
+
+    > a,
+    > span {
+      position: relative;
+      font-size: 16px;
+      font-weight: $weight-semibold;
+      border: 0;
+      padding: 10px 15px;
+
+      &:hover {
+        background: none;
+        border: 0;
+      }
+    }
+
+    > span {
+      display: block;
+      color: $color-light;
+    }
+  }
+}
+
+.wizard-container {
+  .tab-content {
+    margin-top: 50px;
+  }
+
+  .panel-default {
+    padding: 20px;
+  }
+
+  #db {
+    .provisioning-indicator-container {
+      display: none;
+      margin: 0 50px;
+
+      .step.static {
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+
+    &.provisioning {
+      .database-form {
+        display: none;
+      }
+
+      .alert {
+        display: none;
+      }
+
+      .provisioning-indicator-container {
+        display: block;
+      }
+    }
+  }
+}

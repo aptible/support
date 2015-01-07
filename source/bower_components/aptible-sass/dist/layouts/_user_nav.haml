@@ -1,0 +1,21 @@
+%li.dropdown.current-user
+  .btn-group
+    %a.btn.btn-link.user-link{ href: edit_user_url }
+      .clearfix
+        .gravatar.xs
+          %img{ src: gravatar_url(current_user.email, 32) }
+        .pull-left= current_user.name
+    %a.btn.dropdown-toggle{ data: { toggle: 'dropdown' } }
+      %i.fa.fa-chevron-down
+
+    %ul.dropdown-menu
+      - if current_user.verified?
+        %li
+          %a{ href: dashboard_url } Dashboard
+          %a{ href: edit_user_url } Your Settings
+      - else
+        %li
+          %a{ href: verification_code_reset_url } Resend Verification Email
+      %li.divider
+      %li
+        %a{ href: logout_url, data: { no_turbolink: true }  } Logout

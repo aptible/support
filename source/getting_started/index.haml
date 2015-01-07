@@ -1,0 +1,16 @@
+---
+title: 'Getting Started'
+languages:
+  - go
+  - java
+  - php
+  - python
+  - ruby
+  - scala
+---
+
+%h1 Which language are you using?
+
+%ul
+- current_page.data.languages.each do |language|
+  %li= link_to(language, "/getting_started/#{language}")

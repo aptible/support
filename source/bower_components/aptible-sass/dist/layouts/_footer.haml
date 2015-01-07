@@ -1,0 +1,54 @@
+%footer.aptible-footer
+  .aptible-mark
+    .mark
+  .container
+    .row
+      .col-xs-10.col-xs-offset-1
+        .row
+          .col-xs-3
+            %ul.nav
+              %li.title My Aptible
+              %li
+                %a{ href: dashboard_apps_url } Apps
+              %li
+                %a{ href: databases_url } Databases
+              %li
+                %a{ href: compliance_url } Compliance
+              %li
+                %a{ href: organizations_url } My Organizations
+
+          .col-xs-3
+            %ul.nav
+              %li.title Support
+              %li
+                %a{ href: contact_support_url } Contact Us
+              %li
+                %a{ href: support_url } Support
+              %li
+                %a{ href: responsible_disclosure_url } Responsible Disclosure
+              %li.current-status
+                %a.current-status-link{ href: status_url }
+                  Status
+                  %i.current-status-indicator
+
+              %li
+                %a{ href: legal_url } Legal
+
+          .col-xs-6
+            %ul.nav
+              %li.title
+                Aptible, Inc.
+                %span © 2014
+            .row
+              .col-xs-6
+                %ul.split
+                  %li.addr
+                    .addr1 155 Water St
+                    .city-state-zip Brooklyn, NY 11201
+              .col-xs-6
+                %ul.split
+                  %li (866) 296-5003
+                  %li
+                    %a{ href: 'mailto:hello@aptible.com' } hello@aptible.com
+                  %li
+                    .sm

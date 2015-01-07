@@ -1,0 +1,39 @@
+---
+title: Aptible Support
+categories:
+  getting_started:
+    title: Getting Started Guides
+    svg: getting_started
+    url: /getting_started
+  documentation:
+    title: Documentation
+    svg: documentation
+    url: /documentation
+  support:
+    title: Support
+    svg: support
+    url: /support
+---
+
+= wrap_layout :layout do
+  %header.primary-header.full-header
+    .primary-header-bg
+      = partial 'layouts/navbar'
+      .container.header-title-container
+        %h1.primary-title Aptible Support
+        %h2.primary-sub-title How can we help?
+        .search-bar
+          .search-bar-input
+            .input-group
+              %input.form-control{ placeholder: 'Search Documentation, Support, and Quickstart guides', type: 'text' }
+              %button.input-group-addon{ type: 'submit' }
+                %i.fa.fa-search
+
+  .container
+    .categories
+      - current_page.data.categories.each do |category_name, category|
+        %a.category-box{ href: category['url'] }
+          .category-icon= category['svg']
+          .category-footer
+            .category-title= category['title']
+
