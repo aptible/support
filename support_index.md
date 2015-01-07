@@ -11,6 +11,8 @@ Apps
 Databases
 Pricing & Billing
 Compliance
+Languages
+Quickstart Guides
 
 (bottom sections)
 Can't find an answer? [Contact us](https://www.aptible.com/support/) and we'll get back to you as soon as we can.
