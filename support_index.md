@@ -6,13 +6,14 @@ address: support.aptible.com
 How can we help you? Search support articles here...
 
 (main sections, w/ icons)
-My Account
+Quickstart
+Accounts
 Apps
 Databases
 Pricing & Billing
 Compliance
 Languages
-Quickstart Guides
+Migrations
 
 (bottom sections)
 Can't find an answer? [Contact us](https://www.aptible.com/support/) and we'll get back to you as soon as we can.
