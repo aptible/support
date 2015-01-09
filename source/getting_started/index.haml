@@ -10,8 +10,6 @@ languages:
   - Scala
 ---
 
-
-
 .documentation-main
   %h3.sub-title Which language are you using?
   .container
@@ -19,7 +17,7 @@ languages:
       .row
       - current_page.data.languages.each do |language|
         .col-xs-3
-          %a.category-box{ href: "/getting_started/#{language}", class: language.downcase }
+          %a.category-box{ href: "/getting_started/#{language.downcase}", class: language.downcase }
             .category-icon
               = partial "images/icons/#{language}.svg"
             .category-footer

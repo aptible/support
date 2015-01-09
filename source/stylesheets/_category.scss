@@ -1,3 +1,9 @@
+$ruby: #D34444;
+$php: #6082bb;
+$node: #80BD01;
+$scala: #DC0101;
+$go: #6AD7E5;
+
 .categories {
   margin: 50px 0;
 
@@ -66,5 +72,75 @@
     .code-path {
       fill: $color-bright-blue;
     }
+  }
+
+  svg.php {
+    path {
+      fill: $php;
+    }
+  }
+
+  svg.ruby {
+    path {
+      fill: $ruby;
+    }
+  }
+
+  svg.node {
+    path {
+      fill: $node;
+    }
+  }
+
+  svg.scala {
+    path {
+      fill: $scala
+    }
+  }
+
+  svg.java {
+    .path-2 {
+      fill: #EB2D2F;
+    }
+
+    .path-1 {
+      fill: #0073BD;
+    }
+  }
+
+  svg.python {
+    .path-1 {
+      fill: #FFCF3E;
+    }
+    .path-2 {
+      fill: #3777AC;
+    }
+  }
+
+  svg.go {
+    #right-ear,
+    #left-ear,
+    #torso {
+      fill: $go;
+    }
+
+    #nose {
+      fill: #f6d2a2;
+    }
+  }
+}
+
+
+.category-box.java {
+  .category-icon {
+    margin-top: 29px;
+  }
+}
+
+.category-box.ruby,
+.category-box.python,
+.category-box.node {
+  .category-icon {
+    margin-top: 41px;
   }
 }
