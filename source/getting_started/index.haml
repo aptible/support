@@ -1,16 +1,27 @@
 ---
 title: 'Getting Started'
 languages:
-  - go
-  - java
-  - php
-  - python
-  - ruby
-  - scala
+  - Go
+  - Node
+  - Java
+  - PHP
+  - Python
+  - Ruby
+  - Scala
 ---
 
-%h1 Which language are you using?
 
-%ul
-- current_page.data.languages.each do |language|
-  %li= link_to(language, "/getting_started/#{language}")
+
+.documentation-main
+  %h3.sub-title Which language are you using?
+  .container
+    .categories
+      .row
+      - current_page.data.languages.each do |language|
+        .col-xs-3
+          %a.category-box{ href: "/getting_started/#{language}", class: language.downcase }
+            .category-icon
+              = partial "images/icons/#{language}.svg"
+            .category-footer
+              .category-title= language
+

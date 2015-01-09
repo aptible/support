@@ -1,0 +1,70 @@
+.categories {
+  margin: 50px 0;
+
+  .category-box {
+    @extend %aptible-panel;
+    width: 100%;
+    height: 185px;
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+.category-box {
+  position: relative;
+  background: #fff;
+
+  .category-icon {
+    text-align: center;
+    height: 60px;
+    width: 80px;
+    margin: 50px auto 0;
+  }
+
+  .category-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: #fafafa;
+    @include box-shadow(inset 0 2px 5px 0 rgba(black, .05));
+    border-top: 1px solid #dfdfdf;
+    text-align: center;
+    padding: 10px;
+
+    .category-title {
+      color: $color-subdued;
+      font-size: 16px;
+      font-weight: $weight-semibold;
+    }
+  }
+
+  &:hover {
+    border-color: $color-bright-blue;
+    @include box-shadow(0 0 6px 0 $color-bright-blue);
+    text-decoration: none;
+
+    .category-title {
+      color: $color-primary;
+    }
+  }
+}
+
+.category-box:hover {
+  svg.support {
+    .path-2 {
+      fill: $color-bright-blue;
+    }
+  }
+
+  svg.getting-started {
+    .check-path {
+      fill: $color-bright-blue;
+    }
+  }
+
+  svg.documentation {
+    .code-path {
+      fill: $color-bright-blue;
+    }
+  }
+}
