@@ -1,4 +1,5 @@
 address: support.aptible.com/quickstart/scala/play
+default for /quickstart/scala
 
 ### Play Quickstart
 This guide will show you how to set up a Scala app using the Play framework and PostgreSQL.
@@ -18,7 +19,7 @@ For example:
 aptible apps:create play-example
 ```
 
-#### 2. Configure a Git Remote
+#### 2. Add a Git Remote
 Add a Git remote named "aptible":
 ```
 git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
@@ -29,20 +30,15 @@ For example:
 git remote add aptible git@beta.aptible.com:play-example.git
 ```
 
-#### 3. Add a Dockerfile and a Procfile
-Aptible uses Docker to build your app's runtime environment. A Dockerfile is a list of commands used to build that image. A Procfile is then used to explicitly declare what processes Aptible should run for your app.
+#### 3. Add a Procfile
+A Procfile explicitly declares what processes we should run for your app.
 
 A few guidelines:  
-1. Name each file one word, capital "D"/"P", no extension: "Dockerfile" and "Procfile".  
-2. Place them in the root of your repository.  
-3. Be sure to commit both files to version control.  
+1. The file should be named "Procfile": One word, capital "P", no extension.  
+2. Place the Procfile in the root of your repository.  
+3. Be sure to commit it to version control.  
 
-Here is a sample Dockerfile for a Scala app using the Play framework:
-```
-[example Dockerfile]
-```
-
-Here is a sample Procfile:
+Here is a sample Procfile for a Play app:
 ```
 web: target/universal/stage/bin/playexample \
      -Dhttp.port=$PORT \
@@ -50,7 +46,10 @@ web: target/universal/stage/bin/playexample \
      -Ddb.default.driver=org.postgresql.Driver \
      -Ddb.default.url=$DATABASE_URL
 ```
+
 Alternatively, you can omit the runtime database configuration options and instead use your `conf/application.conf` file.
+
+> Note: Aptible uses Docker to build and run your app. If you do not include a Dockerfile in your repository, Aptible will attempt to build your app with the [tutum/buildstep](https://registry.hub.docker.com/u/tutum/buildstep/) image. 
 
 #### 4. Provision and Connect a Database
 By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL database.
