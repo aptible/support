@@ -10,6 +10,6 @@
         %img{ src: '/bower_components/aptible-sass/dist/images/aptible-logo.png' }
     #primary-nav.collapse.navbar-collapse
       %ul.nav.nav-primary.navbar-nav.navbar-right
-        %li= link_to 'Getting Started', '/getting_started'
-        %li= link_to 'Documentation', '/documentation'
-        %li= link_to 'Support', '/support'
+        %li{ class: current_page.url =~ /getting_started/ ? 'active' : '' }= link_to 'Getting Started', '/getting_started'
+        %li{ class: current_page.url =~ /documentation/ ? 'active' : '' }= link_to 'Documentation', '/documentation'
+        %li{ class: current_page.url =~ /support/ ? 'active' : '' }= link_to 'Support', '/support'

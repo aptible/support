@@ -1,8 +1,7 @@
 ---
-title: Deploy Your First Ruby on Rails App to Aptible
-sub_title: In about 5 minutes
-language: Ruby
+title: WTF is docker?
 ---
+
 
 <section>
 # Introduction (h1)

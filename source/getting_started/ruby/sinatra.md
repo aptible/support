@@ -1,7 +1,10 @@
 ---
-title: Sinatra
+title: Deploy Your First Sinatra App to Aptible
+sub_title: In about 5 minutes
+language: Ruby
 ---
 
-# Getting Started With Sinatra on Aptible
+# Introduction
 
-## In about 5 minutes
+# Requirements
+

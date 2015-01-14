@@ -1,8 +1,7 @@
 ---
-title: Deploy Your First Ruby on Rails App to Aptible
-sub_title: In about 5 minutes
-language: Ruby
+title: Introduction to Confirguring Apps on Aptible
 ---
+
 
 <section>
 # Introduction (h1)

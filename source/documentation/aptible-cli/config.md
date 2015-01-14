@@ -1,7 +1,5 @@
 ---
-title: Deploy Your First Ruby on Rails App to Aptible
-sub_title: In about 5 minutes
-language: Ruby
+title: Aptible-cli Config Commands
 ---
 
 <section>

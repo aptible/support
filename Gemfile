@@ -15,3 +15,5 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 gem 'bootstrap-sass'
 gem 'compass'
 gem 'font-awesome-sass'
+gem 'redcarpet'
+gem 'middleman-syntax'

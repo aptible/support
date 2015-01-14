@@ -43,9 +43,13 @@
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
-#     "Helping"
+#     "2Helping"
 #   end
 # end
+
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true, smartypants: true
+activate :syntax, line_numbers: true
 
 activate :directory_indexes
 
@@ -59,6 +63,9 @@ page '/getting_started/*', layout: 'getting_started_guide'
 page '/getting_started/*/index.html', layout: 'category_page'
 page '/documentation/*', layout: 'documentation'
 page '/support/*', layout: 'support'
+page '/documentation*', layout: :documentation do
+  @docs = data.documentation
+end
 
 # Build-specific configuration
 configure :build do

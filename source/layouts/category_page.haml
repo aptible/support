@@ -1,10 +1,12 @@
+/ Template: category_page.haml
 = wrap_layout :layout do
-  %header.primary-header
+  %header.primary-header.full-header
     .primary-header-bg
       = partial 'layouts/navbar'
-      .container.header-title-container
-        %h1.primary-title= current_page.data.title
-        - # %h2.primary-sub-title= current_page.data.title
+      - if current_page.data.sub_title
+        .container.header-title-container
+          %h1.primary-title= current_page.data.title
+          %h2.primary-sub-title= current_page.data.sub_title
   = yield
   - #.main
   - #  %ul

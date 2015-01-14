@@ -5,11 +5,31 @@
 
 
 header.primary-header {
+  height: auto;
+
   &.full-header {
     height: 350px;
   }
 
+  &.no-title {
+    height: auto;
+
+    .nav-primary {
+      margin-top: 8px;
+    }
+
+    .navbar.navbar-primary {
+      margin-bottom: 8px;
+    }
+
+    .navbar-brand {
+      margin-top: -2px;
+    }
+  }
+
   .header-title-container {
+    margin-bottom: 86px;
+
     h1.primary-title {
       font-size: 33px;
       text-shadow: 0px 1px 2px rgba(0,0,0,0.50);
@@ -24,7 +44,7 @@ header.primary-header {
   }
 }
 
-.getting_started_index, .index {
+.getting_started, .index {
   header.primary-header .header-title-container {
     h1.primary-title {
       margin-top: 56px;
@@ -66,6 +86,38 @@ header.primary-header {
     i.fa {
       margin-left: 1px;
       color: $color-subdued;
+    }
+  }
+}
+
+header.breadcrumbs {
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+
+  .breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+      & + li:before {
+        @extend .fa;
+        @extend .fa-chevron-right;
+        font-size: 10px;
+        margin: 0 10px;
+      }
+
+      > a {
+        color: $color-light;
+        font-size: 13px;
+        font-weight: $weight-semibold;
+      }
+
+      &.active {
+        color: $color-primary;
+        font-size: 13px;
+        font-weight: $weight-semibold;
+      }
     }
   }
 }
