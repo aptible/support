@@ -1,57 +1,75 @@
 "Ruby":
   svg: ruby
+  url: "ruby/ruby_on_rails"
   frameworks:
     - title: "Ruby on Rails"
-      url: 'ruby/ruby_on_rails'
+      url: "ruby/ruby_on_rails"
       svg: rails.svg
-      slug: 'rails'
+      slug: "rails"
     - title: "Sinatra"
-      url: 'ruby/sinatra'
-      slug: 'sinatra'
-      svg: 'sinatra.svg'
+      url: "ruby/sinatra"
+      slug: "sinatra"
+      svg: "sinatra.svg"
 
 "Go":
   svg: go.svg
-  frameworks: false
-  url: 'go'
+  url: "go/gorilla"
+  frameworks:
+    - title: "Gorilla on Aptible"
+      url: "go/gorilla"
 
 "Node":
   svg: node.svg
-  frameworks: false
-  url: 'node'
+  url: "node/express"
+  frameworks:
+    - title: "Express"
+      url: "node/express"
+      svg: "express.svg"
+      slug: "express"
 
 "Java":
   svg: java.svg
+  url: 'java/jersey'
   frameworks:
     - title: "Spring"
       url: "java/spring"
-      svg: 'spring.svg'
-      slug: 'spring'
+      svg: "spring.svg"
+      slug: "spring"
+    - title: "Jersey"
+      url: "java/jersey"
+      svg: "jersey.svg"
 
 "Scala":
   svg: scala.svg
+  url: "scala/play"
   frameworks:
-    - title: "Scala"
-      svg: 'scala.svg'
-      slug: 'scala'
+    - title: "Play Framework"
+      svg: "play.svg"
+      slug: "play"
       url: "scala/play"
 
 "PHP":
   svg: php.svg
+  url: "php/laravel"
   frameworks:
     - title: "Laravel"
-      svg: 'laravel.svg'
-      slug: 'laravel'
+      svg: "laravel.svg"
+      slug: "laravel"
       url: "php/laravel"
+    - title: "Symfony"
+      svg: "symfony.svg"
+      slug: "symfony"
+      url: "php/symfony"
 
 "Python":
   svg: python.svg
+  url: 'python/django'
   frameworks:
     - title: "Django"
       url: "python/django"
-      svg: 'django.svg'
-      slug: 'django'
+      svg: "django.svg"
+      slug: "django"
     - title: "Flask"
       url: "python/flask"
-      slug: 'flask'
-      svg: 'flask.svg'
+      slug: "flask"
+      svg: "flask.svg"

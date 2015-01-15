@@ -1,36 +1,96 @@
 ---
-title: Deploy Your First Ruby on Rails App to Aptible
-sub_title: In about 5 minutes
+title: Ruby on Rails Quickstart
+sub_title: Deploy your Ruby on Rails app to Aptible in about 5 minutes
 language: Ruby
 ---
 
-<section>
-# Introduction (h1)
+Using Ruby but not Ruby on Rails?  [Check out our Sinatra Quickstart Guide](/getting_started/ruby/sinatra)
 
-This guide will help you deploy your first Ruby app on Aptible. Pellentesque eget ex suscipit, pulvinar velit eu, viverra orci. Integer sit amet metus at ante posuere sagittis.
+This guide will show you how to set up a Ruby app using the Rails framework and ActiveRecord + PostgreSQL. This guide is for Rails 4.0 or greater. If you are on an older version of Rails, your app will need [additional configuration](http://edgeguides.rubyonrails.org/configuring.html#configuring-a-database) to connect to a database.
 
-## Requirements (h2)
+This guide assumes you have:
+- An Aptible account,
+- An SSH key associated with your Aptible user account, and
+- The Aptible command line tool installed
 
-Curabitur convallis lacus a pretium fermentum. Donec ut ultrices enim, ac interdum sem. Nam et nisl sed quam consequat feugiat. Curabitur vehicula at purus nec mollis.
-</section>
+## 1. Provision Your App
+Tell the Aptible API that you want to provision an application. Until you push code and trigger a build, Aptible uses this as a placeholder.
 
-<section>
-# Section 2
+Use the `apps:create` command: `aptible apps:create $APP_HANDLE`
 
-### Other (h3)
+For example:
 
-This guide will help you deploy your first Ruby app on Aptible. Pellentesque eget ex suscipit, pulvinar velit eu, viverra orci. Integer sit amet metus at ante posuere sagittis.
-
-#### More other (h4)
-
-This guide will help you deploy your first Ruby app on Aptible. Pellentesque eget ex suscipit, pulvinar velit eu, viverra orci. Integer sit amet metus at ante posuere sagittis.
-
-##### Some code, yo (h5)
-
-```ruby
-def show
-  @app = Aptible::Api::App.find(params[:id], token: service_token)
-  render json: @app.attributes if request.xhr?
-end
+```bash
+aptible apps:create rails-quickstart
 ```
-</section>
+
+## 2. Add a Dockerfile and a Procfile
+Aptible uses Docker to build your app's runtime environment. A Dockerfile is a list of commands used to build that image. A Procfile is used to explicitly declare what processes Aptible should run for your app.
+
+A few guidelines:
+1. Name each file one word, capital "D"/P", no extension: "Dockerfile" and "Procfile".
+2. Place both files in the root of your repository.
+3. Be sure to commit both files to version control.
+
+Here is a sample Dockerfile for a Ruby on Rails app:
+
+```Dockerfile
+FROM quay.io/aptible/ruby:ruby-2.0.0
+
+RUN apt-get update && apt-get -y install libpq-dev nodejs
+
+ADD . /opt/rails
+WORKDIR /opt/rails
+RUN bundle install --without development test
+RUN bundle exec rake assets:precompile
+
+ENV PORT 3000
+EXPOSE 3000
+
+CMD bundle exec rails s -p $PORT
+```
+
+Here is a sample Procfile for a Ruby on Rails app:
+
+```bash
+web: bundle exec rails s -p $PORT
+```
+
+## 3. Provision and Connect a Database
+By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL database.
+
+`aptible db:create` will return a connection string on success. The host value is mapped to a private subnet within your stack and cannot be used to connect from the outside Internet. Your containerized app can connect, however.
+
+Add the connection string as an environmental variable to your app:
+
+```bash
+aptible config:add DATABASE_URL=$CONNECTION_STRING --app $APP_HANDLE
+```
+
+## 4. Configure a Git Remote
+Add a Git remote named "aptible":
+
+```bash
+git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
+```
+
+For example:
+
+```bash
+git remote add aptible git@beta.aptible.com:rails-quickstart.git
+```
+
+## 5. Deploy Your App
+Push to the master branch of the Aptible git remote:
+
+```bash
+git push aptible master
+```
+
+If your app deploys successfully, a message will appear near the end of the remote output with a default VHOST:
+
+```bash
+VHOST rails-quickstart.on-aptible.com provisioned.
+```
+
+In this example, once the ELB provisions you could visit rails-quickstart.on-aptible.com to test out your app.
