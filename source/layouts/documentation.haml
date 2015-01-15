@@ -1,0 +1,42 @@
+/ Template: documentation.haml
+
+= wrap_layout :layout do
+  %header.primary-header.no-title
+    .primary-header-bg
+      = partial 'layouts/navbar'
+
+  %header.breadcrumbs
+    .container
+      %ol.breadcrumb
+        %li
+          %a{ href: '/documentation' }Documentation
+        %li.active= current_page.data.title
+
+  .container
+    .row
+      .col-xs-3
+
+        .documentation-sidebar-nav
+          - data.documentation.each do |section, entries|
+            %ul.nav.sidebar-nav
+              %li.title= section
+              - entries.each do |entry|
+                %li{ class: current_page.path =~ Regexp.new(entry.url) ? 'active' : '' }
+                  %a{href: "/documentation/#{entry.url}"}= entry.title
+
+          %ul.nav.sidebar-nav
+            %li.title Introduction
+
+            %li
+              %a{ href: '#' }
+                Introduction to Aptible
+
+      .col-xs-7
+        .document-hero-title
+          %h1= current_page.data.title
+          - if current_page.data.sub_title
+            %h2= current_page.data.sub_title
+
+        .markdown-document
+          = find_and_preserve do
+            = yield

@@ -1,0 +1,27 @@
+---
+title: Getting Started on Aptible
+sub_title: Step-by-step guides for deploying your app on Aptible.
+layout: category_page
+languages:
+  - Go
+  - Node
+  - Java
+  - PHP
+  - Python
+  - Ruby
+  - Scala
+---
+
+.documentation-main
+  %h3.sub-title Which language are you using?
+  .container
+    .categories
+      .row
+      - current_page.data.languages.each do |language|
+        .col-xs-3
+          %a.category-box{ href: "/getting_started/#{language.downcase}", class: language.downcase }
+            .category-icon
+              = partial "images/icons/#{language}.svg"
+            .category-footer
+              .category-title= language
+
