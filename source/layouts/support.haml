@@ -1,11 +1,30 @@
 / Template: support.haml
 = wrap_layout :layout do
-  %header.primary-header
-    .primary-header-bg
-      = partial 'layouts/navbar'
-      .container.header-title-container
-        %h1.primary-title Support
-        %h2.primary-sub-title= current_page.data.title
+  %header.breadcrumbs
+    .container
+      %ol.breadcrumb
+        %li
+          %a{ href: '/support' }Support
+        %li.active= current_page.data.title
 
   .container
-    = yield
+    .row
+      .col-xs-3
+
+        .documentation-sidebar-nav
+          - data.support.each do |section, entries|
+            %ul.nav.sidebar-nav
+              %li.title= section
+              - entries.each do |entry|
+                %li{ class: current_page.path =~ Regexp.new(entry.url) ? 'active' : '' }
+                  %a{href: "/support/#{entry.url}"}= entry.title
+
+      .col-xs-7
+        .document-hero-title
+          %h1= current_page.data.title
+          - if current_page.data.sub_title
+            %h2= current_page.data.sub_title
+
+        .markdown-document
+          = find_and_preserve do
+            = yield

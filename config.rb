@@ -58,13 +58,20 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+set :partials_dir, 'partials'
 
 page '/getting_started/*', layout: 'getting_started_guide'
-page '/getting_started/*/index.html', layout: 'category_page'
+
 page '/documentation/*', layout: 'documentation'
-page '/support/*', layout: 'support'
 page '/documentation*', layout: :documentation do
   @docs = data.documentation
+end
+
+data.support.each do |section, entries|
+  section_slug = section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+
+  proxy "/support/#{section_slug}/index.html",  'support/category.html',
+        locals: { articles: entries, category: section }
 end
 
 # Build-specific configuration

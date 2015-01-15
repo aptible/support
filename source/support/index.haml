@@ -1,3 +1,19 @@
 ---
 title: Support Index
+header_title: Aptible Support
+header_sub_title: How can we help?
 ---
+
+.documentation-main
+  .container
+    .categories
+      .row
+      - data.support.each do |support_category, articles|
+        - category_slug = support_category.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+        .col-xs-3
+          %a.category-box{ href: "/support/#{support_category}", class: category_slug }
+            .category-icon
+
+            .category-footer
+              .category-title= support_category
+

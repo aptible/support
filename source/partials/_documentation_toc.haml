@@ -1,0 +1,7 @@
+.documentation-sidebar-nav
+  - data.documentation.each do |section, entries|
+    %ul.nav.sidebar-nav
+      %li.title= section
+      - entries.each do |entry|
+        %li{ class: current_page.path =~ Regexp.new(entry.url) ? 'active' : '' }
+          %a{href: "/documentation/#{entry.url}"}= entry.title

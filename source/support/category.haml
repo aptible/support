@@ -1,0 +1,22 @@
+%header.breadcrumbs
+  .container
+    %ol.breadcrumb
+      %li
+        %a{ href: '/support' }Support
+      %li.active= category
+
+.container
+  .row
+    .col-xs-3
+      = partial 'support_category_sidebar'
+
+    .col-xs-7
+      .document-hero-title
+        %h1 Recent #{category} Questions
+
+      .category-article-list
+        - articles.each do |article|
+          %a.category-article{ href: "/support#{article.url}" }= article.title
+
+      .back
+        %a{ href: '/support'}← Back to all support categories

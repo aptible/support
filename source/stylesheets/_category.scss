@@ -144,3 +144,22 @@ $go: #6AD7E5;
     margin-top: 41px;
   }
 }
+
+
+.category-article-list {
+  border-top: 4px solid #f6f6f6;
+
+  .category-article {
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 30px 20px;
+
+    &:nth-child(even) {
+      background-color: #fcfcfc;
+    }
+  }
+}
+
+.back {
+  margin: 50px 0;
+}

@@ -11,26 +11,23 @@ header.primary-header {
     height: 350px;
   }
 
-  &.no-title {
-    height: auto;
+  .nav-primary {
+    margin-top: 8px;
+  }
 
-    .nav-primary {
-      margin-top: 8px;
-    }
+  .navbar.navbar-primary {
+    margin-bottom: 8px;
+  }
 
-    .navbar.navbar-primary {
-      margin-bottom: 8px;
-    }
-
-    .navbar-brand {
-      margin-top: -2px;
-    }
+  .navbar-brand {
+    margin-top: -2px;
   }
 
   .header-title-container {
     margin-bottom: 86px;
 
     h1.primary-title {
+      margin-top: 56px;
       font-size: 33px;
       text-shadow: 0px 1px 2px rgba(0,0,0,0.50);
     }
@@ -40,14 +37,6 @@ header.primary-header {
       font-weight: $weight-semibold;
       color: #B2E6FF;
       margin-top: 5px;
-    }
-  }
-}
-
-.getting_started, .index {
-  header.primary-header .header-title-container {
-    h1.primary-title {
-      margin-top: 56px;
     }
   }
 }
@@ -69,7 +58,7 @@ header.primary-header {
 
     .form-control {
       border: 0;
-      width: 640px;
+      width: 650px;
     }
 
     .input-group-addon {
@@ -86,6 +75,7 @@ header.primary-header {
     i.fa {
       margin-left: 1px;
       color: $color-subdued;
+      vertical-align: -8px;
     }
   }
 }
@@ -119,5 +109,14 @@ header.breadcrumbs {
         font-weight: $weight-semibold;
       }
     }
+  }
+}
+
+// Overload ST styles
+.swiftype-widget {
+  .autocomplete {
+    width: 650px !important;
+    margin-left: -2px !important;
+    margin-top: 3px !important;
   }
 }
