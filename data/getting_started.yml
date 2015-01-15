@@ -1,0 +1,57 @@
+"Ruby":
+  svg: ruby
+  frameworks:
+    - title: "Ruby on Rails"
+      url: 'ruby/ruby_on_rails'
+      svg: rails.svg
+      slug: 'rails'
+    - title: "Sinatra"
+      url: 'ruby/sinatra'
+      slug: 'sinatra'
+      svg: 'sinatra.svg'
+
+"Go":
+  svg: go.svg
+  frameworks: false
+  url: 'go'
+
+"Node":
+  svg: node.svg
+  frameworks: false
+  url: 'node'
+
+"Java":
+  svg: java.svg
+  frameworks:
+    - title: "Spring"
+      url: "java/spring"
+      svg: 'spring.svg'
+      slug: 'spring'
+
+"Scala":
+  svg: scala.svg
+  frameworks:
+    - title: "Scala"
+      svg: 'scala.svg'
+      slug: 'scala'
+      url: "scala/play"
+
+"PHP":
+  svg: php.svg
+  frameworks:
+    - title: "Laravel"
+      svg: 'laravel.svg'
+      slug: 'laravel'
+      url: "php/laravel"
+
+"Python":
+  svg: python.svg
+  frameworks:
+    - title: "Django"
+      url: "python/django"
+      svg: 'django.svg'
+      slug: 'django'
+    - title: "Flask"
+      url: "python/flask"
+      slug: 'flask'
+      svg: 'flask.svg'

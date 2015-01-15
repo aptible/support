@@ -1,10 +1,6 @@
 / Template: documentation.haml
 
 = wrap_layout :layout do
-  %header.primary-header.no-title
-    .primary-header-bg
-      = partial 'layouts/navbar'
-
   %header.breadcrumbs
     .container
       %ol.breadcrumb
@@ -15,21 +11,7 @@
   .container
     .row
       .col-xs-3
-
-        .documentation-sidebar-nav
-          - data.documentation.each do |section, entries|
-            %ul.nav.sidebar-nav
-              %li.title= section
-              - entries.each do |entry|
-                %li{ class: current_page.path =~ Regexp.new(entry.url) ? 'active' : '' }
-                  %a{href: "/documentation/#{entry.url}"}= entry.title
-
-          %ul.nav.sidebar-nav
-            %li.title Introduction
-
-            %li
-              %a{ href: '#' }
-                Introduction to Aptible
+        = partial 'documentation_toc'
 
       .col-xs-7
         .document-hero-title

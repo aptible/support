@@ -1,10 +1,6 @@
 / Template: getting_started_guide.haml
 
 = wrap_layout :layout do
-  %header.primary-header.no-title
-    .primary-header-bg
-      = partial 'layouts/navbar'
-
   %header.breadcrumbs
     .container
       %ol.breadcrumb
@@ -12,7 +8,7 @@
           %a{ href: '/documentation' }Documentation
         %li
           %a{ href: '/getting_started' }Quickstart Guides
-        - if current_page.data.language.downcase
+        - if current_page.data.language
           %li
             %a{ href: "/getting_started/#{current_page.data.language.downcase}" }= current_page.data.language
         %li.active= current_page.data.title

@@ -15,4 +15,32 @@
     :javascript
       try{Typekit.load();}catch(e){}
   %body{ class: page_classes }
+    %header.primary-header
+      .primary-header-bg
+        = partial 'navbar'
+
+        - if current_page.data.header_title || current_page.data.header_search
+          .container.header-title-container
+            %h1.primary-title= current_page.data.header_title
+            - if current_page.data.header_sub_title
+              %h2.primary-sub-title= current_page.data.header_sub_title
+            - if current_page.data.header_search
+              .search-bar
+                .search-bar-input
+                  .input-group
+                    %input#swifttype-search-input.form-control{ placeholder: 'Search Documentation, Support, and Quickstart guides', type: 'text' }
+                    %span.input-group-addon
+                      %i.fa.fa-search
+                #st-results-container
+
     = yield
+
+    :javascript
+      try{Typekit.load();}catch(e){}
+
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+      _st('install','NEY74eNs3_qYZJHP2reK');
