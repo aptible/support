@@ -1,66 +1,12 @@
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-
-###
-# Page options, layouts, aliases and proxies
-###
-
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
-#
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
-
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
-#  :which_fake_page => "Rendering a fake page with a local variable" }
-
-###
-# Helpers
-###
-
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
-# Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "2Helping"
-#   end
-# end
-
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
-activate :syntax, line_numbers: true
-
-activate :directory_indexes
-
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 set :partials_dir, 'partials'
 
-page '/getting_started/*', layout: 'getting_started_guide'
+activate :syntax, line_numbers: true
+activate :directory_indexes
 
 page '/documentation/*', layout: 'documentation'
 page '/documentation*', layout: :documentation do
@@ -69,25 +15,29 @@ end
 
 data.support.each do |section, entries|
   section_slug = section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-
   proxy "/support/#{section_slug}/index.html",  'support/category.html',
         locals: { articles: entries, category: section }
 end
 
-# Build-specific configuration
+# Set up proxies for language category pages
+# If the language has no or only one framework, skip category page and
+# render language or framework document
+page '/getting_started/*', layout: 'getting_started_guide.haml'
+data.getting_started.each do |language_name, language_info|
+  section_slug = language_name.downcase
+  proxy_url = "/getting_started/#{section_slug}/index.html"
+  proxy_to = 'getting_started/category.html'
+
+  if language_info.frameworks && language_info.frameworks.count > 1
+    proxy proxy_url, proxy_to,
+        locals: { language_name: language_name,
+                  language_info: language_info,
+                  data: { header_title: 'Ruby!'} }
+  end
+end
+
 configure :build do
-  # For example, change the Compass output style for deployment
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
-
-  # Enable cache buster
-  # activate :asset_hash
-
-  # Use relative URLs
-  # activate :relative_assets
-
-  # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+  activate :minify_css
+  activate :minify_javascript
+  activate :asset_hash
 end
