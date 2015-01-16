@@ -3,7 +3,7 @@
     %ol.breadcrumb
       %li
         %a{ href: '/support' }Support
-      %li.active= category
+      %li.active= topic_name
 
 .container
   .row
@@ -12,10 +12,10 @@
 
     .col-xs-7
       .document-hero-title
-        %h1 Recent #{category} Questions
+        %h1 Recent #{topic_name} Questions
 
       .category-article-list
-        - articles.each do |article|
+        - topic.articles.each do |article|
           %a.category-article{ href: "/support#{article.url}" }= article.title
 
       .back

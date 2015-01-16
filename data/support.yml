@@ -1,23 +1,34 @@
-"Aptible CLI Tool":
-  - title: "How do I Install the Command Line Interface (CLI) Tool?"
-    url: "/aptible-cli-tool/how-to-install-command-line-interface-tool"
-  - title: "What are the Aptible CLI's pre-installation requirements for OS X?"
-    url: "/aptible-cli-tool/how-to-install-command-line-interface-tool"
-  - title: "Configuring Your App Using the Aptible CLI"
-    url: "/aptible-cli-tool/how-to-install-command-line-interface-tool"
-
 "Migrating to Aptible":
-  - title: "How do I add a new VHost for my app?"
-    url: '/migrating/how-do-i-add-a-new-vhost-for-my-app'
+  svg: 'aptible.svg'
+  articles:
+    - title: "How do I add a new VHost for my app?"
+      url: '/migrating/how-do-i-add-a-new-vhost-for-my-app'
 
-"Configuring Logging":
-  - title: "How do I set up Papertrail for my production logs?"
-    url: "/logging/how-do-i-set-up-papertrail-logging-for-production-logs"
+"HIPAA":
+  svg: "hipaa.svg"
+
+"Using the PaaS":
+  svg: "paas.svg"
+
+"Aptible CLI Tool":
+  svg: "cli.svg"
+  articles:
+    - title: "How do I Install the Command Line Interface (CLI) Tool?"
+      url: "/aptible-cli-tool/how-to-install-command-line-interface-tool"
+    - title: "What are the Aptible CLI's pre-installation requirements for OS X?"
+      url: "/aptible-cli-tool/how-to-install-command-line-interface-tool"
+    - title: "Configuring Your App Using the Aptible CLI"
+      url: "/aptible-cli-tool/how-to-install-command-line-interface-tool"
+
+"Troubleshooting":
+  svg: "troubleshoot.svg"
 
 "Your Aptible Account":
-  - title: "How do I manage a user's roles?"
-    url: "/account/how-do-i-manage-user-roles"
-  - title: "How do I update my organization's contact information?"
-    url: "/account/how-do-i-update-organization-contact-information"
-  - title: "What kind of accounts do I have? How can I view my account types?"
-    url: "/account/what-kind-of-accounts-do-I-have"
+  svg: "account.svg"
+  articles:
+    - title: "How do I manage a user's roles?"
+      url: "/account/how-do-i-manage-user-roles"
+    - title: "How do I update my organization's contact information?"
+      url: "/account/how-do-i-update-organization-contact-information"
+    - title: "What kind of accounts do I have? How can I view my account types?"
+      url: "/account/what-kind-of-accounts-do-I-have"
