@@ -13,10 +13,10 @@ page '/documentation*', layout: :documentation do
   @docs = data.documentation
 end
 
-data.support.each do |section, entries|
-  section_slug = section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+data.support.each do |topic_name, topic|
+  section_slug = topic_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   proxy "/support/#{section_slug}/index.html",  'support/category.html',
-        locals: { articles: entries, category: section }
+        locals: { topic: topic, topic_name: topic_name }
 end
 
 # Set up proxies for language category pages
