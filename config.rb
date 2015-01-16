@@ -37,8 +37,8 @@ data.getting_started.each do |language_name, language_info|
 end
 
 configure :build do
-  # Don't build Bower components on their own
-  ignore 'bower_components/*'
+  # Exclude all Bower components except image assets
+  ignore /bower_components(?!.*\/images\/)/
 
   # Don't build pages only used as proxies
   ignore 'getting_started/category*'
