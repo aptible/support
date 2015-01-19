@@ -115,8 +115,69 @@ header.breadcrumbs {
 // Overload ST styles
 .swiftype-widget {
   .autocomplete {
-    width: 650px !important;
-    margin-left: -2px !important;
+    width: 219px !important;
+    margin-left: -25px !important;
     margin-top: 3px !important;
+  }
+}
+
+body.index {
+  .swiftype-widget {
+    .autocomplete {
+      width: 650px !important;
+      margin-left: -2px !important;
+      margin-top: 3px !important;
+    }
+  }
+}
+
+#header-search-bar {
+  width: 16px;
+  height: 40px;
+  margin-right: 5px;
+  position: relative;
+  transition-duration: .5s;
+
+  &.active {
+    width:220px;
+    border-bottom: 1px solid rgba(#fff, 0.30);
+
+    input.form-control {
+      width: 100%;
+    }
+  }
+
+  &:hover, &.active {
+    i.fa {
+      color: rgba(#fff, .85);
+      text-shadow: 1px 1px 1px rgba(black, .3);
+    }
+  }
+
+  input.form-control {
+    transition-duration: .5s;
+    width: 0;
+    border-radius: 0;
+    border: 0;
+    background: none;
+    display: inline-block;
+    box-shadow: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: $weight-normal;
+    position: absolute;
+    top: 13px;
+    left: 23px;
+    height: 22px;
+    padding: 0;
+    margin-right: 20px;
+  }
+
+  i.fa {
+    cursor: pointer;
+    position: absolute;
+    top: 17px;
+    left: 0;
+    color: rgba(#fff, 0.55);
   }
 }
