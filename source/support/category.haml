@@ -15,7 +15,7 @@
         %h1 Recent #{topic_name} Questions
 
       .category-article-list
-        - topic.articles.each do |article|
+        - (topic.articles || []).each do |article|
           %a.category-article{ href: "/support#{article.url}" }= article.title
 
       .back

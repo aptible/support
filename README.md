@@ -2,8 +2,48 @@
 
 Aptible's Support and Documentation Site
 
+## Running Locally
+
+First, clone the repo:
+
+    git clone https://github.com/aptible/aptible-docs.git
+    cd aptible-docs/
+
+Then, install necessary dependencies:
+
+    bower install
+    bundle install
+
+Finally, start the server. You can access it at http://localhost:4567/
+
+    bundle exec middleman server
+
+## Deploying
+
+In [production](https://support.aptible.com) and [staging](https://support.aptible-staging.com), the support site is deployed as an S3 website (fronted by CloudFront).
+
+To deploy to production:
+
+    bundle exec rake deploy:production
+
+To deploy to staging:
+
+    bundle exec rake deploy:staging
+
+To deploy to an arbitrary S3 bucket:
+
+    bundle exec rake deploy[bucket]
+
 ## Contributing
+
 If you run into an issue that needs documentation, feel free to submit a pull request or open an issue. We send t-shirts and swag to contributors.
+
+## Contributors
+
+* Skylar Anderson ([@sandersonet](https://github.com/sandersonet))
+* Chas Ballew ([@chasballew](https://github.com/chasballew))
+* Frank Macreery ([@fancyremarker](https://github.com/fancyremarker))
+* Wayne Chang ([@wyc](https://github.com/wyc))
 
 ## Copyright
 
