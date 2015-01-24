@@ -1,0 +1,22 @@
+%header.breadcrumbs
+  .container
+    %ol.breadcrumb
+      %li
+        %a{ href: '/topics' }Support
+      %li.active= title
+
+.container
+  .row
+    .col-xs-3
+      = partial 'support_sidebar'
+
+    .col-xs-7
+      .document-hero-title
+        %h1 Recent Questions: #{title}
+
+      .category-article-list
+        - (topic.articles || []).each do |article|
+          %a.category-article{ href: "/topics/#{article.url}" }= article.title
+
+      .back
+        %a{ href: '/topics'}← Back to all support topics

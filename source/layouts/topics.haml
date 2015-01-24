@@ -1,10 +1,11 @@
-/ Template: support.haml
+/ Template: topics.haml
+
 = wrap_layout :layout do
   %header.breadcrumbs
     .container
       %ol.breadcrumb
         %li
-          %a{ href: '/support' }Support
+          %a{ href: '/topics' }Support
         %li.active= current_page.data.title
 
   .container
@@ -14,11 +15,10 @@
         .documentation-sidebar-nav
           - data.support.each do |section_name, section|
             %ul.nav.sidebar-nav
-              %li.title= section_name
-              - if section[:articles]
-                - section[:articles].each do |entry|
-                  %li{ class: current_page.path =~ Regexp.new(entry.url) ? 'active' : '' }
-                    %a{href: "/support/#{entry.url}"}= entry.title
+              %li.title= section
+              - entries.each do |entry|
+                %li{ class: current_page.path =~ Regexp.new(entry.url) ? 'active' : '' }
+                  %a{href: "/topics/#{entry.url}"}= entry.title
 
       .col-xs-7
         .document-hero-title

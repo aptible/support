@@ -8,12 +8,10 @@ header_sub_title: How can we help?
   .container
     .categories
       .row
-      - data.support.each do |topic_name, topic|
-        - category_slug = topic_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+      - data.topics.each do |title, topic|
         .col-xs-3
-          %a.category-box{ href: "/support/#{category_slug}", class: category_slug }
+          %a.category-box{ href: "/topics/#{topic.slug}", class: topic.slug }
             .category-icon= partial "images/icons/#{topic.svg}"
 
             .category-footer
-              .category-title= topic_name
-
+              .category-title= title

@@ -4,7 +4,7 @@ sub_title: Deploy your Ruby on Rails app to Aptible in about 5 minutes
 language: Ruby
 ---
 
-Using Ruby but not Ruby on Rails?  [Check out our Sinatra Quickstart Guide](/getting_started/ruby/sinatra)
+Using Ruby but not Ruby on Rails?  [Check out our Sinatra Quickstart Guide](/quickstart/ruby/sinatra)
 
 This guide will show you how to set up a Ruby app using the Rails framework and ActiveRecord + PostgreSQL. This guide is for Rails 4.0 or greater. If you are on an older version of Rails, your app will need [additional configuration](http://edgeguides.rubyonrails.org/configuring.html#configuring-a-database) to connect to a database.
 

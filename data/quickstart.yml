@@ -1,9 +1,10 @@
 "Ruby":
-  svg: ruby
-  url: "ruby/ruby_on_rails"
+  slug: ruby
+  svg: ruby.svg
+  url: "ruby/rails"
   articles:
     - title: "Ruby on Rails"
-      url: "ruby/ruby_on_rails"
+      url: "ruby/rails"
       svg: rails.svg
       slug: "rails"
     - title: "Sinatra"
@@ -12,6 +13,7 @@
       svg: "sinatra.svg"
 
 "Go":
+  slug: go
   svg: go.svg
   url: "go/gorilla"
   articles:
@@ -19,6 +21,7 @@
       url: "go/gorilla"
 
 "Node":
+  slug: node
   svg: node.svg
   url: "node/express"
   articles:
@@ -28,6 +31,7 @@
       slug: "express"
 
 "Java":
+  slug: java
   svg: java.svg
   url: 'java/jersey'
   articles:
@@ -40,6 +44,7 @@
       svg: "java.svg"
 
 "Scala":
+  slug: scala
   svg: scala.svg
   url: "scala/play"
   articles:
@@ -49,6 +54,7 @@
       url: "scala/play"
 
 "PHP":
+  slug: php
   svg: php.svg
   url: "php/laravel"
   articles:
@@ -62,6 +68,7 @@
       url: "php/symfony"
 
 "Python":
+  slug: python
   svg: python.svg
   url: 'python/django'
   articles:

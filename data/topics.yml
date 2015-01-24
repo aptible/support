@@ -1,0 +1,43 @@
+"Migrating to Aptible":
+  slug: "migrating"
+  svg: "aptible.svg"
+  articles:
+    - title: "How do I migrate from Heroku?"
+      url: "migrating/how-to-migrate-from-heroku"
+
+"HIPAA":
+  slug: "hipaa"
+  svg: "hipaa.svg"
+  articles:
+    - title: "What is Protected Health Information (ePHI)"
+      url: "hipaa/what-is-protected-health-information"
+
+"Using the PaaS":
+  slug: "paas"
+  svg: "paas.svg"
+  articles:
+    - title: "What databases does Aptible support?"
+      url: "paas/what-databases-does-aptible-support"
+
+"Aptible CLI":
+  slug: "cli"
+  svg: "cli.svg"
+  articles:
+    - title: "How do I install the Aptible CLI?"
+      url: "cli/how-to-install-command-line-interface"
+
+"Troubleshooting":
+  slug: "troubleshooting"
+  svg: "troubleshooting.svg"
+  articles:
+    - title: "My deploy failed. What should I do?"
+      url: "troubleshooting/deploy-failed"
+
+"Your Aptible Account":
+  slug: "account"
+  svg: "account.svg"
+  articles:
+    - title: "How do I invite a new user to Aptible?"
+      url: "account/how-to-invite-new-user"
+    - title: "What different plans does Aptible offer?"
+      url: "account/what-different-plans-does-aptible-offer"

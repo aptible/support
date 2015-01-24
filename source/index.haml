@@ -4,18 +4,18 @@ header_sub_title: How can we help?
 header_search: true
 title: Aptible Support
 categories:
-  getting_started:
-    title: Getting Started Guides
-    svg: getting_started
-    url: /getting_started
+  quickstart:
+    title: Getting Started
+    svg: quickstart.svg
+    url: /quickstart
   documentation:
     title: Documentation
-    svg: documentation
+    svg: documentation.svg
     url: /documentation
   support:
     title: Support
-    svg: support
-    url: /support
+    svg: support.svg
+    url: /topics
 ---
 
 
@@ -29,7 +29,7 @@ categories:
             .col-xs-4
               %a.category-box{ href: category['url'], class: category['svg'] }
                 .category-icon
-                  = partial "images/icons/#{category['svg']}.svg"
+                  = partial "images/icons/#{category['svg']}"
                 .category-footer
                   .category-title= category['title']
 
