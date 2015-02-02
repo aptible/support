@@ -5,6 +5,7 @@ $scala: #DC0101;
 $go: #6AD7E5;
 
 .categories {
+  @extend %clearfix;
   margin: 50px 0;
 
   .category-box {

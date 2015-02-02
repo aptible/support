@@ -3,7 +3,7 @@ body {
 }
 
 .documentation-main {
-  margin: 30px 0;
+  margin: 50px 0 0;
 
   h3.sub-title {
     text-align: center;
@@ -33,5 +33,68 @@ body {
 
   strong {
     color: $color-primary;
+  }
+}
+
+.contact-footer {
+  @extend %clearfix;
+  border-top: 1px solid #f0f0f0;
+  padding: 100px 0 50px;
+}
+
+.contact-footer-item {
+  padding: 0 50px;
+
+  .contact-footer-icon {
+    float: left;
+    height: 56px;
+    width: 56px;
+    @include border-radius(50%);
+    background: #f6f6f6;
+    text-align: center;
+    margin-top: 9px;
+
+    .fa, .hash {
+      color: $color-bright-blue;
+      font-size: 20px;
+      vertical-align: -19px;
+      margin: 0;
+    }
+
+    .hash {
+      font-weight: $weight-semibold;
+    }
+  }
+
+  .contact-footer-info {
+    margin-left: 100px;
+
+    h4 {
+      font-size: 16px;
+      font-weight: $weight-semibold;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 23px;
+      color: $color-light;
+
+      strong {
+        color: $color-primary;
+      }
+
+      a {
+        font-weight: $weight-semibold;
+      }
+    }
+  }
+}
+
+.aptible-footer-small {
+  li.email {
+    > a {
+      color: $color-bright-blue;
+      font-weight: $weight-normal;
+    }
   }
 }
