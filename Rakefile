@@ -1,3 +1,5 @@
+require 'rspec/core/rake_task'
+
 def system!(cmd)
   fail "Command failed: #{cmd}" unless system(cmd)
 end
@@ -30,3 +32,6 @@ namespace :deploy do
     Rake::Task[:deploy].invoke('support.aptible.com')
   end
 end
+
+RSpec::Core::RakeTask.new(:spec)
+task default: :spec
