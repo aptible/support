@@ -12,12 +12,13 @@
       .col-xs-3
 
         .documentation-sidebar-nav
-          - data.support.each do |section, entries|
+          - data.support.each do |section_name, section|
             %ul.nav.sidebar-nav
-              %li.title= section
-              - entries.each do |entry|
-                %li{ class: current_page.path =~ Regexp.new(entry.url) ? 'active' : '' }
-                  %a{href: "/support/#{entry.url}"}= entry.title
+              %li.title= section_name
+              - if section[:articles]
+                - section[:articles].each do |entry|
+                  %li{ class: current_page.path =~ Regexp.new(entry.url) ? 'active' : '' }
+                    %a{href: "/support/#{entry.url}"}= entry.title
 
       .col-xs-7
         .document-hero-title

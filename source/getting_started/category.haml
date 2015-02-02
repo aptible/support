@@ -7,8 +7,8 @@ layout: layout
   .container
     .categories
       .row
-        .category-wrapper{ class: "category-#{language_info.frameworks.count}" }
-          - language_info.frameworks.each do |framework|
+        .category-wrapper{ class: "category-#{language_info.articles.count}" }
+          - language_info.articles.each do |framework|
             .col-xs-3
               %a.category-box{ href: "/getting_started/#{framework.url}", class: framework.slug }
                 .category-icon= partial "/images/icons/#{framework.svg}"

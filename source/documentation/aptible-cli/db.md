@@ -1,5 +1,5 @@
 ---
-title: Aptible-cli Config Commands
+title: Aptible-CLI DB Commands
 ---
 
 <section>

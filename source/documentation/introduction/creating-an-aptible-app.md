@@ -1,5 +1,5 @@
 ---
-title: Introduction to Creating Aptible Apps
+title: Creating an app
 ---
 
 

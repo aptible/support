@@ -1,5 +1,5 @@
 ---
-title: Play Quickstart
+title: Play Framework
 sub_title: Deploy your Play app on Aptible in about 5 minutes
 language: Scala
 ---

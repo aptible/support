@@ -1,3 +1,6 @@
+require 'bootstrap-sass'
+require 'font-awesome-sass'
+
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
 set :css_dir, 'stylesheets'
@@ -23,12 +26,14 @@ end
 # If the language has no or only one framework, skip category page and
 # render language or framework document
 page '/getting_started/*', layout: 'getting_started_guide.haml'
+page '/support/*', layout: 'support.haml'
+
 data.getting_started.each do |language_name, language_info|
   section_slug = language_name.downcase
   proxy_url = "/getting_started/#{section_slug}/index.html"
   proxy_to = 'getting_started/category.html'
 
-  if language_info.frameworks && language_info.frameworks.count > 1
+  if language_info.articles && language_info.articles.count > 1
     proxy proxy_url, proxy_to,
         locals: { language_name: language_name,
                   language_info: language_info,
