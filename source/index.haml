@@ -16,21 +16,21 @@ categories:
     title: Support
     svg: support
     url: /support
-layout: false
 ---
 
-= wrap_layout :layout do
-  .documentation-main
-    .container
-      .row
-        .col-xs-8.col-xs-offset-2
-          .categories
-            .row
-            - current_page.data.categories.each do |category_name, category|
-              .col-xs-4
-                %a.category-box{ href: category['url'], class: category['svg'] }
-                  .category-icon
-                    = partial "images/icons/#{category['svg']}.svg"
-                  .category-footer
-                    .category-title= category['title']
 
+.documentation-main
+  .container
+    .row
+      .col-xs-8.col-xs-offset-2
+        .categories
+          .row
+          - current_page.data.categories.each do |category_name, category|
+            .col-xs-4
+              %a.category-box{ href: category['url'], class: category['svg'] }
+                .category-icon
+                  = partial "images/icons/#{category['svg']}.svg"
+                .category-footer
+                  .category-title= category['title']
+
+  = partial 'contact-footer'

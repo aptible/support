@@ -12,4 +12,4 @@ document.addEventListener 'DOMContentLoaded', ->
     container.className = ''
     button.addEventListener('click', onButtonClick)
 
-  button.addEventListener('click', onButtonClick)
+  button.addEventListener('click', onButtonClick) if button
