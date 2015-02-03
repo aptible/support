@@ -1,5 +1,5 @@
 ---
-title: Aptible-cli App Commands
+title: Aptible-CLI App Commands
 ---
 
 <section>

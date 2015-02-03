@@ -1,5 +1,5 @@
 ---
-title: WTF is docker?
+title: What is Docker?
 ---
 
 

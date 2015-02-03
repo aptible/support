@@ -1,8 +1,6 @@
 ---
-title: How do I install the command line interface (CLI) tool?
+title: How do I Install the Command Line Interface (CLI) Tool?
 ---
-
-# Installing the command line tool is easy
 
 The easiest way to create and manage Aptible applications is with the Aptible command line interface (CLI) tool. To install the Aptible CLI, you must have Xcode Command Line Tools, Ruby version 1.9.3 or higher, and the RubyGems package manager installed.
 

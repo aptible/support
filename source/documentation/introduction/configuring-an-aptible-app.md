@@ -1,5 +1,5 @@
 ---
-title: Introduction to Confirguring Apps on Aptible
+title: Configuring an app
 ---
 
 

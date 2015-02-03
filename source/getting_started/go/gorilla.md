@@ -1,5 +1,5 @@
 ---
-title: Go on Aptible
+title: Gorilla on Aptible
 ---
 
 This guide teaches you how to set up a Websockets-based chat server written in
