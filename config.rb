@@ -53,3 +53,13 @@ configure :build do
   activate :minify_javascript
   activate :asset_hash
 end
+
+activate :s3_redirect do |config|
+  config.bucket = 'support.aptible-staging.com'
+  config.region = 'us-east-1'
+  config.after_build = false
+end
+
+data.redirects.each do |item|
+  redirect item['loc'], item['url']
+end

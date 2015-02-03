@@ -37,7 +37,7 @@
       slug: "spring"
     - title: "Jersey"
       url: "java/jersey"
-      svg: "jersey.svg"
+      svg: "java.svg"
 
 "Scala":
   svg: scala.svg
