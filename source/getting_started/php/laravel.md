@@ -52,7 +52,7 @@ RUN composer install
 EXPOSE 80
 ```
 
-Here is a sample Procfile for a Ruby on Rails app:
+Here is a sample Procfile for a Laravel app:
 
 ```bash
 web: /run.sh
