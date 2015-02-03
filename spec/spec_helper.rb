@@ -1,5 +1,6 @@
 require 'middleman'
 require 'middleman-syntax'
+require 'middleman-s3_redirect'
 require 'rspec'
 require 'capybara/rspec'
 
