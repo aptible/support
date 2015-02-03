@@ -1,5 +1,6 @@
 require 'bootstrap-sass'
 require 'font-awesome-sass'
+require 'fog'
 
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
@@ -55,7 +56,7 @@ configure :build do
 end
 
 activate :s3_redirect do |config|
-  config.bucket = 'support.aptible-staging.com'
+  config.bucket = ENV['S3_BUCKET'] || 'support.aptible-staging.com'
   config.region = 'us-east-1'
   config.after_build = false
 end
