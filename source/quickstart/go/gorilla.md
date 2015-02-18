@@ -69,11 +69,11 @@ By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL data
 
 `aptible db:create` will return a connection string on success. The host value is mapped to a private subnet within your stack and cannot be used to connect from the outside Internet. Your containerized app can connect, however.
 
-Add the connection string as an environmental variable to your app:
+Add the connection string as an environment variable to your app:
 
     aptible config:add DATABASE_URL=$CONNECTION_STRING
 
-Then, use that environmental variable to connect to the database:
+Then, use that environment variable to connect to the database:
 
 ```go
 databaseURL := os.Getenv("DATABASE_URL")
@@ -83,11 +83,11 @@ conn, err := db.Connect(databaseURL)
 
 ### App secrets
 
-App secrets can be set as app environmental variables via the Aptible CLI tool just as the DATABASE_URL was set.
+App secrets can be set as app environment variables via the Aptible CLI tool just as the DATABASE_URL was set.
 
     aptible config:add --app APP-HANDLE SENDGRID_USER=user SENDGRID_PASSWORD=hunter2
 
-The environmental variable should now be accessible by your app:
+The environment variable should now be accessible by your app:
 
 ```go
 twilio := gotwilio.NewTwilioClient(os.Getenv("SENDGRID_USER"), os.Getenv("SENDGRID_PASSWORD"))

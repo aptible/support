@@ -62,7 +62,7 @@ By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL data
 
 `aptible db:create` will return a connection string on success. The host value is mapped to a private subnet within your stack and cannot be used to connect from the outside Internet. Your containerized app can connect, however.
 
-Add the connection string as an environmental variable to your app:
+Add the connection string as an environment variable to your app:
 
     aptible config:add DATABASE_URL=$CONNECTION_STRING
 
