@@ -4,8 +4,6 @@ sub_title: Deploy your Ruby on Rails app to Aptible in about 5 minutes
 language: Ruby
 ---
 
-Using Ruby but not Ruby on Rails?  [Check out our Sinatra Quickstart Guide](/quickstart/ruby/sinatra)
-
 This guide will show you how to set up a Ruby app using the Rails framework and ActiveRecord + PostgreSQL. This guide is for Rails 4.0 or greater. If you are on an older version of Rails, your app will need [additional configuration](http://edgeguides.rubyonrails.org/configuring.html#configuring-a-database) to connect to a database.
 
 This guide assumes you have:
@@ -22,45 +20,35 @@ Use the `apps:create` command: `aptible apps:create $APP_HANDLE`
 
 For example:
 
-```bash
-aptible apps:create rails-quickstart
-```
+    aptible apps:create rails-quickstart
 
-## 2. Add a Dockerfile and a Procfile
+## 2. Add a Git Remote
 
-Aptible uses Docker to build your app's runtime environment. A Dockerfile is a list of commands used to build that image. A Procfile is used to explicitly declare what processes Aptible should run for your app.
+Add a Git remote named "aptible":
+
+    git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
+
+For example:
+
+    git remote add aptible git@beta.aptible.com:rails-quickstart.git
+
+## 3. Add a Procfile
+
+A Procfile explicitly declares what processes we should run for your app.
 
 A few guidelines:
 
-1. Name each file one word, capital "D"/P", no extension: "Dockerfile" and "Procfile".
-2. Place both files in the root of your repository.
-3. Be sure to commit both files to version control.
-
-Here is a sample Dockerfile for a Ruby on Rails app:
-
-```Dockerfile
-FROM quay.io/aptible/ruby:ruby-2.0.0
-
-RUN apt-get update && apt-get -y install libpq-dev nodejs
-
-ADD . /opt/rails
-WORKDIR /opt/rails
-RUN bundle install --without development test
-RUN bundle exec rake assets:precompile
-
-ENV PORT 3000
-EXPOSE 3000
-
-CMD bundle exec rails s -p $PORT
-```
+1. The file should be named "Procfile": One word, capital "P", no extension.
+2. Place the Procfile in the root of your repository.
+3. Be sure to commit it to version control.
 
 Here is a sample Procfile for a Ruby on Rails app:
 
-```bash
-web: bundle exec rails s -p $PORT
-```
+    web: bundle exec rails s -p $PORT
 
-## 3. Provision and Connect a Database
+> Note: Aptible uses Docker to build and run your app. If you do not include a Dockerfile in your repository, Aptible will attempt to build your app with the [tutum/buildstep](https://registry.hub.docker.com/u/tutum/buildstep/) image.
+
+## 4. Provision and Connect a Database
 
 By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL database.
 
@@ -68,36 +56,15 @@ By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL data
 
 Add the connection string as an environmental variable to your app:
 
-```bash
-aptible config:add DATABASE_URL=$CONNECTION_STRING --app $APP_HANDLE
-```
-
-## 4. Configure a Git Remote
-
-Add a Git remote named "aptible":
-
-```bash
-git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
-```
-
-For example:
-
-```bash
-git remote add aptible git@beta.aptible.com:rails-quickstart.git
-```
+    aptible config:add DATABASE_URL=$CONNECTION_STRING
 
 ## 5. Deploy Your App
-
 Push to the master branch of the Aptible git remote:
 
-```bash
-git push aptible master
-```
+    git push aptible master
 
 If your app deploys successfully, a message will appear near the end of the remote output with a default VHOST:
 
-```bash
-VHOST rails-quickstart.on-aptible.com provisioned.
-```
+    VHOST rails-quickstart.on-aptible.com provisioned.
 
 In this example, once the ELB provisions you could visit rails-quickstart.on-aptible.com to test out your app.
