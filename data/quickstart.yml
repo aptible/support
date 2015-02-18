@@ -13,7 +13,7 @@
   svg: go.svg
   url: "go/gorilla"
   articles:
-    - title: "Gorilla on Aptible"
+    - title: "Gorilla"
       url: "go/gorilla"
 
 "Node":
