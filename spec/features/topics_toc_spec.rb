@@ -2,8 +2,8 @@ require 'spec_helper'
 require 'yaml'
 
 describe 'Support Table of Contents', type: :feature do
-  file = "#{File.dirname(__FILE__)}/../../data/support.yml"
+  file = "#{File.dirname(__FILE__)}/../../data/topics.yml"
   toc = YAML.load_file file
 
-  it_behaves_like 'a table of contents', toc, '/support'
+  it_behaves_like 'a table of contents', toc, '/topics'
 end

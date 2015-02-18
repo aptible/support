@@ -3,6 +3,7 @@ require 'middleman-syntax'
 require 'middleman-s3_redirect'
 require 'rspec'
 require 'capybara/rspec'
+require 'pry'
 
 Dir[File.dirname(__FILE__) + '/shared/*.rb'].each {|file| require file }
 

@@ -1,5 +1,3 @@
-require 'pry'
-
 shared_examples 'a valid page' do |article, section, path|
   before do
     visit "#{path}/#{article['url']}"
