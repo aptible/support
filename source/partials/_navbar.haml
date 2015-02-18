@@ -16,5 +16,6 @@
             %input.form-control#swifttype-search-input
             #st-results-container
         %li{ class: current_page.url =~ /quickstart/ ? 'active' : '' }= link_to 'Getting Started', '/quickstart'
-        %li{ class: current_page.url =~ /documentation/ ? 'active' : '' }= link_to 'Documentation', '/documentation'
+        / TODO: Enable documentation section
+        / %li{ class: current_page.url =~ /documentation/ ? 'active' : '' }= link_to 'Documentation', '/documentation'
         %li{ class: current_page.url =~ /topics/ ? 'active' : '' }= link_to 'Support', '/topics'

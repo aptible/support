@@ -8,16 +8,16 @@ categories:
     title: Getting Started
     svg: quickstart.svg
     url: /quickstart
-  documentation:
-    title: Documentation
-    svg: documentation.svg
-    url: /documentation
+  # TODO: Enable documentation section
+  # documentation:
+  #   title: Documentation
+  #   svg: documentation.svg
+  #   url: /documentation
   support:
     title: Support
     svg: support.svg
     url: /topics
 ---
-
 
 .documentation-main
   .container
@@ -26,7 +26,7 @@ categories:
         .categories
           .row
           - current_page.data.categories.each do |category_name, category|
-            .col-xs-4
+            .col-xs-6
               %a.category-box{ href: category['url'], class: category['svg'] }
                 .category-icon
                   = partial "images/icons/#{category['svg']}"

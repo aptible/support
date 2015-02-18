@@ -13,7 +13,8 @@ activate :syntax, line_numbers: true
 activate :directory_indexes
 
 # Documentation
-page '/documentation/*', layout: 'documentation.haml'
+# TODO: Enable documentation section
+# page '/documentation/*', layout: 'documentation.haml'
 
 # Topics (Support)
 data.topics.each do |title, category|
