@@ -50,7 +50,7 @@ end
 
 configure :build do
   # Exclude all Bower components except image assets
-  ignore /bower_components(?!.*\/images\/)/
+  ignore %r{bower_components(?!.*/images/)}
 
   activate :minify_css
   activate :minify_javascript

@@ -27,7 +27,8 @@ task :redirect, [:bucket] do |_t, args|
   system!('bundle exec middleman build')
 
   Bundler.with_clean_env do
-    system!("S3_BUCKET=#{args[:bucket]} foreman run bundle exec middleman s3_redirect")
+    env = "S3_BUCKET=#{args[:bucket]}"
+    system!("#{env} foreman run bundle exec middleman s3_redirect")
   end
 end
 
@@ -46,4 +47,6 @@ namespace :deploy do
 end
 
 RSpec::Core::RakeTask.new(:spec)
-task default: :spec
+
+require 'aptible/tasks'
+Aptible::Tasks.load_tasks
