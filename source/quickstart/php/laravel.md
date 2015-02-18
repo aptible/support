@@ -1,7 +1,6 @@
 ---
 title: Laravel Quickstart
 subtitle: Deploy your Express app on Aptible in about 5 minutes
-language: PHP
 ---
 
 This guide will show you how to set up a PHP app using the Laravel framework and MySQL. This guide is for Laravel 4.0 or greater.

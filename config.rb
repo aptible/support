@@ -39,7 +39,7 @@ end
 # render language or framework document
 page '/quickstart/*', layout: 'quickstart.haml'
 data.quickstart.each do |title, language|
-  next unless (language.frameworks || []).count > 1
+  next unless (language.articles || []).count > 1
 
   language_url = "/quickstart/#{language.slug}"
   proxy "#{language_url}/index.html",

@@ -1,7 +1,6 @@
 ---
 title: Play Framework
 subtitle: Deploy your Play app on Aptible in about 5 minutes
-language: Scala
 ---
 
 This guide will show you how to set up a Scala app using the Play framework and PostgreSQL.

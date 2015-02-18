@@ -1,7 +1,6 @@
 ---
 title: Express Quickstart
 subtitle: Deploy your Express app on Aptible in about 5 minutes
-language: Node
 ---
 
 This guide will show you how to set up a Node.js app using the Express framework and the Mongoose ODM for Mongodb.

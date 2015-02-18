@@ -1,7 +1,6 @@
 ---
 title: Ruby on Rails Quickstart
 subtitle: Deploy your Ruby on Rails app to Aptible in about 5 minutes
-language: Ruby
 ---
 
 This guide will show you how to set up a Ruby app using the Rails framework and ActiveRecord + PostgreSQL. This guide is for Rails 4.0 or greater. If you are on an older version of Rails, your app will need [additional configuration](http://edgeguides.rubyonrails.org/configuring.html#configuring-a-database) to connect to a database.
