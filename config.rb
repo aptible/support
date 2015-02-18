@@ -16,10 +16,21 @@ activate :directory_indexes
 page '/documentation/*', layout: 'documentation.haml'
 
 # Topics (Support)
-data.topics.each do |title, topic|
-  proxy "/topics/#{topic.slug}/index.html",
+data.topics.each do |title, category|
+  category_url = "/topics/#{category.slug}"
+  page "#{category_url}/index.html", layout: 'topics.haml'
+  proxy "#{category_url}/index.html",
         'topics/category.html',
-        locals: { topic: topic, title: title }
+        locals: { category: category, title: title },
+        ignore: true
+
+  category.articles.each do |article|
+    page "topics/#{article.url}.html", layout: 'topics.haml' do
+      @category_url = category_url
+      @category_title = title
+      @title = article.title
+    end
+  end
 end
 
 # Quickstart (Getting Started)
@@ -27,23 +38,18 @@ end
 # render language or framework document
 page '/quickstart/*', layout: 'quickstart.haml'
 data.quickstart.each do |title, language|
-  proxy_url = "/quickstart/#{language.slug}/index.html"
-  proxy_to = 'quickstart/category.html'
+  next unless (language.frameworks || []).count > 1
 
-  next unless (language.articles || []).count > 1
-  proxy proxy_url, proxy_to, locals: {
-    title: title,
-    language: language
-  }
+  language_url = "/quickstart/#{language.slug}"
+  proxy "#{language_url}/index.html",
+        'quickstart/category.html',
+        locals: { title: title, language: language },
+        ignore: true
 end
 
 configure :build do
   # Exclude all Bower components except image assets
   ignore /bower_components(?!.*\/images\/)/
-
-  # Don't build pages only used as proxies
-  ignore 'quickstart/category*'
-  ignore 'topics/category*'
 
   activate :minify_css
   activate :minify_javascript

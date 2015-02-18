@@ -8,7 +8,7 @@
     %meta{ property: 'og:title', content: current_page.data.title || 'Aptible Support' }
     %meta{ property: 'og:site_name', content: 'Aptible Support' }
     %meta{ property: 'og:image', content: 'https://www.aptible.com/assets/images/aptible-og.png'}
-    %title= current_page.data.title || 'Aptible Support'
+    %title= current_page.metadata[:locals][:title] || current_page.data.title || 'Aptible Support'
     %script{ type: 'text/javascript', src: '//use.typekit.net/hen3udh.js' }
     = stylesheet_link_tag 'main'
     = javascript_include_tag  'all'

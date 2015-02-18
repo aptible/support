@@ -1,1 +1,10 @@
-Dreamcatcher Neutra VHS, tofu wayfarers before they sold out umami flexitarian narwhal cronut small batch Pitchfork tote bag. Kickstarter fap kale chips, lo-fi +1 Truffaut tattooed health goth paleo lumbersexual. Post-ironic crucifix bitters vegan, lo-fi Echo Park sartorial twee 8-bit cray lumbersexual synth pop-up locavore iPhone.
+Currently, Aptible supports the following databases:
+
+* PostgreSQL
+* Redis
+* MongoDB
+* MySQL
+* CouchDB
+* Elasticsearch
+
+If you'd like to run another database on top of Aptible, please email us at [support@aptible.com](mailto:support@aptible.com).

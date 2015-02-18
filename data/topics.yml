@@ -2,15 +2,9 @@
   slug: "migrating"
   svg: "aptible.svg"
   articles:
-    - title: "How do I migrate from Heroku?"
-      url: "migrating/how-to-migrate-from-heroku"
+    - title: "How do I import my existing Heroku PostgreSQL database?"
+      url: "migrating/how-to-import-heroku-postgresql-database"
 
-"HIPAA":
-  slug: "hipaa"
-  svg: "hipaa.svg"
-  articles:
-    - title: "What is Protected Health Information (ePHI)"
-      url: "hipaa/what-is-protected-health-information"
 
 "Using the PaaS":
   slug: "paas"
@@ -18,13 +12,57 @@
   articles:
     - title: "What databases does Aptible support?"
       url: "paas/what-databases-does-aptible-support"
+    - title: "How do I add a background worker to my app?"
+      url: "paas/how-to-add-background-worker"
+    - title: "How do I set up Travis CI to deploy to Aptible?"
+      url: "paas/how-to-set-up-travis-ci"
+    - title: "How do I set up Circle CI to deploy to Aptible?"
+      url: "paas/how-to-set-up-circle-ci"
+    - title: "How do I scale my app?"
+      url: "paas/how-to-scale-app"
+    - title: 'What is a "container" on Aptible?'
+      url: "paas/what-is-a-container"
+    - title: "How do I set up Papertrail for my Aptible apps?"
+      url: "paas/how-to-set-up-papertrail"
+    - title: "How do I automate database migrations for my app?"
+      url: "paas/how-to-automate-database-migrations"
+    - title: "How do I add a new external domain to my app?"
+      url: "paas/how-to-add-external-domain"
+    - title: "How should I store static assets when using Aptible?"
+      url: "paas/how-to-store-static-assets"
+    - title: "My app requires a specific OS package. How should I install it?"
+      url: "paas/how-to-install-specific-os-package"
+    - title: "How do I run scheduled tasks (cron jobs) on Aptible?"
+      url: "paas/how-to-run-scheduled-tasks"
+    - title: "How do I access environment variables inside a Dockerfile?"
+      url: "paas/how-to-access-environment-variables-inside-dockerfile"
+    - title: "What is the difference between the CMD in my Dockerfile and the processes in my Procfile?"
+      url: "paas/what-is-difference-between-dockerfile-cmd-and-procfile"
+    - title: "How do I restore from an Aptible database backup?"
+      url: "paas/how-to-restore-from-database-backup"
+
 
 "Aptible CLI":
   slug: "cli"
   svg: "cli.svg"
   articles:
     - title: "How do I install the Aptible CLI?"
-      url: "cli/how-to-install-command-line-interface"
+      url: "cli/how-to-install-cli"
+    - title: "How do I connect to my Aptible database using a GUI tool?"
+      url: "cli/how-to-connect-to-database-using-gui-tool"
+    - title: "How do I connect to my Aptible database from outside Aptible?"
+      url: "cli/how-to-connect-to-database-from-outside"
+    - title: "How do I view my app logs?"
+      url: "cli/how-to-view-app-logs"
+    - title: "How do I set environment variables for my app?"
+      url: "cli/how-to-set-environment-variables"
+    - title: "How do I SSH into my app?"
+      url: "cli/how-to-ssh-into-app"
+    - title: "How do I restart my app?"
+      url: "cli/how-to-restart-app"
+    - title: "How should I configure sensitive variables for my app?"
+      url: "cli/how-to-configure-sensitive-variables"
+
 
 "Troubleshooting":
   slug: "troubleshooting"
@@ -32,6 +70,25 @@
   articles:
     - title: "My deploy failed. What should I do?"
       url: "troubleshooting/deploy-failed"
+    - title: 'How do I fix the error "no pg_hba.conf entry for host, ... SSL off"?'
+      url: "troubleshooting/no-pg-hba-conf-entry-for-host"
+    - title: 'When I push to Aptible, Git says "Everything up-to-date." What should I do?'
+      url: "troubleshooting/everything-up-to-date"
+    - title: 'My deploy failed, saying "before_release commands failed." What should I do?'
+      url: "troubleshooting/before-release-commands-failed"
+    - title: 'My deploy failed, saying "Container failed to start." What should I do?'
+      url: "troubleshooting/container-failed-to-start"
+    - title: 'My deploy failed, saying "Health check failed." What should I do?'
+      url: "troubleshooting/health-check-failed"
+    - title: 'My deploy failed, saying "No Procfile found." What should I do?'
+      url: "troubleshooting/no-procfile-found"
+    - title: "I just added a domain to my app and it's not responding. What should I do?"
+      url: "troubleshooting/domain-not-responding"
+    - title: "My deploys take too long. How can I speed them up?"
+      url: "troubleshooting/deploys-take-too-long"
+    - title: "My app is processing requests slowly. What should I do?"
+      url: "troubleshooting/app-processing-requests-slowly"
+
 
 "Your Aptible Account":
   slug: "account"
@@ -40,4 +97,6 @@
     - title: "How do I invite a new user to Aptible?"
       url: "account/how-to-invite-new-user"
     - title: "What different plans does Aptible offer?"
-      url: "account/what-different-plans-does-aptible-offer"
+      url: "account/what-plans-does-aptible-offer"
+    - title: "How do I set up a separate staging environment for my apps and databases?"
+      url: "account/how-to-set-up-separate-staging-environment"
