@@ -19,8 +19,8 @@
       .col-xs-8.col-xs-offset-2
         .document-hero-title
           %h1= current_page.data.title
-          - if current_page.data.sub_title
-            %h2= current_page.data.sub_title
+          - if current_page.data.subtitle
+            %h2= current_page.data.subtitle
 
         .markdown-document
           = find_and_preserve do

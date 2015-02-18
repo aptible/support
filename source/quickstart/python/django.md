@@ -1,6 +1,6 @@
 ---
 title: Django
-sub_title: Deploy your Django app to Aptible in about 5 minutes
+subtitle: Deploy your Django app to Aptible in about 5 minutes
 language: Python
 ---
 

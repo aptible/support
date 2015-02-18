@@ -1,6 +1,6 @@
 ---
 title: Ruby on Rails Quickstart
-sub_title: Deploy your Ruby on Rails app to Aptible in about 5 minutes
+subtitle: Deploy your Ruby on Rails app to Aptible in about 5 minutes
 language: Ruby
 ---
 

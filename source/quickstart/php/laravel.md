@@ -1,10 +1,10 @@
 ---
-title: Getting started with Laravel on Aptible
-sub_title: In about 5 minutes
+title: Laravel Quickstart
+subtitle: Deploy your Express app on Aptible in about 5 minutes
 language: PHP
 ---
 
-This guide will show you how to set up a PHP app using the Laravel framework and MySQL. This guide is for Laravel 4.0 or greater. 
+This guide will show you how to set up a PHP app using the Laravel framework and MySQL. This guide is for Laravel 4.0 or greater.
 
 This guide assumes you have:
 
@@ -20,9 +20,7 @@ Use the `apps:create` command: `aptible apps:create $APP_HANDLE`
 
 For example:
 
-```bash
-aptible apps:create laravel-quickstart
-```
+    aptible apps:create laravel-quickstart
 
 ## 2. Add a Dockerfile and a Procfile to Your App
 
@@ -36,7 +34,7 @@ A few guidelines:
 
 Here is a sample Dockerfile for a Laravel app
 
-```Dockerfile
+```dockerfile
 FROM tutum/apache-php
 RUN apt-get update && apt-get install -yq git php5-mcrypt && rm -rf /var/lib/apt/lists/*
 
@@ -54,9 +52,7 @@ EXPOSE 80
 
 Here is a sample Procfile for a Laravel app:
 
-```bash
-web: /run.sh
-```
+    web: /run.sh
 
 ## 3. Provision a Database
 
@@ -64,17 +60,13 @@ By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL data
 
 In order to specify a MySQL database, use the `--type` flag:
 
-```bash
-aptible db:create $DB_HANDLE --type mysql
-```
+    aptible db:create $DB_HANDLE --type mysql
 
 `aptible db:create` will return a connection string on success. The host value is mapped to a private subnet within your stack and cannot be used to connect from the outside Internet. Your containerized app can connect, however.
 
 Add the connection string as an environmental variable to your app:
 
-```bash
-aptible config:add DATABASE_URL=$CONNECTION_STRING --app $APP_HANDLE
-```
+    aptible config:add DATABASE_URL=$CONNECTION_STRING --app $APP_HANDLE
 
 ## 4. Configure a Database Connection
 
@@ -105,31 +97,24 @@ You can now use these variables in your MySQL config:
 
 ```
 
-
 ## 5. Configure a Git Remote
+
 Add a Git remote named "aptible":
 
-```bash
-git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
-```
+    git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
 
 For example:
 
-```bash
-git remote add aptible git@beta.aptible.com:laravel-quickstart.git
-```
+    git remote add aptible git@beta.aptible.com:laravel-quickstart.git
 
 ## 6. Deploy Your App
+
 Push to the master branch of the Aptible git remote:
 
-```bash
-git push aptible master
-```
+    git push aptible master
 
 If your app deploys successfully, a message will appear near the end of the remote output with a default VHOST:
 
-```bash
-VHOST laravel-quickstart.on-aptible.com provisioned.
-```
+    VHOST laravel-quickstart.on-aptible.com provisioned.
 
 In this example, once the ELB provisions you could visit laravel-quickstart.on-aptible.com to test out your app.

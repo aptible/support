@@ -1,6 +1,6 @@
 ---
 title: Express Quickstart
-sub_title: Deploy your Express app on Aptible in about 5 minutes
+subtitle: Deploy your Express app on Aptible in about 5 minutes
 language: Node
 ---
 

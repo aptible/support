@@ -1,6 +1,6 @@
 ---
 title: Jersey on Aptible
-sub_title: Deploy your Jersey app on Aptible in about 5 minutes
+subtitle: Deploy your Jersey app on Aptible in about 5 minutes
 language: Java
 ---
 

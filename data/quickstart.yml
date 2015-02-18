@@ -7,10 +7,6 @@
       url: "ruby/rails"
       svg: rails.svg
       slug: "rails"
-    - title: "Sinatra"
-      url: "ruby/sinatra"
-      slug: "sinatra"
-      svg: "sinatra.svg"
 
 "Go":
   slug: go
@@ -35,10 +31,6 @@
   svg: java.svg
   url: 'java/jersey'
   articles:
-    - title: "Spring"
-      url: "java/spring"
-      svg: "spring.svg"
-      slug: "spring"
     - title: "Jersey"
       url: "java/jersey"
       svg: "java.svg"
@@ -62,10 +54,6 @@
       svg: "laravel.svg"
       slug: "laravel"
       url: "php/laravel"
-    - title: "Symfony"
-      svg: "symfony.svg"
-      slug: "symfony"
-      url: "php/symfony"
 
 "Python":
   slug: python

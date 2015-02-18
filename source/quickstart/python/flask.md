@@ -1,6 +1,6 @@
 ---
 title: Flask
-sub_title: Deploy your Flask app to Aptible in about 5 minutes
+subtitle: Deploy your Flask app to Aptible in about 5 minutes
 language: Python
 ---
 

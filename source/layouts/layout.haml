@@ -22,8 +22,8 @@
         - if current_page.data.header_title || current_page.data.header_search
           .container.header-title-container
             %h1.primary-title= current_page.data.header_title
-            - if current_page.data.header_sub_title
-              %h2.primary-sub-title= current_page.data.header_sub_title
+            - if current_page.data.header_subtitle
+              %h2.primary-sub-title= current_page.data.header_subtitle
             - if current_page.data.header_search
               .search-bar
                 .search-bar-input
