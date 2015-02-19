@@ -1,5 +1,3 @@
-require 'pry'
-
 shared_examples 'a table of contents' do |toc, path|
   toc.each do |section_name, section|
     describe section_name do

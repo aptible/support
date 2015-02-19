@@ -12,7 +12,7 @@ describe 'index', type: :feature do
   it 'has the correct page title' do
     page.should have_selector 'h1'
     within 'h1' do
-      page.should have_content /Aptible Support/
+      page.should have_content(/Aptible Support/)
     end
   end
 end

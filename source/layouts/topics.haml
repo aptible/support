@@ -1,0 +1,34 @@
+/ Template: topics.haml
+
+= wrap_layout :layout do
+  %header.breadcrumbs
+    .container
+      %ol.breadcrumb
+        %li
+          %a{ href: '/topics' }Support
+        - if @category_url
+          %li
+            %a{ href: @category_url }= @category_title
+        %li.active= @title || title
+
+  .container
+    .row
+      .col-xs-3
+        = partial 'support_sidebar'
+
+      .markdown-document
+        .col-xs-7
+          .document-hero-title
+            - if @category_url
+              %h1= @title || title
+            -else
+              %h1 Recent Questions: #{@title || title}
+
+          = find_and_preserve do
+            = yield
+
+          .back
+            - if @category_title
+              %a{ href: @category_url }← Back to #{@category_title}
+            - else
+              %a{ href: '/topics' }← Back to all support topics

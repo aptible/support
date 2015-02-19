@@ -1,6 +1,4 @@
-require 'pry'
-
-shared_examples 'a valid page' do |article, section, path|
+shared_examples 'a valid page' do |article, _, path|
   before do
     visit "#{path}/#{article['url']}"
   end

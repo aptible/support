@@ -1,0 +1,27 @@
+/ Template: quickstart.haml
+
+= wrap_layout :layout do
+  %header.breadcrumbs
+    .container
+      %ol.breadcrumb
+        %li
+          %a{ href: '/documentation' }Documentation
+        %li
+          %a{ href: '/quickstart' }Quickstart Guides
+        - if current_page.data.language
+          %li
+            %a{ href: "/quickstart/#{current_page.data.language.downcase}" }= current_page.data.language
+        %li.active= current_page.data.title
+
+
+  .container.no-nav
+    .row
+      .col-xs-8.col-xs-offset-2
+        .document-hero-title
+          %h1= current_page.data.title
+          - if current_page.data.subtitle
+            %h2= current_page.data.subtitle
+
+        .markdown-document
+          = find_and_preserve do
+            = yield

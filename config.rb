@@ -12,43 +12,45 @@ set :partials_dir, 'partials'
 activate :syntax, line_numbers: true
 activate :directory_indexes
 
-page '/documentation/*', layout: 'documentation'
-page '/documentation*', layout: :documentation do
-  @docs = data.documentation
+# Documentation
+# TODO: Enable documentation section
+# page '/documentation/*', layout: 'documentation.haml'
+
+# Topics (Support)
+data.topics.each do |title, category|
+  category_url = "/topics/#{category.slug}"
+  page "#{category_url}/index.html", layout: 'topics.haml'
+  proxy "#{category_url}/index.html",
+        'topics/category.html',
+        locals: { category: category, title: title },
+        ignore: true
+
+  category.articles.each do |article|
+    page "topics/#{article.url}.html", layout: 'topics.haml' do
+      @category_url = category_url
+      @category_title = title
+      @title = article.title
+    end
+  end
 end
 
-data.support.each do |topic_name, topic|
-  section_slug = topic_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-  proxy "/support/#{section_slug}/index.html",  'support/category.html',
-        locals: { topic: topic, topic_name: topic_name }
-end
-
-# Set up proxies for language category pages
+# Quickstart (Getting Started)
 # If the language has no or only one framework, skip category page and
 # render language or framework document
-page '/getting_started/*', layout: 'getting_started_guide.haml'
-page '/support/*', layout: 'support.haml'
+page '/quickstart/*', layout: 'quickstart.haml'
+data.quickstart.each do |title, language|
+  next unless (language.articles || []).count > 1
 
-data.getting_started.each do |language_name, language_info|
-  section_slug = language_name.downcase
-  proxy_url = "/getting_started/#{section_slug}/index.html"
-  proxy_to = 'getting_started/category.html'
-
-  if language_info.articles && language_info.articles.count > 1
-    proxy proxy_url, proxy_to,
-        locals: { language_name: language_name,
-                  language_info: language_info,
-                  data: { header_title: 'Ruby!'} }
-  end
+  language_url = "/quickstart/#{language.slug}"
+  proxy "#{language_url}/index.html",
+        'quickstart/category.html',
+        locals: { title: title, language: language },
+        ignore: true
 end
 
 configure :build do
   # Exclude all Bower components except image assets
-  ignore /bower_components(?!.*\/images\/)/
-
-  # Don't build pages only used as proxies
-  ignore 'getting_started/category*'
-  ignore 'support/category*'
+  ignore %r{bower_components(?!.*/images/)}
 
   activate :minify_css
   activate :minify_javascript

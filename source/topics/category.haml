@@ -1,0 +1,3 @@
+.category-article-list
+  - (category.articles || []).each do |article|
+    %a.category-article{ href: "/topics/#{article.url}" }= article.title

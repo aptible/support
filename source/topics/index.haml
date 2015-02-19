@@ -1,0 +1,17 @@
+---
+title: Support Index
+header_title: Aptible Support
+header_subtitle: How can we help?
+---
+
+.documentation-main
+  .container
+    .categories
+      .row
+      - data.topics.each do |title, topic|
+        .col-xs-3
+          %a.category-box{ href: "/topics/#{topic.slug}", class: topic.slug }
+            .category-icon= partial "images/icons/#{topic.svg}"
+
+            .category-footer
+              .category-title= title

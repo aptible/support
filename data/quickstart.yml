@@ -1,0 +1,70 @@
+"Ruby":
+  slug: ruby
+  svg: ruby.svg
+  url: "ruby/rails"
+  articles:
+    - title: "Ruby on Rails"
+      url: "ruby/rails"
+      svg: rails.svg
+      slug: "rails"
+
+"Go":
+  slug: go
+  svg: go.svg
+  url: "go/gorilla"
+  articles:
+    - title: "Gorilla"
+      url: "go/gorilla"
+
+"Node":
+  slug: node
+  svg: node.svg
+  url: "node/express"
+  articles:
+    - title: "Express"
+      url: "node/express"
+      svg: "express.svg"
+      slug: "express"
+
+"Java":
+  slug: java
+  svg: java.svg
+  url: 'java/jersey'
+  articles:
+    - title: "Jersey"
+      url: "java/jersey"
+      svg: "java.svg"
+
+"Scala":
+  slug: scala
+  svg: scala.svg
+  url: "scala/play"
+  articles:
+    - title: "Play Framework"
+      svg: "play.svg"
+      slug: "play"
+      url: "scala/play"
+
+"PHP":
+  slug: php
+  svg: php.svg
+  url: "php/laravel"
+  articles:
+    - title: "Laravel"
+      svg: "laravel.svg"
+      slug: "laravel"
+      url: "php/laravel"
+
+"Python":
+  slug: python
+  svg: python.svg
+  url: 'python/django'
+  articles:
+    - title: "Django"
+      url: "python/django"
+      svg: "django.svg"
+      slug: "django"
+    - title: "Flask"
+      url: "python/flask"
+      slug: "flask"
+      svg: "flask.svg"
