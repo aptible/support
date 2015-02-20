@@ -9,6 +9,9 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :partials_dir, 'partials'
 
+# (Semi-) secrets
+set :swiftype_key, 'dsMEc1fYviE2ShXAjYMW'
+
 activate :syntax, line_numbers: true
 activate :directory_indexes
 
