@@ -11,6 +11,7 @@ set :partials_dir, 'partials'
 
 # (Semi-) secrets
 set :swiftype_key, 'dsMEc1fYviE2ShXAjYMW'
+set :base_url, ENV['BASE_URL'] || 'https://support.aptible.com'
 
 activate :syntax, line_numbers: true
 activate :directory_indexes
