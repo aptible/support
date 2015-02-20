@@ -1,0 +1,12 @@
+---
+layout: false
+---
+
+!!! XML
+
+%urlset{ xlmns: 'http://www.sitemaps.org/schemas/sitemap/0.9' }
+  - sitemap.resources.each do |resource|
+    - next unless resource.ext == '.html'
+    - next if resource.path =~ /^bower_components/
+    %url
+      %loc= "#{base_url}#{resource.url}"

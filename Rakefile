@@ -5,7 +5,7 @@ def system!(cmd)
 end
 
 desc 'Tag current HEAD and push to release branch'
-task :deploy, [:bucket] do |_t, args|
+task :deploy, [:bucket] => :redirect do |_t, args|
   fail 'No bucket specified' unless args[:bucket]
 
   # Build site
@@ -24,8 +24,6 @@ end
 task :redirect, [:bucket] do |_t, args|
   fail 'No bucket specified' unless args[:bucket]
 
-  system!('bundle exec middleman build')
-
   Bundler.with_clean_env do
     env = "S3_BUCKET=#{args[:bucket]}"
     system!("#{env} foreman run bundle exec middleman s3_redirect")
@@ -35,14 +33,14 @@ end
 namespace :deploy do
   desc 'Build and deploy site to support.aptible-staging.com'
   task :staging do
+    ENV['BASE_URL'] = 'https://support.aptible-staging.com'
     Rake::Task[:deploy].invoke('support.aptible-staging.com')
-    Rake::Task[:redirect].invoke('support.aptible-staging.com')
   end
 
   desc 'Build and deploy site to support.aptible.com'
   task :production do
+    ENV['BASE_URL'] = 'https://support.aptible.com'
     Rake::Task[:deploy].invoke('support.aptible.com')
-    Rake::Task[:redirect].invoke('support.aptible.com')
   end
 end
 
