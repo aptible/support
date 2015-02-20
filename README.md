@@ -22,6 +22,11 @@ Finally, start the server. You can access it at http://localhost:4567/
 
 ## Deploying
 
+First, some prerequisites:
+
+* [AWS CLI](http://aws.amazon.com/cli/), installed locally
+* Access to a sufficiently authorized pair of AWS access key credentials
+
 In [production](https://support.aptible.com) and [staging](https://support.aptible-staging.com), the support site is deployed as an S3 website (fronted by CloudFront).
 
 To deploy to production:
@@ -36,6 +41,12 @@ To deploy to an arbitrary S3 bucket:
 
     bundle exec rake deploy[bucket]
 
+Note that deployment happens automatically (both to staging and production) on every successful merge to master. This requires the encrypted AWS credentials for an authorized user to be stored in the .travis.yml configuration file.
+
+To update these credentials at any time, run:
+
+    travis encrypt -r aptible/support --add env AWS_ACCESS_KEY_ID=... AWS_SECRET_ACCESS_KEY=...
+
 ## Contributing
 
 If you run into an issue that needs documentation, feel free to submit a pull request or open an issue. We send t-shirts and swag to contributors.
@@ -49,6 +60,6 @@ If you run into an issue that needs documentation, feel free to submit a pull re
 
 ## Copyright
 
-Copyright (c) 2014 [Aptible](https://www.aptible.com). All rights reserved.
+Copyright (c) 2015 [Aptible](https://www.aptible.com). All rights reserved.
 
 [<img src="https://s.gravatar.com/avatar/9b58236204e844e3181e43e05ddb0809?s=60" style="border-radius: 50%;" alt="@sandersonet" />](https://github.com/sandersonet)
