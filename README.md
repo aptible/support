@@ -1,4 +1,6 @@
-# ![Aptible](http://aptible-media-assets-manual.s3.amazonaws.com/tiny-github-icon.png) Aptible Docs
+# ![Aptible](http://aptible-media-assets-manual.s3.amazonaws.com/tiny-github-icon.png) Aptible Support
+
+[![Build Status](https://travis-ci.org/aptible/support.png?branch=master)](https://travis-ci.org/aptible/support)
 
 Aptible's Support and Documentation Site
 
