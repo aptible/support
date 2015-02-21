@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Deploy to staging and production (but not on PRs)
 
 if [ "$TRAVIS_BRANCH" == "master" ] &&
