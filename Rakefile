@@ -1,7 +1,9 @@
 require 'rspec/core/rake_task'
 
 def system!(cmd)
-  fail "Command failed: #{cmd}" unless system(cmd)
+  success = !!system(cmd)
+  exitstatus = $CHILD_STATUS.exitstatus
+  fail "Command failed (exit #{exitstatus}): #{cmd}" unless success
 end
 
 desc 'Tag current HEAD and push to release branch'
@@ -25,8 +27,10 @@ task :redirect, [:bucket] do |_t, args|
   fail 'No bucket specified' unless args[:bucket]
 
   Bundler.with_clean_env do
-    env = "S3_BUCKET=#{args[:bucket]}"
-    system!("#{env} foreman run bundle exec middleman s3_redirect")
+    ENV['S3_BUCKET'] = args[:bucket]
+    puts "TRAVIS_SECURE_ENV_VARS: #{ENV['TRAVIS_SECURE_ENV_VARS']}"
+    puts ENV.keys.join(' ')
+    system!('bundle exec middleman s3_redirect')
   end
 end
 
