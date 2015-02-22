@@ -28,7 +28,7 @@ task :redirect, [:bucket] do |_t, args|
 
   Bundler.with_clean_env do
     ENV['S3_BUCKET'] = args[:bucket]
-    system!("#{env} bundle exec middleman s3_redirect")
+    system!("bundle exec middleman s3_redirect")
   end
 end
 
