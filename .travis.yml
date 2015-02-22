@@ -7,6 +7,8 @@ env:
   - secure: N48fyo+8ZQyBMWvo/h4gf6lQZkh+xAO94/LVmyrLsY0SkA3anRzIyBX6KuNeJoAkEo4p+v59PeITV96JI2keDsMmpJQRvmAG+m0hePhJpF3rlmLXzmT2KysOweh0w7GhUjluHA1Q5Dx1+KYjVYHp3/M624qbV4hBOSgy1aWwouE=
 install:
   - bundle install --deployment --retry 3
+  - npm install bower
+  - bower install
   - pip install --user awscli
 script:
   - bundle exec rake
