@@ -1,7 +1,9 @@
 require 'rspec/core/rake_task'
 
 def system!(cmd)
-  fail "Command failed: #{cmd}" unless system(cmd)
+  success = !!system(cmd)
+  exitstatus = $CHILD_STATUS.exitstatus
+  fail "Command failed (exit #{exitstatus}): #{cmd}" unless success
 end
 
 desc 'Tag current HEAD and push to release branch'
