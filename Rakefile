@@ -27,7 +27,7 @@ task :redirect, [:bucket] do |_t, args|
   fail 'No bucket specified' unless args[:bucket]
 
   Bundler.with_clean_env do
-    env = "S3_BUCKET=#{args[:bucket]}"
+    ENV['S3_BUCKET'] = args[:bucket]
     system!("#{env} bundle exec middleman s3_redirect")
   end
 end
