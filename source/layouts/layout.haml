@@ -8,7 +8,12 @@
     %meta{ property: 'og:title', content: current_page.data.title || 'Aptible Support' }
     %meta{ property: 'og:site_name', content: 'Aptible Support' }
     %meta{ property: 'og:image', content: 'https://www.aptible.com/assets/images/aptible-og.png'}
-    %title= @title || current_page.metadata[:locals][:title] || current_page.data.title || 'Aptible Support'
+
+    -# Use the page title if one exists, otherwise just default to 'Aptible Support'
+    - title = @title || current_page.metadata[:locals][:title] || current_page.data.title
+    - (title == nil) ? title = 'Aptible Support' : title = title + ' | Aptible Support'
+
+    %title= title
     %script{ type: 'text/javascript', src: '//use.typekit.net/hen3udh.js' }
     %link{ rel: "shortcut icon", href: "/images/favicon.ico" }
     = stylesheet_link_tag 'main'
