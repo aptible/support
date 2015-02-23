@@ -131,6 +131,11 @@ $go: #6AD7E5;
   }
 }
 
+.category-box.django {
+  .category-icon {
+    width: 118px;
+  }
+}
 
 .category-box.java {
   .category-icon {
@@ -171,7 +176,7 @@ $go: #6AD7E5;
   &.category-3 {
     text-align: center;
 
-    .col-xs-3 {
+    .col-md-3 {
       display: inline-block;
       float: none;
     }

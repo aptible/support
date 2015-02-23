@@ -1,14 +1,15 @@
 .document-hero-title {
-  margin: 80px 0 100px;
+  margin: 60px 0 70px;
 
   h1 {
     font-size: 32px;
     font-weight: $weight-normal;
     margin: 30px 0 9px;
-    line-height: 48px;
+    line-height: 1.4em;
   }
 
   h2 {
+    line-height: 1.4em;
     margin-top: 0;
     color: $color-light;
     font-size: 18px;
@@ -20,6 +21,14 @@
     text-align: center;
     border: 0;
     padding: 0;
+  }
+
+  h1 {
+    margin-top: 10px;
+  }
+
+  h2 {
+    margin: 0;
   }
 
   .document-hero-title {
@@ -73,8 +82,9 @@
     padding: 5px 8px;
   }
 
-  p {
-    font-size: 16px;
+  p, ol, ul {
+    line-height: 1.4em;
+    font-size: 18px;
     margin: 15px 0;
   }
 
@@ -82,10 +92,20 @@
     margin: 40px 0;
   }
 
+  ol {
+    margin: 15px 0;
+
+    li {
+      margin: 15px 0;
+    }
+  }
+
   .highlight {
     @extend %aptible-panel;
     border-color: #ccc;
-    margin: 20px 0;
+    margin: 20px 0 25px;
+    max-width: 100%;
+    overflow-x: scroll;
 
     .gl {
       background: #fafafa;

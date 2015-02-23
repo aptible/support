@@ -9,7 +9,7 @@ header_subtitle: How can we help?
     .categories
       .row
       - data.topics.each do |title, topic|
-        .col-xs-3
+        .col-xs-12.col-sm-4.col-md-3
           %a.category-box{ href: "/topics/#{topic.slug}", class: topic.slug }
             .category-icon= partial "images/icons/#{topic.svg}"
 

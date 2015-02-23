@@ -1,0 +1,18 @@
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+/* xs devices (tablets, 767px and down) */
+@media (max-width: $screen-sm-min - 1) {
+  @import "mobile/xs";
+}
+
+/* Small devices (tablets, 768px to 992px) */
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+  @import "mobile/sm";
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  @import "mobile/md"
+}
