@@ -9,7 +9,7 @@ layout: layout
       .row
         .category-wrapper{ class: "category-#{language.articles.count}" }
           - language.articles.each do |article|
-            .col-xs-3
+            .col-xs-12.col-sm-4.col-md-3
               %a.category-box{ href: "/quickstart/#{article.url}", class: article.slug }
                 .category-icon= partial "/images/icons/#{article.svg}"
                 .category-footer

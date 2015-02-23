@@ -11,19 +11,20 @@
             %a{ href: @category_url }= @category_title
         %li.active= @title || title
 
-  .container
+  .container.no-nav
     .row
-      .col-xs-2.hidden-xs
-        / = partial 'support_sidebar'
+      - #.col-xs-2.hidden-xs
+      - #= partial 'support_sidebar'
 
-      .markdown-document
-        .col-xs-7
-          .document-hero-title
-            - if @category_url
-              %h1= @title || title
-            -else
-              %h1 Recent Questions: #{@title || title}
+      .col-xs-12.col-sm-12.col-md-8.col-md-offset-2
+        .document-hero-title
+          - if @category_url
+            %h2= @category_title
+            %h1= @title || title
+          -else
+            %h1 Recent Questions: #{@title || title}
 
+        .markdown-document
           = find_and_preserve do
             = yield
 

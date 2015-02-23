@@ -22,13 +22,13 @@ categories:
 .documentation-main
   .container
     .row
-      .col-xs-8.col-xs-offset-2
+      .col-xs-12.col-md-8.col-md-offset-2
         .categories
           .row
-          - current_page.data.categories.each do |category_name, category|
-            .col-xs-6
-              %a.category-box{ href: category['url'], class: category['svg'] }
-                .category-icon
-                  = partial "images/icons/#{category['svg']}"
-                .category-footer
-                  .category-title= category['title']
+            - current_page.data.categories.each do |category_name, category|
+              .col-xs-12.col-md-6
+                %a.category-box{ href: category['url'], class: category['svg'] }
+                  .category-icon
+                    = partial "images/icons/#{category['svg']}"
+                  .category-footer
+                    .category-title= category['title']
