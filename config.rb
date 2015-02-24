@@ -70,3 +70,17 @@ end
 data.redirects.each do |item|
   redirect item['loc'], item['url']
 end
+
+helpers do
+  def title_tag(opts = {})
+    current_page = opts[:page]
+    title = opts[:title]
+    category = opts[:category] || 'Aptible Support'
+
+    title = title || current_page.metadata[:locals][:title] ||
+            current_page.data.title
+    title = title.nil? ? 'Aptible Support' : "#{title} | #{category}"
+
+    "<title>#{title}</title>"
+  end
+end

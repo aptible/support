@@ -1,5 +1,5 @@
 ---
-title: Jersey on Aptible
+title: Getting Started with Java on Aptible using the Jersey Framework
 subtitle: Deploy your Jersey app on Aptible in about 5 minutes
 ---
 
