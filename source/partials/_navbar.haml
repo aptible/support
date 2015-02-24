@@ -13,7 +13,8 @@
         - unless current_page.data.header_search
           %li#header-search-bar
             %i.fa.fa-search#header-search-button
-            %input.form-control#swifttype-search-input
+            %form{ action: '/search' }
+              %input.form-control#swifttype-search-input{ }
             #st-results-container
         %li{ class: current_page.url =~ /quickstart/ ? 'active' : '' }= link_to 'Getting Started', '/quickstart'
         / TODO: Enable documentation section

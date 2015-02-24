@@ -34,9 +34,10 @@
               .search-bar
                 .search-bar-input
                   .input-group
-                    %input#swifttype-search-input.form-control{ placeholder: 'Search Documentation, Support, and Quickstart guides', type: 'text' }
-                    %span.input-group-addon
-                      %i.fa.fa-search
+                    %form{ action: '/search' }
+                      %input#swifttype-search-input.form-control{ name: 'search', placeholder: 'Search Documentation, Support, and Quickstart guides', type: 'text' }
+                      %button.input-group-addon{ type: 'submit' }
+                        %i.fa.fa-search
                 #st-results-container
 
     = yield
