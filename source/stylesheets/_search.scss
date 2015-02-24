@@ -1,0 +1,135 @@
+.search-bar {
+  width: 700px;
+  padding: 4px;
+  background: #fafafa;
+  @include border-radius(3px);
+  margin: 40px auto 0;
+
+  .search-bar-input {
+    background: #fff;
+    border: 1px solid #ccc;
+    @include border-radius(3px);
+  }
+
+  .input-group {
+    width: 100%;
+
+    .form-control {
+      border: 0;
+      width: 650px;
+    }
+
+    .input-group-addon {
+      background-image: linear-gradient(-180deg, #FAFAFA 0%, #E0E0E0 100%);
+      border: 0;
+      border-left: 1px solid #ddd;
+      box-shadow: inset 0px 1px 0px 0px #fff;
+      width: 40px;
+      height: 40px;
+      float: right;
+      @include border-radius(0 3px 3px 0);
+    }
+
+    i.fa {
+      margin-left: 1px;
+      color: $color-subdued;
+      vertical-align: -1px;
+    }
+  }
+}
+
+header.primary-header {
+  .search-bar {
+    background: #054e9f;
+    padding: 5px;
+  }
+
+  .search-bar-input {
+    border: 0;
+  }
+}
+
+#st-results-large-container {
+  margin: 50px 0;
+
+  .loading-results {
+    padding: 50px 0 100px;
+  }
+
+  i.fa-spinner {
+    font-size: 20px;
+    color: $color-subdued;
+    height: 20px;
+    width: 20px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .st-search-summary {
+    border-bottom: 4px solid #f0f0f0;
+    margin: 0 0 40px;
+
+    > h2 {
+      font-size: 24px;
+      color: $color-light;
+    }
+
+    .st-query {
+      color: $color-primary;
+      font-style: none;
+      font-weight: $weight-semibold;
+    }
+  }
+
+  .st-result {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    &.final {
+      border: 0;
+    }
+  }
+
+  .st-result-text {
+    > h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      font-weight: $weight-semibold;
+    }
+  }
+
+  .st-snippet {
+    color: $color-subdued;
+    font-size: 15px;
+
+    em {
+      font-weight: $weight-semibold;
+      color: $color-primary;
+    }
+  }
+
+  .st-pagination {
+    border-top: 4px solid #f0f0f0;
+    padding-top: 30px;
+
+    &:empty {
+      display: none;
+    }
+
+    a.st-page {
+      display: inline-block;
+      padding: 8px 17px;
+      border-radius: 19px;
+      background: #f0f0f0;
+      color: $color-primary;
+      font-weight: $weight-semibold;
+
+      &:hover {
+        text-decoration: none;
+        background: $color-bright-blue;
+        color: #fff;
+      }
+    }
+  }
+}
