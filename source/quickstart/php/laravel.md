@@ -1,5 +1,5 @@
 ---
-title: Laravel Quickstart
+title: Getting Started with PHP on Aptible Using the Laravel Framework
 subtitle: Deploy your Express app on Aptible in about 5 minutes
 ---
 

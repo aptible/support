@@ -1,5 +1,5 @@
 ---
-title: Play Framework
+title: Getting Started with Scala on Aptible Using the Play Framework
 subtitle: Deploy your Play app on Aptible in about 5 minutes
 ---
 

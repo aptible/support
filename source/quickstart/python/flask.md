@@ -1,5 +1,5 @@
 ---
-title: Flask
+title: Getting Started with Python on Aptible Using the Flask Framework
 subtitle: Deploy your Flask app to Aptible in about 5 minutes
 language: Python
 ---
