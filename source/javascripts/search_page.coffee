@@ -17,6 +17,6 @@ document.addEventListener 'DOMContentLoaded', ->
 
   onFormSubmit = (e) ->
     e.preventDefault()
-    document.location.href = "/search#stq=#{field.value}&stp=1"
+    document.location.href = "/search/#stq=#{field.value}&stp=1"
 
   form.addEventListener('submit', onFormSubmit)
