@@ -13,7 +13,7 @@
         - unless current_page.data.header_search
           %li#header-search-bar
             %i.fa.fa-search#header-search-button
-            %form{ action: '/search' }
+            %form{ action: '/search/' }
               %input.form-control#swifttype-search-input{ }
             #st-results-container
         %li{ class: current_page.url =~ /quickstart/ ? 'active' : '' }= link_to 'Getting Started', '/quickstart'
