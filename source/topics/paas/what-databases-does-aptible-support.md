@@ -7,4 +7,12 @@ Currently, Aptible supports the following databases:
 * CouchDB
 * Elasticsearch
 
+Databases can be provisioned either from the Dashboard or Aptible CLI.  To provision a database from Dashboard, simply click on the 'Databases' tab on the top navigation and then click the 'Create Database' button.
+
+To provision a database using Aptible CLI, use the `aptible db:create` command:
+
+```
+aptible db:create --type <DATABASE_TYPE> --size <SIZE_IN_GB> <DATABASE_HANDLE>
+```
+
 If you'd like to run another database on top of Aptible, please email us at [support@aptible.com](mailto:support@aptible.com).
