@@ -1,6 +1,7 @@
 # ![Aptible](http://aptible-media-assets-manual.s3.amazonaws.com/tiny-github-icon.png) Aptible Support
 
 [![Build Status](https://travis-ci.org/aptible/support.png?branch=master)](https://travis-ci.org/aptible/support)
+[![Roadmap](https://badge.waffle.io/aptible/support.svg?label=ready&title=roadmap)](http://waffle.io/aptible/support)
 
 Aptible's Support and Documentation Site
 
