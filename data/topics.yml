@@ -46,6 +46,8 @@
       url: "paas/what-is-a-container"
     - title: "How do I set up Papertrail for my Aptible apps?"
       url: "paas/how-to-set-up-papertrail"
+    - title: "How do I set up my own logging stack?"
+      url: "paas/how-to-set-up-your-own-logging-stack"
     # - title: "How do I set up Logentries for my Aptible apps?"
     #   url: "paas/how-to-set-up-logentries"
     - title: "How do I automate database migrations for my app?"
