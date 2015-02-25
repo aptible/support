@@ -1,6 +1,6 @@
 Setting up Papertrail for production logging is easy on Aptible!
 
-First, sign up for a Papertrail account. Once you're signed up, go to your Account page and navigate to the "Log Destinations" tab. Click "Create a Log Destination" and then "Create" again:
+First, sign up for a Papertrail account. Once you're signed up, go to your Papertrail account page and navigate to the "Log Destinations" tab. Click "Create a Log Destination" and then "Create" again:
 
 ![](/images/topics/paas/how-to-set-up-papertrail/account.png)
 
