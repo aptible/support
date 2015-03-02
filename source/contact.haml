@@ -1,30 +1,46 @@
+---
+title: Contact Us
+---
 %iframe#zd-form-transport{ name: 'zd-form-transport' }
-.container.no-nav
+.container.no-nav.contact-support
   .row
-    .col-md-6.col-md-offset-3.col-sm-12
+    .col-xs-12
       .document-hero-title
         %h1 Contact Aptible Support
         %h2 How can we help?
       .contact-us-panel
         .panel.panel-default.contact-panel
-          .panel-body
-            %form#support-form{ method: 'post', action: 'https://aptible.zendesk.com/requests/embedded/create', target: 'zd-form-transport'}
-              %input{ type: 'hidden', name: 'locale_id', value: '1' }
-              %input{ type: 'hidden', name: 'set_tags', value: 'web_widget' }
-              %input{ type: 'hidden', name: 'via_id', value: '48' }
-              %input{ type: 'hidden', name: 'submitted_from', value: 'http://support.aptible.com/contact'}
 
-              .alert#support-form-alert
-                .text#support-form-alert-text
+          .row
+            .col-md-6.col-xs-12
+              %form#support-form{ method: 'post', action: 'https://aptible.zendesk.com/requests/embedded/create', target: 'zd-form-transport'}
+                %input{ type: 'hidden', name: 'locale_id', value: '1' }
+                %input{ type: 'hidden', name: 'set_tags', value: 'web_widget' }
+                %input{ type: 'hidden', name: 'via_id', value: '48' }
+                %input{ type: 'hidden', name: 'submitted_from', value: 'http://support.aptible.com/contact'}
 
-              .form-group
-                %label{ for: 'name' }Name:
-                %input.form-control#support-form-name{ name: 'name', type: 'text'}
-              .form-group
-                %label{ for: 'email' }Email:
-                %input.form-control#support-form-email{ name: 'email', type: 'text'}
-              .form-group
-                %label{ for: 'description' }Message:
-                %textarea.form-control#support-form-message{ name: 'description', rows: 8 }
-              .form-group
-                %button.btn.btn-primary.btn-lg.pull-right{ type: 'submit' }Submit
+                .alert#support-form-alert
+                  .text#support-form-alert-text
+
+                .form-group
+                  %label{ for: 'support-form-subject' }Subject:
+                  %input.form-control#support-form-subject{ name: 'subject', type: 'text', autofocus: true }
+                .form-group
+                  %label{ for: 'support-form-name' }Name:
+                  %input.form-control#support-form-name{ name: 'name', type: 'text'}
+                .form-group
+                  %label{ for: 'support-form-email' }Email:
+                  %input.form-control#support-form-email{ name: 'email', type: 'text'}
+                .form-group
+                  %label{ for: 'support-form-message' }Message:
+                  %textarea.form-control#support-form-message{ name: 'description', rows: 8 }
+                .form-group
+                  %button.btn.btn-primary{ type: 'submit' }Submit
+
+
+            .col-md-6.col-xs-12
+              #searcher.panel-body-results
+                %h2.results-title Frequently Asked Questions
+                %ul#search-results
+                  %li.loading
+                    %i.fa.fa-spin.fa-spinner

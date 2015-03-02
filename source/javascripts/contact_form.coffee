@@ -34,5 +34,4 @@ document.addEventListener 'DOMContentLoaded', ->
       alert.style.display = 'block'
       alertText.innerHTML = 'Name, Email, and Message are all required fields'
 
-  name.focus()
   form.addEventListener('submit', onFormSubmit)
