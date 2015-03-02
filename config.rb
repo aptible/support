@@ -84,4 +84,8 @@ helpers do
 
     "<title>#{title}</title>"
   end
+
+  def contact_href
+    "#{base_url}/contact"
+  end
 end

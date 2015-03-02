@@ -2,5 +2,5 @@ This error usually means that your PostgreSQL client library is configured to co
 
 Many PostgreSQL client libraries allow enforcing SSL by appending `?ssl=true` to the default database connection URL provided by Aptible. For other libraries, it may be necessary to set this in the library configuration code.
 
-If you have questions about enabling SSL for your app's PostgreSQL library, feel free to email us at [support@aptible.com](mailto:support@aptible.com).
+If you have questions about enabling SSL for your app's PostgreSQL library, please [contact support](https://support.aptible.com/contact).
 
