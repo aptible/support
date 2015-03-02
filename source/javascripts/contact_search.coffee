@@ -31,8 +31,9 @@ class Searcher
     @title.html(title)
 
     for result in results
-      resultHTML = resultHTML + "<li><a href='#{result.url}'>#{result.title}</a></li>"
-    @container.html resultHTML
+      resultHTML = resultHTML + "<li>\n\t<a href=\"#{result.url}\">#{result.title}</a>\n</li>\n"
+
+    @container.html(resultHTML) unless @container.html() == resultHTML
 
   initialize: ->
     @searchFor @defaultSearchTerm
