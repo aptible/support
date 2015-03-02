@@ -13,10 +13,12 @@
 
     %script{ type: 'text/javascript', src: '//use.typekit.net/hen3udh.js' }
     %link{ rel: "shortcut icon", href: "/images/favicon.ico" }
-    = stylesheet_link_tag 'main'
-    = javascript_include_tag  'all'
     :javascript
       try{Typekit.load();}catch(e){}
+      window.swiftypeEngineKey = '#{swiftype_engine}';
+    = stylesheet_link_tag 'main'
+    = javascript_include_tag  'all'
+
   %body{ class: page_classes }
     %header.primary-header
       .primary-header-bg
