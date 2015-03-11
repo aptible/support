@@ -70,6 +70,12 @@ end
 
 data.redirects.each do |item|
   redirect item['loc'], item['url']
+
+  # Zendesk will sometimes index slugged URLs by ID alone
+  # e.g. /hc/en-us/categories/200178460-Getting-Started ->
+  #      /hc/en-us/categories/200178460
+  match = item['loc'].match(/(^.*[0-9]{9})/)
+  redirect(match[1], item['url']) if match
 end
 
 helpers do
