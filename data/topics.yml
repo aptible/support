@@ -34,6 +34,8 @@
   articles:
     - title: "What databases does Aptible support?"
       url: "paas/what-databases-does-aptible-support"
+    - title: "Can I deploy a custom database on Aptible?"
+      url: "paas/deploy-custom-database"
     - title: "How do I add a background worker to my app?"
       url: "paas/how-to-add-background-worker"
     - title: "How do I set up Travis CI to deploy to Aptible?"
