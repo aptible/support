@@ -40,7 +40,7 @@
   svg: scala.svg
   url: "scala/play"
   articles:
-    - title: "Play Framework"
+    - title: "Scala Play"
       svg: "play.svg"
       slug: "play"
       url: "scala/play"
