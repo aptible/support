@@ -38,7 +38,7 @@ data.topics.each do |title, category|
   end
 end
 
-# Quickstart (Getting Started)
+# Quickstart Guides
 # If the language has no or only one framework, skip category page and
 # render language or framework document
 page '/quickstart/*', layout: 'quickstart.haml'
