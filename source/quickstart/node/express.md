@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Node.js on Aptible Using the Express Framework
+title: Node.js Express
 subtitle: Deploy your Express app on Aptible in about 5 minutes
 ---
 

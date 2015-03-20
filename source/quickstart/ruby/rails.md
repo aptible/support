@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Ruby on Aptible Using the Ruby on Rails Framework
+title: Ruby on Rails
 subtitle: Deploy your Ruby on Rails app to Aptible in about 5 minutes
 ---
 
