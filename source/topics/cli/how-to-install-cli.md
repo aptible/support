@@ -12,4 +12,4 @@ Then, to see what's possible with the CLI, just run:
 
     aptible help
 
-If you have questions about the CLI, feel free to email us at [support@aptible.com](mailto:support@aptible.com).
+If you have questions about the CLI, please [contact support](https://support.aptible.com/contact).

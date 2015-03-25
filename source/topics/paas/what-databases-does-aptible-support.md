@@ -15,4 +15,4 @@ To provision a database using Aptible CLI, use the `aptible db:create` command:
 aptible db:create --type <DATABASE_TYPE> --size <SIZE_IN_GB> <DATABASE_HANDLE>
 ```
 
-If you'd like to run another database on top of Aptible, please email us at [support@aptible.com](mailto:support@aptible.com).
+If you'd like to run another database on top of Aptible, please [contact support](https://support.aptible.com/contact).

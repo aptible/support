@@ -1,5 +1,7 @@
 - loc: /hc/en-us
   url: /
+- loc: /hc/en-us/requests/new
+  url: /
 - loc: /hc/en-us/categories/200178460-Getting-Started
   url: /quickstart
 - loc: /hc/en-us/sections/200508614-Welcome-to-Aptible
@@ -75,8 +77,6 @@
 - loc: /hc/en-us/articles/202315304-What-kinds-of-support-does-Aptible-offer-
   url: /topics/account
 - loc: /hc/en-us/articles/202316094-Do-you-have-a-phone-number-I-can-call-
-  url: /
-- loc: /hc/en-us/requests/new
   url: /
 - loc: /hc/en-us/articles/202647560-How-do-I-test-that-my-VHost-is-working-before-making-DNS-changes-
   url: /topics/paas

@@ -11,6 +11,7 @@ set :partials_dir, 'partials'
 
 # (Semi-) secrets
 set :swiftype_key, 'dsMEc1fYviE2ShXAjYMW'
+set :swiftype_engine, 'axuhZ5Lt1ZUziN-DqxnR'
 set :base_url, ENV['BASE_URL'] || 'https://support.aptible.com'
 
 activate :syntax, line_numbers: true
@@ -69,6 +70,12 @@ end
 
 data.redirects.each do |item|
   redirect item['loc'], item['url']
+
+  # Zendesk will sometimes index slugged URLs by ID alone
+  # e.g. /hc/en-us/categories/200178460-Getting-Started ->
+  #      /hc/en-us/categories/200178460
+  match = item['loc'].match(/(^.*[0-9]{9})/)
+  redirect(match[1], item['url']) if match
 end
 
 helpers do
@@ -82,5 +89,9 @@ helpers do
     title = title.nil? ? 'Aptible Support' : "#{title} | #{category}"
 
     "<title>#{title}</title>"
+  end
+
+  def contact_href
+    "#{base_url}/contact"
   end
 end
