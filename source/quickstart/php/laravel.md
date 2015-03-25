@@ -1,8 +1,3 @@
----
-title: PHP Laravel
-subtitle: Deploy your Laravel PHP app on Aptible in about 5 minutes
----
-
 This guide will show you how to set up a PHP app using the Laravel framework and MySQL. This guide is for Laravel 4.0 or greater.
 
 This guide assumes you have:

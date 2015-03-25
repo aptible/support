@@ -6,19 +6,17 @@
       %ol.breadcrumb
         %li
           %a{ href: '/quickstart' }Quickstart Guides
-        - if current_page.data.language
-          %li
-            %a{ href: "/quickstart/#{current_page.data.language.downcase}" }= current_page.data.language
-        %li.active= current_page.data.title
+        %li
+          %a{ href: "/quickstart/#{@language.slug}" }= @language.name
+        %li.active= @framework
 
 
   .container.no-nav
     .row
       .col-xs-12.col-sm-12.col-md-8.col-md-offset-2
         .document-hero-title
-          %h1= current_page.data.title + " Quickstart Guide"
-          - if current_page.data.subtitle
-            %h2= current_page.data.subtitle
+          %h1= @framework + " Quickstart Guide"
+          %h2= "Deploying your first " + @framework + " app on Aptible"
 
         .markdown-document
           = find_and_preserve do

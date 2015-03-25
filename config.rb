@@ -40,17 +40,24 @@ data.topics.each do |title, category|
 end
 
 # Quickstart Guides
-# If the language has no or only one framework, skip category page and
-# render language or framework document
-page '/quickstart/*', layout: 'quickstart.haml'
-data.quickstart.each do |title, language|
-  next unless (language.articles || []).count > 1
-
-  language_url = "/quickstart/#{language.slug}"
+# Middleman Data Files: https://middlemanapp.com/advanced/data_files/
+data.quickstart.each do |language_name, language_data|
+  language_data[:name] = language_name
+  language_url = "/quickstart/#{language_data.slug}"
   proxy "#{language_url}/index.html",
         'quickstart/category.html',
-        locals: { title: title, language: language },
-        ignore: true
+        locals: { language: language_data },
+        ignore: true do
+    @title = language_data.name + ' Quickstarts'
+  end
+
+  language_data.articles.each do |article|
+    page "quickstart/#{article.url}.html", layout: 'quickstart.haml' do
+      @framework = article.framework
+      @language = language_data
+      @title = @framework + ' Quickstart'
+    end
+  end
 end
 
 configure :build do
@@ -81,12 +88,19 @@ end
 helpers do
   def title_tag(opts = {})
     current_page = opts[:page]
-    title = opts[:title]
-    category = opts[:category] || 'Aptible Support'
 
-    title = title || current_page.metadata[:locals][:title] ||
-            current_page.data.title
-    title = title.nil? ? 'Aptible Support' : "#{title} | #{category}"
+    # Quickstart articles pass @title (see ~#L55)
+    title = opts[:title]
+
+    # Some pages also set it in front matter
+    title ||= current_page.metadata[:locals][:title] ||
+              current_page.data.header_title
+
+    if title.nil? || title == 'Aptible Support'
+      title = 'Aptible Support'
+    else
+      title = "#{title} | Aptible Support"
+    end
 
     "<title>#{title}</title>"
   end

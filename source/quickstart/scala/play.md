@@ -1,8 +1,3 @@
----
-title: Scala Play
-subtitle: Deploy your Play app on Aptible in about 5 minutes
----
-
 This guide will show you how to set up a Scala app using the Play framework and PostgreSQL.
 
 This guide assumes you have:

@@ -1,8 +1,3 @@
----
-title: Java Jersey
-subtitle: Deploy your Jersey app on Aptible in about 5 minutes
----
-
 This guide will show you how to set up a Java app using the Jersey framework and PostgreSQL.
 
 This guide assumes you have:

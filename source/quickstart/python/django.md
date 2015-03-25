@@ -1,9 +1,3 @@
----
-title: Django
-subtitle: Deploy your Django app to Aptible in about 5 minutes
-language: Python
----
-
 This guide will show you how to set up a Python app using the Django framework, Gunicorn, and PostgreSQL.
 
 This guide assumes you have:
