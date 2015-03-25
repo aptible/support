@@ -28,13 +28,17 @@ data.topics.each do |title, category|
   proxy "#{category_url}/index.html",
         'topics/category.html',
         locals: { category: category, title: title },
-        ignore: true
+        ignore: true do
+    @description = "Aptible support questions about #{title}"
+  end
 
   category.articles.each do |article|
     page "topics/#{article.url}.html", layout: 'topics.haml' do
       @category_url = category_url
       @category_title = title
       @title = article.title
+      @description = 'Aptible support guides and answers'
+      @og_type = 'article'
     end
   end
 end
@@ -48,14 +52,19 @@ data.quickstart.each do |language_name, language_data|
         'quickstart/category.html',
         locals: { language: language_data },
         ignore: true do
-    @title = language_data.name + ' Quickstarts'
+    @title = "#{language_data.name} Quickstart Guides"
+    @description = "Guides for getting started with #{language_data.name} "\
+                   'on Aptible'
   end
 
   language_data.articles.each do |article|
     page "quickstart/#{article.url}.html", layout: 'quickstart.haml' do
       @framework = article.framework
       @language = language_data
-      @title = @framework + ' Quickstart'
+      @title = "#{@framework} Quickstart"
+      @description = 'Step-by-step instructions for getting started '\
+                     "with #{@framework} on Aptible"
+      @og_type = 'article'
     end
   end
 end
@@ -86,23 +95,44 @@ data.redirects.each do |item|
 end
 
 helpers do
-  def title_tag(opts = {})
+  def title_tags(opts = {})
     current_page = opts[:page]
 
-    # Quickstart articles pass @title (see ~#L55)
+    # Article pages pass @title as an option
     title = opts[:title]
 
     # Some pages also set it in front matter
     title ||= current_page.metadata[:locals][:title] ||
               current_page.data.header_title
 
+    # Some pages just have a default title, which we don't want to repeat
     if title.nil? || title == 'Aptible Support'
-      title = 'Aptible Support'
+      swiftype_title = title = 'Aptible Support'
     else
+      # Use a clean title for Swifttype
+      swiftype_title = title
       title = "#{title} | Aptible Support"
     end
 
-    "<title>#{title}</title>"
+    "<title>#{title}</title> \n" \
+    "<meta property=\"og:title\" content=\"#{title}\" > \n" \
+    "<meta class=\"swiftype\" name=\"title\" " \
+    "data-type=\"string\" content=\"#{swiftype_title}\" >"
+  end
+
+  def meta_tags(opts = {})
+    description = opts[:description]
+    og_type = opts[:og_type]
+
+    description ||= current_page.data.header_subtitle
+
+    url = "#{base_url}#{current_page.url}"
+
+    og_type = og_type.nil? ? 'website' : 'article'
+
+    "<meta property=\"og:description\" content=\"#{description}\" >\n" \
+    "<meta property=\"og:url\" content=\"#{url}\" >\n"\
+    "<meta property=\"og:type\" content=\"#{og_type}\" >"
   end
 
   def contact_href

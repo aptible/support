@@ -5,11 +5,12 @@
     %meta{ content: 'IE=edge,chrome=1', http_equiv:'X-UA-Compatible' }
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }
 
-    %meta{ property: 'og:site_name', content: 'Aptible Support' }
-    %meta{ property: 'og:image', content: 'https://www.aptible.com/assets/images/aptible-og.png'}
-
     -# see config.rb
     = title_tags({ title: @title, category: @category_title, page: current_page })
+    = meta_tags({ description: @description, og_type: @og_type })
+
+    %meta{ property: 'og:site_name', content: 'Aptible Support' }
+    %meta{ property: 'og:image', content: 'https://www.aptible.com/assets/images/aptible-og.png'}
 
     %script{ type: 'text/javascript', src: '//use.typekit.net/hen3udh.js' }
     %link{ rel: "shortcut icon", href: "/images/favicon.ico" }
@@ -39,7 +40,7 @@
                         %i.fa.fa-search
                 #st-results-container
 
-    %div{ 'data-swifttype-name' => 'body', 'data-swiftype-type' => 'text', 'data-swifttype-index' => 'true' }
+    %div{ 'data-swiftype-name' => 'body', 'data-swiftype-type' => 'text', 'data-swiftype-index' => 'true' }
       = yield
 
     = partial 'footer'
