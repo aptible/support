@@ -1,8 +1,3 @@
----
-title: Getting Started with PHP on Aptible Using the Laravel Framework
-subtitle: Deploy your Express app on Aptible in about 5 minutes
----
-
 This guide will show you how to set up a PHP app using the Laravel framework and MySQL. This guide is for Laravel 4.0 or greater.
 
 This guide assumes you have:

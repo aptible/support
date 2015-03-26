@@ -1,8 +1,3 @@
----
-title: Getting Started with Go on Aptible using the Gorilla Web Toolkit
-subtitle: Deploy your Gorilla web toolkit app on Aptible in about 5 minutes
----
-
 This guide teaches you how to set up a Websockets-based chat server written in Go on Aptible, using the Gorilla web toolkit.  With additional authentication, authorization, and data persistence, this example app has the potential to become a HIPAA-compliant web chat product that might command millions of dollars in seed funding.
 
 This guide assumes you have:

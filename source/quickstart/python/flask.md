@@ -1,9 +1,3 @@
----
-title: Getting Started with Python on Aptible Using the Flask Framework
-subtitle: Deploy your Flask app to Aptible in about 5 minutes
-language: Python
----
-
 This guide will show you how to set up a Python app using the Flask framework, Gunicorn, SQLAlchemy, and PostgreSQL.
 
 This guide assumes you have:

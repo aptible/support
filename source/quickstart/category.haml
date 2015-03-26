@@ -3,7 +3,7 @@ layout: layout
 ---
 
 .documentation-main
-  %h3.sub-title Which #{title} framework are you using?
+  %h3.sub-title Which #{language.name} framework are you using?
   .container
     .categories
       .row
@@ -13,4 +13,4 @@ layout: layout
               %a.category-box{ href: "/quickstart/#{article.url}", class: article.slug }
                 .category-icon= partial "/images/icons/#{article.svg}"
                 .category-footer
-                  .category-title= article.title
+                  .category-title= article.framework

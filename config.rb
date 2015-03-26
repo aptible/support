@@ -10,8 +10,8 @@ set :images_dir, 'images'
 set :partials_dir, 'partials'
 
 # (Semi-) secrets
-set :swiftype_key, 'dsMEc1fYviE2ShXAjYMW'
-set :swiftype_engine, 'axuhZ5Lt1ZUziN-DqxnR'
+set :swiftype_key, ENV['SWIFTYPE_KEY'] || 'dsMEc1fYviE2ShXAjYMW'
+set :swiftype_engine, ENV['SWIFTYPE_ENGINE'] || 'axuhZ5Lt1ZUziN-DqxnR'
 set :base_url, ENV['BASE_URL'] || 'https://support.aptible.com'
 
 activate :syntax, line_numbers: true
@@ -28,29 +28,45 @@ data.topics.each do |title, category|
   proxy "#{category_url}/index.html",
         'topics/category.html',
         locals: { category: category, title: title },
-        ignore: true
+        ignore: true do
+    @description = "Aptible support questions about #{title}"
+  end
 
   category.articles.each do |article|
     page "topics/#{article.url}.html", layout: 'topics.haml' do
       @category_url = category_url
       @category_title = title
       @title = article.title
+      @description = 'Aptible support guides and answers'
+      @og_type = 'article'
     end
   end
 end
 
-# Quickstart (Getting Started)
-# If the language has no or only one framework, skip category page and
-# render language or framework document
-page '/quickstart/*', layout: 'quickstart.haml'
-data.quickstart.each do |title, language|
-  next unless (language.articles || []).count > 1
-
-  language_url = "/quickstart/#{language.slug}"
+# Quickstart Guides
+# Middleman Data Files: https://middlemanapp.com/advanced/data_files/
+data.quickstart.each do |language_name, language_data|
+  language_data[:name] = language_name
+  language_url = "/quickstart/#{language_data.slug}"
   proxy "#{language_url}/index.html",
         'quickstart/category.html',
-        locals: { title: title, language: language },
-        ignore: true
+        locals: { language: language_data },
+        ignore: true do
+    @title = "#{language_data.name} Quickstart Guides"
+    @description = "Guides for getting started with #{language_data.name} "\
+                   'on Aptible'
+  end
+
+  language_data.articles.each do |article|
+    page "quickstart/#{article.url}.html", layout: 'quickstart.haml' do
+      @framework = article.framework
+      @language = language_data
+      @title = "#{@framework} Quickstart"
+      @description = 'Step-by-step instructions for getting started '\
+                     "with #{@framework} on Aptible"
+      @og_type = 'article'
+    end
+  end
 end
 
 configure :build do
@@ -79,16 +95,44 @@ data.redirects.each do |item|
 end
 
 helpers do
-  def title_tag(opts = {})
+  def title_tags(opts = {})
     current_page = opts[:page]
+
+    # Article pages pass @title as an option
     title = opts[:title]
-    category = opts[:category] || 'Aptible Support'
 
-    title = title || current_page.metadata[:locals][:title] ||
-            current_page.data.title
-    title = title.nil? ? 'Aptible Support' : "#{title} | #{category}"
+    # Some pages also set it in front matter
+    title ||= current_page.metadata[:locals][:title] ||
+              current_page.data.header_title
 
-    "<title>#{title}</title>"
+    # Some pages just have a default title, which we don't want to repeat
+    if title.nil? || title == 'Aptible Support'
+      swiftype_title = title = 'Aptible Support'
+    else
+      # Use a clean title for Swifttype
+      swiftype_title = title
+      title = "#{title} | Aptible Support"
+    end
+
+    "<title>#{title}</title> \n" \
+    "<meta property=\"og:title\" content=\"#{title}\" > \n" \
+    "<meta class=\"swiftype\" name=\"title\" " \
+    "data-type=\"string\" content=\"#{swiftype_title}\" >"
+  end
+
+  def meta_tags(opts = {})
+    description = opts[:description]
+    og_type = opts[:og_type]
+
+    description ||= current_page.data.header_subtitle
+
+    url = "#{base_url}#{current_page.url}"
+
+    og_type = og_type.nil? ? 'website' : 'article'
+
+    "<meta property=\"og:description\" content=\"#{description}\" >\n" \
+    "<meta property=\"og:url\" content=\"#{url}\" >\n"\
+    "<meta property=\"og:type\" content=\"#{og_type}\" >"
   end
 
   def contact_href
