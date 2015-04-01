@@ -26,21 +26,26 @@ For example:
 
     git remote add aptible git@beta.aptible.com:express-quickstart.git
 
-## 3. Add a Procfile
+## 3. Add a Dockerfile and a Procfile
+
+A Dockerfile is a text file that contains the commands you would otherwise execute manually to build a Docker image. Aptible uses the resulting image to run your containers.
 
 A Procfile explicitly declares what processes we should run for your app.
 
 A few guidelines:
 
-1. The file should be named "Procfile": One word, capital "P", no extension.
-2. Place the Procfile in the root of your repository.
-3. Be sure to commit it to version control.
+1. The files should be named "Procfile" and "Dockerfile": One word, initial capital letter, no extension.
+2. Place both files in the root of your repository.
+3. Be sure to commit them to version control.
+
+Here is a sample Dockerfile that uses Aptible's `autobuild` image:
+
+    # Dockerfile
+    FROM quay.io/aptible/autobuild
 
 Here is a sample Procfile for a Node.js app:
 
     web: node server.js -p $PORT
-
-> Note: Aptible uses Docker to build and run your app. If you do not include a Dockerfile in your repository, Aptible will attempt to build your app with the [tutum/buildstep](https://registry.hub.docker.com/u/tutum/buildstep/) image.
 
 ## 4. Provision a Database
 
@@ -52,7 +57,7 @@ For a Mongodb database, we will specify the `--type` option:
 
 `aptible db:create` will return a connection string on success. The host value is mapped to a private subnet within your stack and cannot be used to connect from the outside Internet. Your containerized app can connect, however.
 
-Add the connection string as an environment variable to your app:
+Add the database connection string to your app as an environment variable:
 
     aptible config:add DATABASE_URL=$CONNECTION_STRING
 
@@ -60,11 +65,9 @@ Add the connection string as an environment variable to your app:
 
 Instantiate the Mongoose connection with the $DATABASE_URL variable you loaded into your app's environment in Step 4.
 
-```javascript
-// in server.js
-var mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL);
-```
+    // in server.js
+    var mongoose = require('mongoose');
+    mongoose.connect(process.env.DATABASE_URL);
 
 ## 6. Deploy Your App
 
