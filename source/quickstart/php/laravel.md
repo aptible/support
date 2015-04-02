@@ -16,36 +16,38 @@ For example:
 
     aptible apps:create laravel-quickstart
 
-## 2. Add a Dockerfile and a Procfile to Your App
+## 2. Add a Dockerfile and a Procfile
 
-Aptible uses Docker to build your app's runtime environment. A Dockerfile is a list of commands used to build that image. A Procfile is used to explicitly declare what processes Aptible should run for your app.
+A Dockerfile is a text file that contains the commands you would otherwise execute manually to build a Docker image. Aptible uses the resulting image to run your containers.
+
+A Procfile explicitly declares what processes we should run for your app.
 
 A few guidelines:
 
-1. Name each file one word, capital "D"/P", no extension: "Dockerfile" and "Procfile".
+1. The files should be named "Procfile" and "Dockerfile": One word, initial capital letter, no extension.
 2. Place both files in the root of your repository.
-3. Be sure to commit both files to version control.
+3. Be sure to commit them to version control.
 
-Here is a sample Dockerfile for a Laravel app
+Here is a sample Dockerfile for a Laravel app:
 
-```dockerfile
-FROM tutum/apache-php
-RUN apt-get update && apt-get install -yq git php5-mcrypt && rm -rf /var/lib/apt/lists/*
+    # Dockerfile
+    FROM tutum/apache-php
+    RUN apt-get update && apt-get install -yq git php5-mcrypt && rm -rf /var/lib/apt/lists/*
 
-RUN php5enmod mcrypt
+    RUN php5enmod mcrypt
 
-RUN rm -fr /app
-ADD . /app
-RUN rm /var/www/html
-RUN ln -s /app/public /var/www/html
+    RUN rm -fr /app
+    ADD . /app
+    RUN rm /var/www/html
+    RUN ln -s /app/public /var/www/html
 
-RUN composer install
+    RUN composer install
 
-EXPOSE 80
-```
+    EXPOSE 80
 
 Here is a sample Procfile for a Laravel app:
 
+    # Procfile
     web: /run.sh
 
 ## 3. Provision a Database
@@ -58,38 +60,33 @@ In order to specify a MySQL database, use the `--type` flag:
 
 `aptible db:create` will return a connection string on success. The host value is mapped to a private subnet within your stack and cannot be used to connect from the outside Internet. Your containerized app can connect, however.
 
-Add the connection string as an environment variable to your app:
-
-    aptible config:add DATABASE_URL=$CONNECTION_STRING --app $APP_HANDLE
-
 ## 4. Configure a Database Connection
 
 Add the following PHP code to your `app/config/database.php` file to extract the MySQL connection info from the `DATABASE_URL` environment config you set in step 3.
 
-```php
-$url = parse_url($_ENV['DATABASE_URL']);
+    $url = parse_url($_ENV['DATABASE_URL']);
 
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1)
-```
+    $host = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $database = substr($url["path"], 1)
 
 You can now use these variables in your MySQL config:
 
-```php
-'mysql' => array(
-      'driver'    => 'mysql',
-      'host'      => $host,
-      'database'  => $database,
-      'username'  => $username,
-      'password'  => $password,
-      'charset'   => 'utf8',
-      'collation' => 'utf8_unicode_ci',
-      'prefix'    => '',
-    ),
+    'mysql' => array(
+          'driver'    => 'mysql',
+          'host'      => $host,
+          'database'  => $database,
+          'username'  => $username,
+          'password'  => $password,
+          'charset'   => 'utf8',
+          'collation' => 'utf8_unicode_ci',
+          'prefix'    => '',
+        ),
 
-```
+Add the database connection string to your app as an environment variable:
+
+    aptible config:add DATABASE_URL=$CONNECTION_STRING
 
 ## 5. Configure a Git Remote
 
