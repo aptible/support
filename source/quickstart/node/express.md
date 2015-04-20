@@ -59,15 +59,15 @@ For a Mongodb database, we will specify the `--type` option:
 
 Add the database connection string to your app as an environment variable:
 
-    aptible config:add DATABASE_URL=$CONNECTION_STRING
+    aptible config:add MONGODB_URL=$CONNECTION_STRING
 
 ## 5. Connect the Database Using Mongoose
 
-Instantiate the Mongoose connection with the $DATABASE_URL variable you loaded into your app's environment in Step 4.
+Instantiate the Mongoose connection with the $MONGODB_URL variable you loaded into your app's environment in Step 4.
 
     // in server.js
     var mongoose = require('mongoose');
-    mongoose.connect(process.env.DATABASE_URL);
+    mongoose.connect(process.env.MONGODB_URL);
 
 ## 6. Deploy Your App
 
