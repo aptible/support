@@ -78,6 +78,8 @@
     #   url: "paas/how-to-set-up-npm-caching"
     - title: "How do I restore from an Aptible database backup?"
       url: "paas/how-to-restore-from-database-backup"
+    - title: "How do I install private Ruby/Node dependencies for my app?"
+      url: "paas/how-to-install-private-dependencies"
 
 
 "Aptible CLI":
