@@ -2,4 +2,4 @@ If you submitted a ticket via [support@aptible.com](support@aptible.com) , follo
 
    > `You can view this and your other tickets on the web.`
 
-If you are submitting a ticket for the first time, you'll need to create a password in order to login to the zendesk account we've automatically generated for you.
+If this is your first submission, follow the provided link to create a password in order to login to the zendesk account we've automatically generated for you.  
