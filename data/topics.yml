@@ -142,3 +142,6 @@
       url: "account/what-plans-does-aptible-offer"
     - title: "How do I set up a separate staging environment for my apps and databases?"
       url: "account/how-to-set-up-separate-staging-environment"
+    - title: "How do I view my open support tickets?"
+      url: "account/how-to-view-open-support-tickets"
+
