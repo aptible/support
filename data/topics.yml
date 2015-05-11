@@ -82,7 +82,8 @@
       url: "paas/how-to-restore-from-database-backup"
     - title: "How do I install private Ruby/Node dependencies for my app?"
       url: "paas/how-to-install-private-dependencies"
-
+    - title: "Does Aptible support zero downtime deploys?"
+      url: "paas/zero-downtime-deploys"
 
 "Aptible CLI":
   slug: "cli"
@@ -104,7 +105,6 @@
       url: "cli/how-to-restart-app"
     - title: "How should I configure sensitive variables for my app?"
       url: "cli/how-to-configure-sensitive-variables"
-
 
 "Troubleshooting":
   slug: "troubleshooting"
@@ -132,7 +132,6 @@
       url: "troubleshooting/deploys-take-too-long"
     - title: "My app is processing requests slowly. What should I do?"
       url: "troubleshooting/app-processing-requests-slowly"
-
 
 "Your Aptible Account":
   slug: "account"
