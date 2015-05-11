@@ -42,6 +42,8 @@
       url: "paas/how-to-set-up-travis-ci"
     - title: "How do I set up Circle CI to deploy to Aptible?"
       url: "paas/how-to-set-up-circle-ci"
+    - title: "How do I set up Codeship to deploy to Aptible?"
+      url: "paas/how-to-set-up-codeship"
     - title: "How do I scale my app?"
       url: "paas/how-to-scale-app"
     - title: 'What is a "container" on Aptible?'
