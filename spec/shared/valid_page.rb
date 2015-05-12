@@ -4,6 +4,8 @@ shared_examples 'a valid page' do |article, _, path|
   end
 
   it 'should have a page title' do
+    title = article['title']
+    CGI.escapeHTML(title) if title
     expect(page).to have_title(article['title'])
   end
 
