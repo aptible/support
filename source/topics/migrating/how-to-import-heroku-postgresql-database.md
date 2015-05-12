@@ -1,4 +1,12 @@
-Once you have provisioned and deployed a copy of your app on Aptible, there are a few final steps to migrate from Heroku's managed PostgreSQL service:
+Once you have provisioned and deployed a copy of your app on Aptible, there are a few final steps to migrate from Heroku's managed PostgreSQL service.
+
+Before you begin, make sure that the PostgreSQL client tools (`psql` and `pg_restore`) are available in your app's Docker image. If your Docker image is based on Ubuntu 14.04, you can do this by adding the following lines to your Dockerfile:
+
+    USER root
+    RUN apt-get update && \
+        apt-get -y install postgresql-client-9.3 postgresql-contrib-9.3
+
+Now, to perform the migration:
 
 1. First, put your Heroku app into maintenance mode:
 
@@ -24,10 +32,6 @@ Once you have provisioned and deployed a copy of your app on Aptible, there are 
 
         wget $BACKUP_URL -O backup.dump
 
-1. Install the PostgreSQL command line tools in your aptible ssh image, if they aren't already installed:
+1. Identify the host, port and password for your Aptible PostgreSQL database, and run the following command to restore from the backup (replacing `$HOST` and `$PORT` with your Aptible PostgreSQL database's host and port. You will be prompted for the database password:
 
-        apt-get -y install postgresql-client-9.3 postgresql-contrib-9.3
-
-1. Restore from the backup:
-
-        pg_restore --clean --no-acl --no-owner $DATABASE_URL backup.dump
+        pg_restore --clean --no-acl --no-owner -h $HOST -p $PORT -d db -U aptible -W backup.dump
