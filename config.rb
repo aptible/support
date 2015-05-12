@@ -95,6 +95,10 @@ data.redirects.each do |item|
 end
 
 helpers do
+  def sanitize(str)
+    str.gsub(/"|'/, '')
+  end
+
   def title_tags(opts = {})
     current_page = opts[:page]
 
@@ -114,6 +118,9 @@ helpers do
       title = "#{title} | Aptible Support"
     end
 
+    title = sanitize(title)
+    swiftype_title = sanitize(swiftype_title)
+
     "<title>#{title}</title> \n" \
     "<meta property=\"og:title\" content=\"#{title}\" > \n" \
     "<meta class=\"swiftype\" name=\"title\" " \
@@ -129,6 +136,8 @@ helpers do
     url = "#{base_url}#{current_page.url}"
 
     og_type = og_type.nil? ? 'website' : 'article'
+
+    description = sanitize(description)
 
     "<meta property=\"og:description\" content=\"#{description}\" >\n" \
     "<meta property=\"og:url\" content=\"#{url}\" >\n"\

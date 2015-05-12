@@ -4,7 +4,10 @@ shared_examples 'a valid page' do |article, _, path|
   end
 
   it 'should have a page title' do
-    expect(page).to have_title(article['title'])
+    title = article['title']
+    title = title.gsub(/"|'/, '') if title
+
+    expect(page).to have_title(title)
   end
 
   it 'should have a header' do
