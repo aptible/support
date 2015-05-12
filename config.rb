@@ -1,6 +1,7 @@
 require 'bootstrap-sass'
 require 'font-awesome-sass'
 require 'fog'
+require 'cgi'
 
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
@@ -114,6 +115,9 @@ helpers do
       title = "#{title} | Aptible Support"
     end
 
+    title = CGI.escapeHTML(title)
+    swiftype_title = CGI.escapeHTML(swiftype_title)
+
     "<title>#{title}</title> \n" \
     "<meta property=\"og:title\" content=\"#{title}\" > \n" \
     "<meta class=\"swiftype\" name=\"title\" " \
@@ -125,6 +129,7 @@ helpers do
     og_type = opts[:og_type]
 
     description ||= current_page.data.header_subtitle
+    description = CGI.escapeHTML(description)
 
     url = "#{base_url}#{current_page.url}"
 
