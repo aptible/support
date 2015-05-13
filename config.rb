@@ -115,8 +115,8 @@ helpers do
       title = "#{title} | Aptible Support"
     end
 
-    title = CGI.escapeHTML(title)
-    swiftype_title = CGI.escapeHTML(swiftype_title)
+    title = CGI.escapeHTML(title) if title
+    swiftype_title = CGI.escapeHTML(swiftype_title) if swiftype_title
 
     "<title>#{title}</title> \n" \
     "<meta property=\"og:title\" content=\"#{title}\" > \n" \
@@ -129,7 +129,7 @@ helpers do
     og_type = opts[:og_type]
 
     description ||= current_page.data.header_subtitle
-    description = CGI.escapeHTML(description)
+    description = CGI.escapeHTML(description) if description
 
     url = "#{base_url}#{current_page.url}"
 
