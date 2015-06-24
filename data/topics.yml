@@ -68,6 +68,8 @@
       url: "paas/how-to-install-specific-os-package"
     - title: "How do I run scheduled tasks (cron jobs) on Aptible?"
       url: "paas/how-to-run-scheduled-tasks"
+    - title: "Can I use Whenever to run scheduled tasks (cron jobs) on Aptible?"
+      url: "paas/how-to-use-whenever"
     # - title: "How do I contribute to Aptible's open source repos?"
     #   url: "paas/how-to-contribute-to-aptible-open-source"
     - title: "How do I access environment variables inside a Dockerfile?"

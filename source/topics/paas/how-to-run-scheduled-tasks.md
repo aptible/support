@@ -9,3 +9,5 @@ To summarize the GitHub example:
         ADD files/etc/crontab /etc/crontab
 
 1. Then, add a new `cron` process to your Procfile, which just runs `cron -f`. In the GitHub example, we run `cron && tail -f /var/log/cron.log` in order to log the output of all cron jobs.
+
+Another option for running scheduled tasks on Aptible is to use the Whenever gem. More on that approach [over here](topics/paas/how-to-use-whenever).
