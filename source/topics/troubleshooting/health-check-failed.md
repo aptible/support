@@ -4,3 +4,5 @@ If the health check fails for your app, it means that this HTTP request failed t
 
 * The app server is listening on a different port than the port exposed by the container. For example, your Dockerfile may include the instruction `EXPOSE 3000`, but your app is actually listening on port 8000. Changing the port value of `EXPOSE` instruction can fix this root cause.
 * The app server is listening only on localhost (127.0.0.1). Aptible's routing requires that the app listen on all external addresses, so your app server should be configured to listen on 0.0.0.0. Most app frameworks will be configured to listen on 0.0.0.0 by default, but if you have questions about setting it up for your app, please [contact support](https://support.aptible.com/contact).
+
+_Note: If you are using the quay.io/aptible/autobuild image in your Dockerfile, port 3000 will already be exposed and set as the PORT environment variable._
