@@ -45,7 +45,9 @@ Here is a sample Dockerfile that uses Aptible's `autobuild` image:
 
 Here is a sample Procfile for a Node.js app:
 
-    web: node server.js -p $PORT
+    web: node server.js
+
+_Note: If you are using the quay.io/aptible/autobuild image in your Dockerfile, port 3000 will already be exposed and set as the PORT environment variable.  Exposing or listening to another port in your app will lead to [health check failures](/topics/troubleshooting/health-check-failed/)._
 
 ## 4. Provision a Database
 
