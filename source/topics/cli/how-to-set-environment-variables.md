@@ -5,3 +5,5 @@ To set an ENV variable for your app, use `aptible config:set`, like so:
 To view the existing set of ENV variables and their values, run:
 
     aptible config --app $APP_HANDLE
+
+If you need environment variables during a build, [you can specify them](/topics/paas/how-to-access-environment-variables-inside-dockerfile) in a `.aptible.env` file.
