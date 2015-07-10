@@ -12,7 +12,7 @@ You can also add `--size X` to the above command to provision an X GB database. 
 
 ### Step 2: Set up a log drain
 
-After you provision an Elasticsearch instance, [contact support](https://support.aptible.com/contact) to configure your application logs to drain into  Elasticsearch.
+Next, under the "Logging" tab in your environment, add a log drain by selecting "Elasticsearch" as the type and selecting your database.
 
 ### Step 3: Set up a Kibana instance
 
