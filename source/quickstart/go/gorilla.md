@@ -4,7 +4,7 @@ This guide assumes you have:
 
 - An Aptible account
 - An SSH key associated with your Aptible user account
-- The Aptible command line tool installed
+- The [Aptible command line tool installed](/topics/cli/how-to-install-cli)
 
 ## 1. Get the Code
 
