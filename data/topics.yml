@@ -60,6 +60,8 @@
     #   url: "paas/how-to-update-ssl-certificate"
     - title: "How do I add a new external domain to my app?"
       url: "paas/how-to-add-external-domain"
+    - title: "How do I add a new internal domain to my app?"
+      url: "paas/how-to-add-internal-domain"
     - title: "How should I store static assets when using Aptible?"
       url: "paas/how-to-store-static-assets"
     # - title: "How do I prevent public internet access to my app?"
