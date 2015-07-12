@@ -2,9 +2,9 @@ This guide will show you how to set up a PHP app using the Laravel framework and
 
 This guide assumes you have:
 
-- An Aptible account,
-- An SSH key associated with your Aptible user account, and
-- The Aptible command line tool installed
+- An Aptible account
+- An SSH key associated with your Aptible user account
+- The [Aptible command line tool installed](/topics/cli/how-to-install-cli)
 
 ## 1. Provision Your App
 
