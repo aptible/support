@@ -19,3 +19,5 @@ Next, under the "Logging" tab in your environment, add a log drain by selecting 
 Kibana is an open source, browser-based analytics and search dashboard for Elasticsearch. Follow the instructions in our [aptible/docker-kibana](https://github.com/aptible/docker-kibana) repo to deploy your own instance as an Aptible app.
 
 That's it!
+
+If you need an archiving strategy for older logs, we recommend setting up a periodic cron job like [aptible/elasticsearch-logstash-s3-backup](https://github.com/aptible/elasticsearch-logstash-s3-backup) to roll your live logs over to Amazon S3 after a fixed number of days. You'll need to sign a business associate agreement directly with Amazon to store logs containing PHI in S3.

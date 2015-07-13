@@ -9,8 +9,8 @@ Aptible's Support and Documentation Site
 
 First, clone the repo:
 
-    git clone https://github.com/aptible/aptible-docs.git
-    cd aptible-docs/
+    git clone https://github.com/aptible/support.git
+    cd support/
 
 Then, install necessary dependencies:
 
