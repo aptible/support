@@ -60,6 +60,8 @@ Add the connection string to your app as an environment variable:
 
     aptible config:add DATABASE_URL=$CONNECTION_STRING
 
+To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
+
 ## 5. Deploy Your App
 
 Push to the master branch of the Aptible git remote:
