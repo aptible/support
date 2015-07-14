@@ -63,6 +63,8 @@ Add the database connection string to your app as an environment variable:
 
     aptible config:add MONGODB_URL=$CONNECTION_STRING
 
+To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
+
 ## 5. Connect the Database Using Mongoose
 
 Instantiate the Mongoose connection with the $MONGODB_URL variable you loaded into your app's environment in Step 4.

@@ -74,6 +74,7 @@ databaseURL := os.Getenv("DATABASE_URL")
 conn, err := db.Connect(databaseURL)
 // ...
 ```
+To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 
 ### App secrets
 

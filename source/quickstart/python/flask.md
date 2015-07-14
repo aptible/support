@@ -63,6 +63,8 @@ In `config.py`:
 
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
+To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
+
 ## 5. Deploy Your App
 Push to the master branch of the Aptible git remote:
 

@@ -63,6 +63,8 @@ To use the DATABASE_URL variable in your Django app, install the [dj-database-ur
 
     DATABASES = {'default': dj_database_url.config()}
 
+To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
+
 ## 5. Deploy Your App
 
 Push to the master branch of the Aptible git remote:
