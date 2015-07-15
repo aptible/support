@@ -11,8 +11,10 @@ Yes, you can deploy a custom database on Aptible, provided that it's packaged in
     * `USERNAME` database access should be granted to a user with this username
     * `PASSPHRASE` the created user (if applicable) should have this passphrase
     * `DATABASE` the name of the database to create
+    * `SSL_CERTIFICATE` a PEM-encoded SSL certificate
+    * `SSL_KEY` a PEM-encoded SSL key
 
-    These environment variables may not all be relevant. For example, redis doesn't have users or named databases, so a redis image would only use `$PASSPHRASE`.
+    These environment variables may not all be relevant. For example, redis doesn't have users or named databases, so a redis image would only use `$PASSPHRASE`. If the database needs an SSL key pair to enable secure connections, it should use the key pair defined by `$SSL_CERTIFICATE` and `$SSL_KEY`.
 
 * The database service will be started by running the image with no arguments. It is important that the database process stay in the foreground (i.e. not daemonize) so that Docker doesn't think the container has stopped running.
 
