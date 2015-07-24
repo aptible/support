@@ -15,8 +15,14 @@ To use Whenever in your app, take the following steps. In our example, we will a
     # Inherit all ENV variables
     ENV.each { |k, v| env(k, v) }
 
+    # Define a custom job type that will pull in your app's environment - replace
+    # APP_DIR below with your app's working directory. For images based on
+    # quay.io/aptible/autobuild, APP_DIR will be "/app". For others, it should match
+    # the definition of the WORKDIR in your Dockerfile.
+    job_type :aptible_rake, 'cd APP_DIR && set -a && . .aptible.env && bundle exec rake :task --silent :output'
+
     every 1.day, at: '2:00 am' do
-      rake 'db:awesome'
+      aptible_rake 'db:awesome'
     end
     ```
 
