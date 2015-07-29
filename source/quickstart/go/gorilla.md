@@ -44,7 +44,7 @@ For example:
 
 ## 5. Deploy Your App
 
-Push to the master branch of the Aptible git remote:
+Push to the master branch of the Aptible Git remote:
 
     git push aptible master
 

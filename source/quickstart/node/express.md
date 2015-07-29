@@ -1,4 +1,4 @@
-This guide will show you how to set up a Node.js app using the Express framework and the Mongoose ODM for Mongodb.
+This guide will show you how to set up a Node.js app using the Express framework and the Mongoose ODM for MongoDB.
 
 This guide assumes you have:
 
@@ -53,7 +53,7 @@ _Note: If you are using the quay.io/aptible/autobuild image in your Dockerfile, 
 
 By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL database.
 
-For a Mongodb database, we will specify the `--type` option:
+For a MongoDB database, we will specify the `--type` option:
 
     aptible db:create $DB_HANDLE --type mongodb
 
@@ -75,7 +75,7 @@ Instantiate the Mongoose connection with the $MONGODB_URL variable you loaded in
 
 ## 6. Deploy Your App
 
-Push to the master branch of the Aptible git remote:
+Push to the master branch of the Aptible Git remote:
 
     git push aptible master
 
