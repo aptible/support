@@ -27,6 +27,10 @@
       slug: "express"
       svg: "node.svg"
       url: "node/express"
+    - framework: "Meteor"
+      slug: "meteor"
+      svg: "node.svg"
+      url: "node/meteor"
 
 "Java":
   slug: java
