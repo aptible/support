@@ -36,3 +36,5 @@ To use Whenever in your app, take the following steps. In our example, we will a
         cron: whenever -w && cron && tail -f /var/log/whenever.log
 
 Alternatively, you can write the crontab inside the Dockerfile (`RUN whenever -w`). If you do so, just make sure you're [appropriately accessing ENV variables](/topics/paas/how-to-access-environment-variables-inside-dockerfile) inside the Dockerfile. Also, remove `whenever -w &&` from your Procfile.
+
+**Note:** If you receive the error `No such file or directory - crontab (Errno::ENOENT)` after attempting to write your crontab with `whenever -w`, then your image is missing `cron.` To install `cron`, you'll need to add `cron` as an apt dependency in your`Dockerfile`: `RUN apt-get update && apt-get -y install cron`.
