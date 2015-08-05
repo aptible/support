@@ -38,22 +38,31 @@ A few guidelines:
 2. Place both files in the root of your repository.
 3. Be sure to commit them to version control.
 
-Here is a Dockerfile that installs Meteor and sets up the app:
+Here is a Dockerfile that installs Meteor and builds a production-ready version of the app:
 
     # Dockerfile
-    FROM quay.io/aptible/nodejs:v0.12.x
+    FROM quay.io/aptible/nodejs:v0.10.x
 
-    RUN apt-get update && apt-get -y install curl procps
+    # Install Meteor
+    RUN apt-install curl procps
     RUN curl https://install.meteor.com/ | sh
+
+    # Install `meteor build` dependencies
+    RUN apt-install python build-essential
 
     ADD . /app
     WORKDIR /app
 
+    RUN meteor build --directory .
+    WORKDIR /app/bundle/programs/server
+    RUN npm install
+
+    ENV PORT 3000
     EXPOSE 3000
 
 Here is a sample Procfile for a Meteor app:
 
-    web: meteor run
+    web: node boot.js program.json
 
 ## 4. Provision a Database
 
