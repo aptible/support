@@ -80,7 +80,13 @@ Add the database connection string to your app as an environment variable:
 
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 
-## 5. Deploy Your App
+## 5. Configure a ROOT_URL
+
+When using `meteor build`, as we do in the Dockerfile above, it's necessary to specify a `ROOT_URL` when running your Meteor app. You can configure this as an environment variable on your app. For example:
+
+    aptible config:add ROOT_URL=https://meteor-quickstart.on-aptible.com
+
+## 6. Deploy Your App
 
 Push to the master branch of the Aptible Git remote:
 
