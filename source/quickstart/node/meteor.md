@@ -76,7 +76,7 @@ For a MongoDB database, we will specify the `--type` option:
 
 Add the database connection string to your app as an environment variable:
 
-    aptible config:add MONGO_URL=$CONNECTION_STRING
+    aptible config:set MONGO_URL=$CONNECTION_STRING
 
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 
@@ -84,7 +84,7 @@ To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-con
 
 When using `meteor build`, as we do in the Dockerfile above, it's necessary to specify a `ROOT_URL` when running your Meteor app. You can configure this as an environment variable on your app. For example:
 
-    aptible config:add ROOT_URL=https://meteor-quickstart.on-aptible.com
+    aptible config:set ROOT_URL=https://meteor-quickstart.on-aptible.com
 
 ## 6. Deploy Your App
 

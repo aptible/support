@@ -61,7 +61,7 @@ For a MongoDB database, we will specify the `--type` option:
 
 Add the database connection string to your app as an environment variable:
 
-    aptible config:add MONGODB_URL=$CONNECTION_STRING
+    aptible config:set MONGODB_URL=$CONNECTION_STRING
 
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 

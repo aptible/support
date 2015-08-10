@@ -57,7 +57,7 @@ By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL data
 
 Add the database connection string to your app as an environment variable:
 
-    aptible config:add DATABASE_URL=$CONNECTION_STRING
+    aptible config:set DATABASE_URL=$CONNECTION_STRING
 
 To use the DATABASE_URL variable in your Django app, install the [dj-database-url package](https://warehouse.python.org/project/dj-database-url/), then in `settings.py`:
 
