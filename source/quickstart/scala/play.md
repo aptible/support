@@ -61,7 +61,7 @@ By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL data
 
 Add the database connection string to your app as an environment variable:
 
-    aptible config:add DATABASE_URL=$CONNECTION_STRING
+    aptible config:set DATABASE_URL=$CONNECTION_STRING
 
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 

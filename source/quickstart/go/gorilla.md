@@ -65,7 +65,7 @@ By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL data
 
 Add the connection string as an environment variable to your app:
 
-    aptible config:add DATABASE_URL=$CONNECTION_STRING
+    aptible config:set DATABASE_URL=$CONNECTION_STRING
 
 Then, use that environment variable to connect to the database:
 
@@ -80,7 +80,7 @@ To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-con
 
 App secrets can be set as app environment variables via the Aptible CLI tool just as the DATABASE_URL was set.
 
-    aptible config:add --app APP-HANDLE SENDGRID_USER=user SENDGRID_PASSWORD=hunter2
+    aptible config:set --app APP-HANDLE SENDGRID_USER=user SENDGRID_PASSWORD=hunter2
 
 The environment variable should now be accessible by your app:
 

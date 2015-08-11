@@ -88,7 +88,7 @@ You can now use these variables in your MySQL config:
 
 Add the database connection string to your app as an environment variable:
 
-    aptible config:add DATABASE_URL=$CONNECTION_STRING
+    aptible config:set DATABASE_URL=$CONNECTION_STRING
 
 ## 5. Configure a Git Remote
 
