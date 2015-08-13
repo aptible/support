@@ -88,6 +88,8 @@
       url: "paas/how-to-install-private-dependencies"
     - title: "Does Aptible support zero downtime deploys?"
       url: "paas/zero-downtime-deploys"
+    - title: "How can I modify the way my app handles SSL?"
+      url: "paas/how-to-modify-nginx-config"
 
 "Aptible CLI":
   slug: "cli"
@@ -149,4 +151,3 @@
       url: "account/how-to-set-up-separate-staging-environment"
     - title: "How do I view my open support tickets?"
       url: "account/how-to-view-open-support-tickets"
-
