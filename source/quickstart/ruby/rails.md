@@ -60,6 +60,12 @@ Add the database connection string to your app as an environment variable:
 
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 
+Most Rails applications need to run database migrations as part of their setup.
+Create an `.aptible.yml` to run migrations automatically when the app is deployed in the next step.
+
+    before_release:
+      bundle exec rake db:migrate
+
 ## 5. Deploy Your App
 Push to the master branch of the Aptible Git remote:
 
