@@ -138,6 +138,8 @@
       url: "troubleshooting/deploys-take-too-long"
     - title: "My app is processing requests slowly. What should I do?"
       url: "troubleshooting/app-processing-requests-slowly"
+    - title: "The connection to my MySQL database is being refused, what should I do?"
+      url: "troubleshooting/mysql-connection-refused"
 
 "Your Aptible Account":
   slug: "account"
