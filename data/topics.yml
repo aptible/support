@@ -77,7 +77,7 @@
     - title: "What is the difference between the CMD in my Dockerfile and the processes in my Procfile?"
       url: "paas/what-is-difference-between-dockerfile-cmd-and-procfile"
     - title: "What is the difference between an internal and an external doomain?"
-      url: "paas/what-is-difference-between-internal-external-domain.md"
+      url: "paas/what-is-difference-between-internal-external-domain"
     # - title: "How do I set up caching for Bundler?"
     #   url: "paas/how-to-set-up-bundler-caching"
     # - title: "How do I set up caching for npm packages?"
