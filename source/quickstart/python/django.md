@@ -130,5 +130,9 @@ application = DjangoWhiteNoise(get_wsgi_application())
 
 ```python
 # myproject/settings.py
+
+# Tell Django where to put compiled static assets when running `collectstatic`
+STATIC_ROOT = 'staticfiles'
+
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 ```
