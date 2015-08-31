@@ -65,6 +65,7 @@ Add the database connection string to your app as an environment variable:
 
 To use the DATABASE_URL variable in your Django app, install the [dj-database-url package](https://warehouse.python.org/project/dj-database-url/), then in `settings.py`:
 
+    import dj_database_url
     DATABASES = {'default': dj_database_url.config()}
 
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
