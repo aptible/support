@@ -71,6 +71,14 @@ To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-con
 
 ## 5. Deploy Your App
 
+Ensure there is a `requirements.txt` file at the root of your project so Aptible knows this is a Python app:
+
+    # sample requirements.txt
+    Django==1.8.4
+    dj-database-url
+    psycopg2
+    gunicorn
+
 Push to the master branch of the Aptible Git remote:
 
     git push aptible master
