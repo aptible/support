@@ -43,6 +43,10 @@ Here is a sample Dockerfile that uses Aptible's `autobuild` image:
 
     # Dockerfile
     FROM quay.io/aptible/autobuild
+    ADD . /app
+    WORKDIR /app
+    ENV PORT 3000
+    EXPOSE 3000
 
 Here is a sample Procfile for a Django app, logging to stderr:
 
@@ -76,3 +80,46 @@ If your app deploys successfully, a message will appear near the end of the remo
     VHOST django-quickstart.on-aptible.com provisioned.
 
 In this example, once the ELB provisions you could visit django-quickstart.on-aptible.com to test out your app.
+
+Be sure to add this VHOST to your [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts) in your settings module:
+
+```python
+ALLOWED_HOSTS = ['django-quickstart.on-aptible.com']
+```
+
+Finally, you'll likely want to [SSH into your app](https://support.aptible.com/topics/cli/how-to-ssh-into-app/) and migrate the database:
+
+    aptible ssh --app $APP_HANDLE
+    python manage.py migrate
+
+## 6. Setup Static Files
+
+By default, Django does not support serving static files in production. However, you can use [WhiteNoise](https://warehouse.python.org/project/whitenoise/) for best-practice serving of static assets in production.
+
+### Install Whitenoise:
+
+```bash
+pip install whitenoise
+pip freeze > requirements.txt
+```
+
+### Update WSGI module
+
+```python
+# myproject/wsgi.py
+import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myproject.settings")
+
+from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
+
+application = DjangoWhiteNoise(get_wsgi_application())
+```
+
+### Update Django Settings
+
+```python
+# myproject/settings.py
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+```
