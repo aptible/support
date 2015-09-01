@@ -43,10 +43,6 @@ Here is a sample Dockerfile that uses Aptible's `autobuild` image:
 
     # Dockerfile
     FROM quay.io/aptible/autobuild
-    ADD . /app
-    WORKDIR /app
-    ENV PORT 3000
-    EXPOSE 3000
 
 Here is a sample Procfile for a Django app, logging to stderr:
 
@@ -101,7 +97,7 @@ Finally, you'll likely want to [SSH into your app](https://support.aptible.com/t
     aptible ssh --app $APP_HANDLE
     python manage.py migrate
 
-## 6. Setup Static Files
+## 6. Set Up Static Files
 
 By default, Django does not support serving static files in production. However, you can use [WhiteNoise](https://warehouse.python.org/project/whitenoise/) for best-practice serving of static assets in production.
 
