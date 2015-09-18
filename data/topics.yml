@@ -76,7 +76,7 @@
       url: "paas/how-to-access-environment-variables-inside-dockerfile"
     - title: "What is the difference between the CMD in my Dockerfile and the processes in my Procfile?"
       url: "paas/what-is-difference-between-dockerfile-cmd-and-procfile"
-    - title: "What is the difference between an internal and an external doomain?"
+    - title: "What is the difference between an internal and an external domain?"
       url: "paas/what-is-difference-between-internal-external-domain.md"
     # - title: "How do I set up caching for Bundler?"
     #   url: "paas/how-to-set-up-bundler-caching"
