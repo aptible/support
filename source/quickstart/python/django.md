@@ -61,11 +61,20 @@ Add the database connection string to your app as an environment variable:
 
 To use the DATABASE_URL variable in your Django app, install the [dj-database-url package](https://warehouse.python.org/project/dj-database-url/), then in `settings.py`:
 
+    import dj_database_url
     DATABASES = {'default': dj_database_url.config()}
 
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 
 ## 5. Deploy Your App
+
+Ensure there is a `requirements.txt` file at the root of your project so Aptible knows this is a Python app:
+
+    # sample requirements.txt
+    Django==1.8.4
+    dj-database-url
+    psycopg2
+    gunicorn
 
 Push to the master branch of the Aptible Git remote:
 
@@ -76,3 +85,50 @@ If your app deploys successfully, a message will appear near the end of the remo
     VHOST django-quickstart.on-aptible.com provisioned.
 
 In this example, once the ELB provisions you could visit django-quickstart.on-aptible.com to test out your app.
+
+Be sure to add this VHOST to your [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts) in your settings module:
+
+```python
+ALLOWED_HOSTS = ['django-quickstart.on-aptible.com']
+```
+
+Finally, you'll likely want to [SSH into your app](https://support.aptible.com/topics/cli/how-to-ssh-into-app/) and migrate the database:
+
+    aptible ssh --app $APP_HANDLE
+    python manage.py migrate
+
+## 6. Set Up Static Files
+
+By default, Django does not support serving static files in production. However, you can use [WhiteNoise](https://warehouse.python.org/project/whitenoise/) for best-practice serving of static assets in production.
+
+### Install Whitenoise:
+
+```bash
+pip install whitenoise
+pip freeze > requirements.txt
+```
+
+### Update WSGI module
+
+```python
+# myproject/wsgi.py
+import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myproject.settings")
+
+from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
+
+application = DjangoWhiteNoise(get_wsgi_application())
+```
+
+### Update Django Settings
+
+```python
+# myproject/settings.py
+
+# Tell Django where to put compiled static assets when running `collectstatic`
+STATIC_ROOT = 'staticfiles'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+```

@@ -28,7 +28,7 @@ To use Whenever in your app, take the following steps. In our example, we will a
 
 2. Add a line in your Dockerfile to create the Whenever log file (if you choose to use one):
 
-        RUN touch /var/log/whenever.log
+        RUN touch /var/log/whenever.log && chmod go+rw /var/log/whenever.log
 
 3. Add an entry to your Procfile to write the crontab, start cron, and then follow the logs written to the Whenever log file:
 
