@@ -1,4 +1,4 @@
-When submitting a support request to Aptible, keep the following best practices in mind
+When submitting a support request to Aptible, keep the following best practices in mind:
 
 1) If you provide us with as much detail as possible we'll be able to troubleshoot your issue much faster.  When appropriate, please provide  
 
