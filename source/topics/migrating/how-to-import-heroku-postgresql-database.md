@@ -4,7 +4,7 @@ Before you begin, make sure that the PostgreSQL client tools (`psql` and `pg_res
 
     USER root
     RUN apt-get update && \
-        apt-get -y install postgresql-client-9.3 postgresql-contrib-9.3
+        apt-get -y install postgresql-client postgresql-contrib
 
 Now, to perform the migration:
 
