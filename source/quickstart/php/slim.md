@@ -1,4 +1,4 @@
-This guide will show you how to set up a PHP app using the Laravel framework and MySQL. This guide is for Laravel 4.0 or greater.
+This guide will show you how to set up a PHP app using the Slim framework and MySQL, using the Paris ORM.
 
 This guide assumes you have:
 
@@ -14,7 +14,7 @@ Use the `apps:create` command: `aptible apps:create $APP_HANDLE`
 
 For example:
 
-    aptible apps:create laravel-quickstart
+    aptible apps:create slim-quickstart
 
 ## 2. Add a Dockerfile and a Procfile
 
@@ -28,24 +28,28 @@ A few guidelines:
 2. Place both files in the root of your repository.
 3. Be sure to commit them to version control.
 
-Here is a sample Dockerfile for a Laravel app:
+Here is a sample Dockerfile for a Slim app:
 
     # Dockerfile
     FROM tutum/apache-php
-    RUN apt-get update && apt-get install -yq git php5-mcrypt && rm -rf /var/lib/apt/lists/*
+    RUN apt-get update \
+        && apt-get install -yq git wget php5-mcrypt \
+        && rm -rf /var/lib/apt/lists/*
+
+    WORKDIR /app
 
     RUN php5enmod mcrypt
 
     RUN rm -fr /app
     ADD . /app
     RUN rm /var/www/html
-    RUN ln -s /app/public /var/www/html
+    RUN ln -s /app /var/www/html
 
-    RUN composer install
+    RUN composer require slim/slim
 
     EXPOSE 80
 
-Here is a sample Procfile for a Laravel app:
+Here is a sample Procfile for a Slim app:
 
     # Procfile
     web: /run.sh
@@ -62,33 +66,24 @@ In order to specify a MySQL database, use the `--type` flag:
 
 Add the database connection string to your app as an environment variable:
 
-    aptible config:set --app laravel-quickstart DATABASE_URL=$CONNECTION_STRING
+    aptible config:set --app slim-quickstart DATABASE_URL=$CONNECTION_STRING
 
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 
 ## 4. Configure a Database Connection
 
-Add the following PHP code to your `app/config/database.php` file to extract the MySQL connection info from the `DATABASE_URL` environment config you set in step 3.
+Add the following PHP code to your `config.php` file to extract the MySQL connection info from the `DATABASE_URL` environment config you set in step 3.
 
     $url = parse_url($_ENV['DATABASE_URL']);
 
     $host = $url["host"];
     $username = $url["user"];
     $password = $url["pass"];
-    $database = substr($url["path"], 1)
+    $database = substr($url["path"], 1);
 
-You can now use these variables in your MySQL config:
-
-    'mysql' => array(
-          'driver'    => 'mysql',
-          'host'      => $host,
-          'database'  => $database,
-          'username'  => $username,
-          'password'  => $password,
-          'charset'   => 'utf8',
-          'collation' => 'utf8_unicode_ci',
-          'prefix'    => '',
-        ),
+    ORM::configure('mysql:host=' . $host . ';dbname=' . $database);
+    ORM::configure('username', $username . '-nossl');
+    ORM::configure('password', $password);
 
 ## 5. Configure a Git Remote
 
@@ -98,7 +93,7 @@ Add a Git remote named "aptible":
 
 For example:
 
-    git remote add aptible git@beta.aptible.com:laravel-quickstart.git
+    git remote add aptible git@beta.aptible.com:slim-quickstart.git
 
 ## 6. Deploy Your App
 
@@ -108,6 +103,6 @@ Push to the master branch of the Aptible Git remote:
 
 If your app deploys successfully, a message will appear near the end of the remote output with a default VHOST:
 
-    VHOST laravel-quickstart.on-aptible.com provisioned.
+    VHOST slim-quickstart.on-aptible.com provisioned.
 
-In this example, once the ELB provisions you could visit laravel-quickstart.on-aptible.com to test out your app.
+In this example, once the ELB provisions you could visit slim-quickstart.on-aptible.com to test out your app.

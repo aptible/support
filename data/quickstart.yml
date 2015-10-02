@@ -61,6 +61,10 @@
       slug: "laravel"
       svg: "laravel.svg"
       url: "php/laravel"
+    - framework: "Slim"
+      slug: "slim"
+      svg: "php.svg"
+      url: "php/slim"
 
 "Python":
   slug: python
