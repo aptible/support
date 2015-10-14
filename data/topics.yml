@@ -92,6 +92,11 @@
       url: "paas/zero-downtime-deploys"
     - title: "How can I modify the way my app handles SSL?"
       url: "paas/how-to-modify-nginx-config"
+    - title: "I'm getting the error \"Validation failed: Private key must match certificate,\" what should I do?"
+      url: "paas/how-to-order-certs"
+    - title: "How do I set a custom error page for my app?"
+      url: "paas/how-to-set-up-custom-error-page"
+    
 
 "Aptible CLI":
   slug: "cli"
