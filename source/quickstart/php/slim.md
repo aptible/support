@@ -77,11 +77,12 @@ Add the following PHP code to your `config.php` file to extract the MySQL connec
     $url = parse_url($_ENV['DATABASE_URL']);
 
     $host = $url["host"];
+    $port = $url["port"];
     $username = $url["user"];
     $password = $url["pass"];
     $database = substr($url["path"], 1);
 
-    ORM::configure('mysql:host=' . $host . ';dbname=' . $database);
+    ORM::configure('mysql:host=' . $host . ';port=' . $port . ';dbname=' . $database);
     ORM::configure('username', $username . '-nossl');
     ORM::configure('password', $password);
 

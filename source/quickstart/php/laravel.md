@@ -73,6 +73,7 @@ Add the following PHP code to your `app/config/database.php` file to extract the
     $url = parse_url($_ENV['DATABASE_URL']);
 
     $host = $url["host"];
+    $port = $url["port"];
     $username = $url["user"];
     $password = $url["pass"];
     $database = substr($url["path"], 1)
@@ -82,6 +83,7 @@ You can now use these variables in your MySQL config:
     'mysql' => array(
           'driver'    => 'mysql',
           'host'      => $host,
+          'port'      => $port,
           'database'  => $database,
           'username'  => $username,
           'password'  => $password,
