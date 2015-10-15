@@ -94,9 +94,9 @@
       url: "paas/how-to-modify-nginx-config"
     - title: "I'm getting the error \"Validation failed: Private key must match certificate,\" what should I do?"
       url: "paas/how-to-order-certs"
-    - title: "How do I set a custom error page for my app?"
-      url: "paas/how-to-set-up-custom-error-page"
-    
+    - title: "How does the MAINTENANCE_PAGE_URL config setting work?"
+      url: "paas/how-does-the-maintenance-page-url-config-setting-work"
+
 
 "Aptible CLI":
   slug: "cli"
