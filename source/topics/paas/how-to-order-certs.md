@@ -10,7 +10,7 @@ then upload `bundle.crt` to Aptible.
 
 Your certificate issuer will have instructions on the order in which to concatenate these certificates but in general, they need to go from most specific (your own certificate) to least specific (the certificate for the global trusted CA).
 
-If you're pasting the certs directly into dashboard, be sure to check that the issuer for each cert is the subject of the next. You can test the chain with [digcert’s tool](https://www.digicert.com/help/) as well. 
+If you're pasting the certs directly into dashboard, be sure to check that the issuer for each cert is the subject of the next. You can test the chain with [digicert’s tool](https://www.digicert.com/help/) as well. 
 
 Finally, if your certificate body includes `-----END CERTIFICATE-----` or `-----BEGIN CERTIFICATE-----` these must be included.  
 
