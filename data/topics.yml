@@ -162,3 +162,5 @@
       url: "account/how-to-set-up-separate-staging-environment"
     - title: "How do I view my open support tickets?"
       url: "account/how-to-view-open-support-tickets"
+    - title: "How do I invite a new user to training?"
+      url: "account/how-to-invite-training-user"
