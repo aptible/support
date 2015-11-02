@@ -38,10 +38,19 @@ A few guidelines:
 2. Place both files in the root of your repository.
 3. Be sure to commit them to version control.
 
-Here is a sample Dockerfile that uses Aptible's `autobuild` image:
+Here is a sample Dockerfile for a conventional Jersey app, on Oracle Java 8:
 
     # Dockerfile
-    FROM quay.io/aptible/autobuild
+    FROM quay.io/aptible/java:oracle-java8
+
+    RUN apt-get update && apt-get -y install maven
+
+    ADD . /app
+    WORKDIR /app
+
+    RUN mvn -Dmaven.test.skip=true install
+
+    EXPOSE 8080
 
 Here is a sample Procfile for a Jersey app:
 
