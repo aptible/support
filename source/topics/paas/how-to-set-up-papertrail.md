@@ -12,6 +12,6 @@ Once you click "Create", you'll see a message specifying a host and port for you
 
 ![](/images/topics/paas/how-to-set-up-papertrail/destination-created.png)
 
-Note the host and port, and return to the [Aptible Dashboard](https://dashboard.aptible.com). Click the "Account Settings" wheel next to the environment for which you'd like to set up log draining. In the next dialog, enter the host and port from the previous step for the "remote syslog host" and "remote syslog port," respectively.
+Note the host and port, and return to the [Aptible Dashboard](https://dashboard.aptible.com). Click on the "Logging" tab from within the environment for which you'd like to set up log draining, then click "Add Log Drain". In the next dialog, enter the host and port from the previous step for the "remote syslog host" and "remote syslog port," respectively.
 
 You should begin to see your app's logs in Papertrail in the next several minutes.
