@@ -65,8 +65,6 @@ Here is a sample Procfile for a Node.js app:
 
     web: node server.js
 
-_Note: If you are using the quay.io/aptible/autobuild image in your Dockerfile, port 3000 will already be exposed and set as the PORT environment variable.  Exposing or listening to another port in your app will lead to [health check failures](/topics/troubleshooting/health-check-failed/)._
-
 ## 4. Provision a Database
 
 By default, `aptible db:create $DB_HANDLE` will provision a 10GB PostgreSQL database.
