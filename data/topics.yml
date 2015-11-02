@@ -96,6 +96,8 @@
       url: "paas/how-to-order-certs"
     - title: "How does the MAINTENANCE_PAGE_URL config setting work?"
       url: "paas/how-does-the-maintenance-page-url-config-setting-work"
+    - title: "How do I serve serve media files from Amazon S3?"
+      url: "paas/how-to-serve-s3-media-files"
 
 
 "Aptible CLI":
