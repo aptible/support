@@ -5,3 +5,5 @@ To connect to your Aptible database from outside Aptible's private cloud, use th
     aptible db:tunnel $DB_HANDLE
 
 This will create a secure (SSH) tunnel to your database and print a local URL where you can connect to the database.
+
+Open a separate terminal window and pass in the URL using the appropriate database client. 
