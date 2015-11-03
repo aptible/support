@@ -147,7 +147,7 @@
       url: "troubleshooting/app-processing-requests-slowly"
     - title: "The connection to my MySQL database is being refused, what should I do?"
       url: "troubleshooting/mysql-connection-refused"
-    - title: "What are the best practices when opening support tickets?"
+    - title: "How can I get the fastest responses to my support requests?"
       url: "troubleshooting/support-ticket-best-practices"
 
 "Your Aptible Account":
