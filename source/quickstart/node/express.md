@@ -38,16 +38,32 @@ A few guidelines:
 2. Place both files in the root of your repository.
 3. Be sure to commit them to version control.
 
-Here is a sample Dockerfile that uses Aptible's `autobuild` image:
+Here is a sample Dockerfile for a conventional Express app:
 
     # Dockerfile
-    FROM quay.io/aptible/autobuild
+    FROM quay.io/aptible/nodejs:v0.12.x
+
+    # Add package.json before rest of repo, for Docker caching purposes
+    # See http://ilikestuffblog.com/2014/01/06/
+    ADD package.json /app/
+    WORKDIR /app
+    RUN npm install --production
+
+    # If you use Bower, uncomment the following lines:
+    # ADD bower.json /app/
+    # RUN bower install --allow-root
+
+    ADD . /app
+
+    # Run any additional build commands here...
+    # grunt some:task
+
+    ENV PORT 3000
+    EXPOSE 3000
 
 Here is a sample Procfile for a Node.js app:
 
     web: node server.js
-
-_Note: If you are using the quay.io/aptible/autobuild image in your Dockerfile, port 3000 will already be exposed and set as the PORT environment variable.  Exposing or listening to another port in your app will lead to [health check failures](/topics/troubleshooting/health-check-failed/)._
 
 ## 4. Provision a Database
 

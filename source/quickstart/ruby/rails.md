@@ -38,10 +38,32 @@ A few guidelines:
 2. Place both files in the root of your repository.
 3. Be sure to commit them to version control.
 
-Here is a sample Dockerfile that uses Aptible's `autobuild` image:
+Here is a sample Dockerfile for a conventional Rails app:
 
     # Dockerfile
-    FROM quay.io/aptible/autobuild
+    FROM quay.io/aptible/ruby:ruby-2.2
+
+    RUN apt-get update && apt-get -y install build-essential
+
+    # System prerequisites
+    RUN apt-get update && apt-get -y install libpq-dev
+
+    # If you require additional OS dependencies, install them here:
+    # RUN apt-get update && apt-get -y install imagemagick nodejs
+
+    # Add Gemfile before rest of repo, for Docker caching purposes
+    # See http://ilikestuffblog.com/2014/01/06/
+    ADD Gemfile /app/
+    ADD Gemfile.lock /app/
+    WORKDIR /app
+    RUN bundle install
+
+    ADD . /app
+    RUN bundle exec rake assets:precompile
+
+    ENV PORT 3000
+    EXPOSE 3000
+
 
 Here is a sample Procfile for a Ruby on Rails app:
 

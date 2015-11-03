@@ -2,8 +2,8 @@
   slug: "migrating"
   svg: "aptible.svg"
   articles:
-    # - title: "How do I migrate from Heroku?"
-    #   url: "migrating/how-to-migrate-from-heroku"
+    - title: "How can I use the Heroku build process with my Aptible app?"
+      url: "migrating/how-to-use-heroku-build-process"
     - title: "How do I import my existing Heroku PostgreSQL database?"
       url: "migrating/how-to-import-heroku-postgresql-database"
     # - title: "How do I import my existing MongoDB database?"
