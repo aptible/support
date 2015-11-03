@@ -1,4 +1,4 @@
-This article covers _storing_ and _serving_ media files from S3 in a HIPAA-compliant manner
+This article covers _storing_ and _serving_ media files from S3 in a HIPAA-compliant manner.
 
 For storing PHI on Amazon S3, you'll need to get a separate BAA with Amazon Web Services. This BAA will require that you encrypt all data stored on S3. You have three options for implementing encryption, ranked from best to worst (based on the combination of ease of implementation and security):
 

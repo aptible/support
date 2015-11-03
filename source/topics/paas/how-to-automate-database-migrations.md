@@ -9,7 +9,7 @@ before_release:
   bundle exec rake db:migrate
 ```
 
-If you want to deploy the same repo to different environments that require different rake tasks, we suggest referencing a bash script:
+If you want to deploy the same repo to different environments that require different rake tasks, we suggest referencing a Bash script:
 
 ```
 #!/bin/sh
