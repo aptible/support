@@ -38,14 +38,43 @@ A few guidelines:
 2. Place both files in the root of your repository.
 3. Be sure to commit them to version control.
 
-Here is a sample Dockerfile that uses Aptible's `autobuild` image:
+Here is a sample Dockerfile for a conventional Play app:
 
     # Dockerfile
-    FROM quay.io/aptible/autobuild
+    FROM quay.io/aptible/java:oracle-java8
 
-Here is a sample Procfile for a Play app:
+    # Install prerequisite tools
+    RUN apt-get update && apt-get -y install wget unzip
 
-    web: target/universal/stage/bin/playexample \
+    # Install Scala
+    RUN cd /usr/share && \
+        wget http://www.scala-lang.org/files/archive/scala-2.10.4.tgz && \
+        tar xzf scala-2.10.4.tgz && \
+        ln -s /usr/share/scala-2.10.4 /usr/share/scala && \
+        rm -f /tmp/scala-2.10.4.tgz
+    ENV PATH $PATH:/usr/share/scale/bin
+
+    # Install Activator (omit if not needed)
+    RUN cd /opt && \
+        wget http://downloads.typesafe.com/typesafe-activator/1.2.10/typesafe-activator-1.2.10.zip && \
+        unzip typesafe-activator-1.2.10.zip && \
+        rm -f /opt/typesafe-activator-1.2.10.zip && \
+        mv /opt/activator-1.2.10 /opt/activator
+    ENV PATH $PATH:/opt/activator
+
+    ADD . /app
+    WORKDIR /app
+
+    RUN activator -XX:+UseCodeCacheFlushing clean compile dist
+
+    # Change the following command to match your actual app name
+    RUN cd playexample/target/universal && unzip playexample-1.0-SNAPSHOT.zip
+
+    EXPOSE 80
+
+Here is a sample Procfile for a Play app. You will need to update this command to match your actual app name, instead of `playexample`:
+
+    web: playexample/target/universal/*-SNAPSHOT/bin/playexample \
          -Dhttp.port=$PORT \
          -DapplyEvolutions.default=true \
          -Ddb.default.driver=org.postgresql.Driver \
