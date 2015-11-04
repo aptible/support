@@ -38,3 +38,9 @@ $table-zebra-color: #fafafa;
     margin-bottom: 0;
   }
 }
+
+.markdown-document .highlight table {
+  tr, tr th, tr td {
+    border: 0;
+  }
+}
