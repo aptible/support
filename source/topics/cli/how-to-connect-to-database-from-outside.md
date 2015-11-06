@@ -18,4 +18,10 @@ OR
 
       mongo localhost:[PORT]/db -u aptible -p [PASSWORD]
 
+For non-CLI database clients, the required arguments are the same:
 
+      Host: 127.0.0.1 
+      Port: [PORT]
+      Username: aptible
+      Password: [PASSWORD]
+      Database: db
