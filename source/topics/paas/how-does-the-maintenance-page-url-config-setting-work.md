@@ -1,4 +1,3 @@
-
 Aptible can serve a maintenance page when the app itself is not responding
 (which results in a 502 error at NGiNX).
 

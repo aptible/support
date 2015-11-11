@@ -1,4 +1,4 @@
-Yes, you can deploy a custom database on Aptible, provided that it's packaged in a Docker image conforming to the following specification:
+You can deploy a custom database on Aptible, provided that it is packaged in a Docker image conforming to the following specification:
 
 * Any files or directories that need to persist should be defined as `VOLUME`s in the Dockerfile. Aside from the data stored in the database, this may include database configuration files, user lists, etc.
 

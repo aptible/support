@@ -16,5 +16,3 @@ To source your app's current configuration for a command — say, `bundle exec r
 
 RUN set -a && . /opt/app/.aptible.env && bundle exec rake assets:precompile
 ```
-
-Note: The `quay.io/aptible/autobuild` base image will automatically load `.aptible.env` before building your app, so it is not necessary to explicitly source the file when using that image.
