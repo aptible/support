@@ -10,7 +10,7 @@ Open a separate terminal window and, depending on the database type:
 
 - Pass in the entire URL, e.g. 
 
-      psql postgresql://aptible:[PASSWORD]@127.0.0.1:[PORT]/db
+        psql postgresql://aptible:[PASSWORD]@127.0.0.1:[PORT]/db
 
 OR
 
