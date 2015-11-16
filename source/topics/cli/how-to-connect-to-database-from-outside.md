@@ -14,14 +14,6 @@ Open a separate terminal window and, depending on the database type:
 
 OR
 
-- Use the port, host, user, and password contained within the connection URL, e.g.
+- Use the port, host, user, and password printed in the `db:tunnel` output.
 
-      mongo localhost:[PORT]/db -u aptible -p [PASSWORD]
 
-For non-CLI database clients, the required arguments are the same:
-
-      Host: 127.0.0.1 
-      Port: [PORT]
-      Username: aptible
-      Password: [PASSWORD]
-      Database: db
