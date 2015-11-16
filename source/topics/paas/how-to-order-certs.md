@@ -15,5 +15,5 @@ If you're pasting the certs directly into dashboard, be sure to check that the i
 Finally, if your certificate body includes `-----END CERTIFICATE-----` or `-----BEGIN CERTIFICATE-----` these must be included.
 
 
-If you are still having trouble, reach out to Aptible support.
+If you have questions please [contact support](https://support.aptible.com/contact).
 

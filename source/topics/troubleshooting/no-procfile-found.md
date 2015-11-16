@@ -5,4 +5,4 @@ The Procfile should list process types and the commands associated with them. Fo
     web: bundle exec rails server -b 0.0.0.0 -p $PORT
     worker: bundle exec sidekiq
 
-This will deploy two sets of containers for your app, one for the web process and another for the worker, each of which you may scale independently.
+This will deploy two sets of containers ("services") for your app, one for the web process and another for the worker. These services may be scaled independently.
