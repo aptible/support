@@ -11,8 +11,8 @@ To source your app's current configuration for a command — say, `bundle exec r
 
 ```
 # Assume that you've already ADDed your repo:
-# ADD . /opt/app
-# WORKDIR /opt/app
+# ADD . /app
+# WORKDIR /app
 
-RUN set -a && . /opt/app/.aptible.env && bundle exec rake assets:precompile
+RUN set -a && . /app/.aptible.env && bundle exec rake assets:precompile
 ```
