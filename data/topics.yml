@@ -98,6 +98,8 @@
       url: "paas/how-does-the-maintenance-page-url-config-setting-work"
     - title: "How do I serve media files from Amazon S3?"
       url: "paas/how-to-serve-s3-media-files"
+    - title: "How do I update my SSL certificate on Aptible?"
+      url: "paas/how-to-update-ssl-certificate"
 
 
 "Aptible CLI":
