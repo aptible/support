@@ -115,6 +115,8 @@ Be sure to add this VHOST to your [`ALLOWED_HOSTS`](https://docs.djangoproject.c
 ALLOWED_HOSTS = ['django-quickstart.on-aptible.com']
 ```
 
+*Note:* Default VHOSTs are only automatically created for apps in development environments.
+
 Finally, you'll likely want to [SSH into your app](https://support.aptible.com/topics/cli/how-to-ssh-into-app/) and migrate the database:
 
     aptible ssh --app $APP_HANDLE
