@@ -8,4 +8,4 @@ Once you have renewed your certificate, you'll need to update your vhosts in Apt
 
 Log into dashboard, and navigate to your apps' domains tab. Click _Edit_, then _Add new certificate_
 
-_NB: Be sure your certificate bundle is [correctly ordered](https://support.aptible.com/topics/paas/how-to-order-certs/)_
+*Note:* Be sure your certificate bundle is [correctly ordered](https://support.aptible.com/topics/paas/how-to-order-certs/).
