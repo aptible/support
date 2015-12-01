@@ -68,7 +68,7 @@ Here is a sample Dockerfile for a conventional Rails app:
 Here is a sample Procfile for a Ruby on Rails app:
 
     # Procfile
-    web: bundle exec rails s -p $PORT
+    web: bundle exec rails s -b 0.0.0.0 -p $PORT
 
 ## 4. Provision and Connect a Database
 
