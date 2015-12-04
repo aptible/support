@@ -1,4 +1,8 @@
-This error is the result of either not including the necessary intermediate certs, or due to improper formatting.
+If you are using Google Chrome you may be seeing an error like: `NET::ERR_CERT_AUTHORITY_INVALID` or `ERR_CERT_COMMON_NAME_INVALID`.  
+
+On firefox you may be seeing _This Connection is Untrusted_ or something similar.
+
+These errors are often the result of either not including the necessary intermediate certs, or due to improper formatting.
 
 We represent "certificate bundles" in the native OpenSSL format, which involves simply concatenating them together.
 
