@@ -1,6 +1,6 @@
-If you are using Google Chrome you may be seeing an error like: `NET::ERR_CERT_AUTHORITY_INVALID`. On Firefox you may be seeing _This Connection is Untrusted_.
+If you are using Google Chrome you may be seeing the error `NET::ERR_CERT_AUTHORITY_INVALID`. On Firefox you may be seeing _This Connection is Untrusted_.
 
-A common cause for this is missing or incorrectly ordered intermediate certificates.
+Common causes for this are either missing or incorrectly ordered intermediate certificates.
 
 We represent "certificate bundles" in the native OpenSSL format, which involves simply concatenating them together.
 

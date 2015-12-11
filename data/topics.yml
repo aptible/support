@@ -92,7 +92,7 @@
       url: "paas/zero-downtime-deploys"
     - title: "How can I modify the way my app handles SSL?"
       url: "paas/how-to-modify-nginx-config"
-    - title: "I'm seeing an SSL error (e.g. 'ERR_CERT_AUTHORITY_INVALID') in my browser. What should I do"
+    - title: "I'm seeing an SSL error ('ERR_CERT_AUTHORITY_INVALID') in my browser. What should I do"
       url: "paas/how-to-order-certs"
     - title: "How does the MAINTENANCE_PAGE_URL config setting work?"
       url: "paas/how-does-the-maintenance-page-url-config-setting-work"
