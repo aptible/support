@@ -20,11 +20,11 @@ For example:
 
 Add a Git remote named "aptible":
 
-    git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
-
+    git remote add aptible git@beta.aptible.com:$ENVIRONMENT_HANDLE/$APP_HANDLE.git
+ 
 For example:
 
-    git remote add aptible git@beta.aptible.com:express-quickstart.git
+    git remote add aptible git@beta.aptible.com:test-env/express-quickstart.git
 
 ## 3. Add a Dockerfile and a Procfile
 

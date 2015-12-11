@@ -11,6 +11,6 @@ Deploying from Travis CI is easy on Aptible! We recommend the following approach
 after_success:
   - chmod 600 .travis/deploy.pem
   - ssh-add .travis/deploy.pem
-  - git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
+  - git remote add git@beta.aptible.com:$ENVIRONMENT_HANDLE/$APP_HANDLE.git
   - git push aptible master
 ```
