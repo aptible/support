@@ -96,11 +96,11 @@ You can now use these variables in your MySQL config:
 
 Add a Git remote named "aptible":
 
-    git remote add aptible git@beta.aptible.com:$APP_HANDLE.git
-
+    git remote add aptible git@beta.aptible.com:$ENVIRONMENT_HANDLE/$APP_HANDLE.git
+ 
 For example:
 
-    git remote add aptible git@beta.aptible.com:laravel-quickstart.git
+    git remote add aptible git@beta.aptible.com:test-env/laravel-quickstart.git
 
 ## 6. Deploy Your App
 

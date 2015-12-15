@@ -6,6 +6,6 @@ To deploy from Codeship on Aptible, we recommend the following approach:
 4. Add an environment variable called `APTIBLE_APP` with your application handle as the value.
 5. Add a custom script based deployment with the following commands. (You can also find this script in the [codeship/scripts repository](https://github.com/codeship/scripts/blob/master/deployments/aptible.sh))
 
-```shell
-git push git@beta.aptible.com:${APTIBLE_APP}.git ${CI_COMMIT_ID}:master
+```
+git push git@beta.aptible.com:$ENVIRONMENT_HANDLE/$APP_HANDLE.git $CI_COMMIT_ID:master
 ```

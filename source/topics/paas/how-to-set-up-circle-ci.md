@@ -12,5 +12,5 @@ deployment:
     production:
       branch: production
       commands:
-        - git push git@beta.aptible.com:$APP_HANDLE.git $CIRCLE_SHA1:master
+        - git push git@beta.aptible.com:$ENVIRONMENT_HANDLE/$APP_HANDLE.git $CIRCLE_SHA1:master
 ```
