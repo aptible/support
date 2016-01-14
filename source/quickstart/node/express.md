@@ -50,6 +50,7 @@ Here is a sample Dockerfile for a conventional Express app:
     RUN npm install --production
 
     # If you use Bower, uncomment the following lines:
+    # RUN npm install -g bower
     # ADD bower.json /app/
     # RUN bower install --allow-root
 
