@@ -164,6 +164,8 @@
   articles:
     - title: "How do I invite a new user to Aptible?"
       url: "account/how-to-invite-new-user"
+    - title: "How do I get ready for Aptible HIPAA training?"
+      url: "account/how-to-prepare-for-training"
     - title: "What different plans does Aptible offer?"
       url: "account/what-plans-does-aptible-offer"
     - title: "How do I set up a separate staging environment for my apps and databases?"
