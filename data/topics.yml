@@ -145,6 +145,8 @@
       url: "troubleshooting/health-check-failed"
     - title: 'My deploy failed, saying "No Procfile found." What should I do?'
       url: "troubleshooting/no-procfile-found"
+    - title: 'My deploy failed, saying "error: Could not read COMMIT_HASH." What should I do?'
+      url: "troubleshooting/could-not-read-shallow-clone"
     # - title: "My app stopped working. What should I do?"
     #   url: "troubleshooting/app-stopped-working"
     - title: "I just added a domain to my app and it's not responding. What should I do?"
