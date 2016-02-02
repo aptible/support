@@ -126,7 +126,7 @@
       url: "cli/how-to-restart-app"
     - title: "How should I configure sensitive variables for my app?"
       url: "cli/how-to-configure-sensitive-variables"
-    - title: "How can dump and restory my Aptible database?"
+    - title: "How can I dump and restore my Aptible database?"
       url: "cli/how-to-dump-and-restore"
 
 "Troubleshooting":
