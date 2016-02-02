@@ -16,7 +16,7 @@ If you want to migrate data from one Aptible database to another, or perform a b
     If you're using postgres, you can combine steps 1 and 2 with `aptible db:dump $HANDLE`
 
 
-3.  Provision a new Aptible database if you have not already done so. 
+3.  Provision a new Aptible database if you have not already done so.
 
 4. Similar to the first two steps, connect to the new database and, in a new bash session, upload the dumped file:
 
