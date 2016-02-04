@@ -13,6 +13,7 @@ If you want to set variables in bulk, you can use the syntax:
 ```bash
 xargs aptible config:set --app $APP_HANDLE < config_values.txt
 ```
+
 where `config_values.txt` contains a new-line separated list of var/value pairs.  
 
 
