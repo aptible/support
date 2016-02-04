@@ -1,4 +1,4 @@
-If you want to migrate data from one Aptible database to another, or perform a back-up and restore, you can use the Aptible CLI with the following steps:
+If you want to migrate data from one Aptible database to another, or perform a backup and restore, you can use the Aptible CLI with the following steps:
 
 
 1. [Tunnel](https://support.aptible.com/topics/cli/how-to-connect-to-database-from-outside/) to the origin database:
@@ -13,7 +13,7 @@ If you want to migrate data from one Aptible database to another, or perform a b
     mysqldump -u aptible -p[PASSWORD] -h 127.0.0.1 -P [PORT] db > dumpfilename.sql
     ```
 
-    If you're using postgres, you can combine steps 1 and 2 with `aptible db:dump $HANDLE`
+    If you're using PostgreSQL, you can combine steps 1 and 2 with `aptible db:dump $HANDLE`
 
 
 3.  Provision a new Aptible database if you have not already done so.
@@ -24,5 +24,5 @@ If you want to migrate data from one Aptible database to another, or perform a b
     aptible db:tunnel $NEW_DB_HANDLE
 
     # separate session
-    mysqldump -u aptible -p[PASSWORD] -h 127.0.0.1 -P [PORT] db < dumpfilename.sql
+    mysql -u aptible -p[PASSWORD] -h 127.0.0.1 -P [PORT] db < dumpfilename.sql
     ```
