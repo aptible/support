@@ -141,6 +141,6 @@ helpers do
   end
 
   def contact_href
-    "https://aptible.zendesk.com/hc/en-us/requests/new"
+    'https://aptible.zendesk.com/hc/en-us/requests/new'
   end
 end
