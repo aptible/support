@@ -8,14 +8,10 @@ To view the existing set of ENV variables and their values, run:
 
 If you need environment variables during a build, [you can specify them](/topics/paas/how-to-access-environment-variables-inside-dockerfile) in a `.aptible.env` file.
 
-If you want to set variables in bulk, you can use the syntax: 
+If you want to set variables in bulk, you can use the syntax:
 
 ```bash
 xargs aptible config:set --app $APP_HANDLE < config_values.txt
 ```
 
-where `config_values.txt` contains a new-line separated list of var/value pairs.  
-
-
-
-
+where `config_values.txt` contains a new-line separated list of var/value pairs.
