@@ -21,7 +21,7 @@ For example:
 Add a Git remote named "aptible":
 
     git remote add aptible git@beta.aptible.com:$ENVIRONMENT_HANDLE/$APP_HANDLE.git
- 
+
 For example:
 
     git remote add aptible git@beta.aptible.com:test-env/django-quickstart.git
@@ -38,45 +38,21 @@ A few guidelines:
 2. Place both files in the root of your repository.
 3. Be sure to commit them to version control.
 
-Here is a sample Dockerfile for a conventional Django app:
+Here is a sample Dockerfile for a conventional Django app, running Python 2.7.6:
 
     # Dockerfile
     FROM quay.io/aptible/ubuntu:14.04
 
-    # Dockerfile specifically for python3 (the default is 2.7.6)
-    # FROM python:3-wheezy
-    # You can do python version this way (uncomment to configure):
-    # RUN apt-install python3-minimal
-    # RUN ln -s python3 /usr/bin/python
-
-    # Basic dependencies (Comment out if using wheezy)
+    # Basic dependencies
     RUN apt-install build-essential python-dev python-setuptools
     RUN apt-install libxml2-dev libxslt1-dev python-dev
 
     # PostgreSQL dev headers and client (uncomment if you use PostgreSQL)
     # RUN apt-install libpq-dev postgresql-client-9.3 postgresql-contrib-9.3
-    # See http://wiki.postgresql.org/wiki/Apt
-    # ENV PG_VERSION=9.3 \
-        # PG_USER=postgres \
-        # PG_HOME=/var/lib/postgresql \
-        # PG_RUNDIR=/run/postgresql \
-        # PG_LOGDIR=/var/log/postgresql
-
-    # ENV PG_CONFDIR="/etc/postgresql/${PG_VERSION}/main" \
-        # PG_BINDIR="/usr/lib/postgresql/${PG_VERSION}/bin" \
-        # PG_DATADIR="${PG_HOME}/${PG_VERSION}/main"
-
-    # RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
-        # && echo 'deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
-        # && apt-get update \
-        # && DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql-${PG_VERSION} postgresql-client-${PG_VERSION} postgresql-contrib-${PG_VERSION} \
-        # && rm -rf ${PG_HOME} \
-        # && rm -rf /var/lib/apt/lists/*
 
     # MySQL dev headers (uncomment if you use MySQL)
     # RUN apt-install libmysqlclient-dev
 
-    # Comment out if using wheezy (it's installed w/ python)
     RUN easy_install pip
 
     # Add requirements.txt ONLY, then run pip install, so that Docker cache won't
@@ -88,12 +64,53 @@ Here is a sample Dockerfile for a conventional Django app:
     # Add repo contents to image
     ADD . /app/
 
-    # Django runs default on 8000, so maybe change
     ENV PORT 3000
     EXPOSE 3000
 
+Here's an alternate Dockerfile, specifically for Python 3. (Thanks [JP Bader](https://github.com/lordB8r) for testing and contributing this!)
+
+    # Dockerfile specifically for python3
+    FROM python:3-wheezy
+    You can do python version this way (uncomment to configure):
+    RUN apt-install python3-minimal
+    RUN ln -s python3 /usr/bin/python
+
+    # See http://wiki.postgresql.org/wiki/Apt
+    ENV PG_VERSION=9.3 \
+        PG_USER=postgres \
+        PG_HOME=/var/lib/postgresql \
+        PG_RUNDIR=/run/postgresql \
+        PG_LOGDIR=/var/log/postgresql
+
+    ENV PG_CONFDIR="/etc/postgresql/${PG_VERSION}/main" \
+        PG_BINDIR="/usr/lib/postgresql/${PG_VERSION}/bin" \
+        PG_DATADIR="${PG_HOME}/${PG_VERSION}/main"
+
+    RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
+        && echo 'deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
+        && apt-get update \
+        && DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql-${PG_VERSION} postgresql-client-${PG_VERSION} postgresql-contrib-${PG_VERSION} \
+        && rm -rf ${PG_HOME} \
+        && rm -rf /var/lib/apt/lists/*
+
+    # MySQL dev headers (uncomment if you use MySQL)
+    # RUN apt-install libmysqlclient-dev
+
+    # Add requirements.txt ONLY, then run pip install, so that Docker cache won't
+    # bust when changes are made to other repo files
+    ADD requirements.txt /app/
+    WORKDIR /app
+    RUN pip install -r requirements.txt
+
+    # Add repo contents to image
+    ADD . /app/
+
+    ENV PORT 8000
+    EXPOSE 8000
+
     # Potentially have to set work directory for this to work
     # WORKDIR /app/YOUR_APP
+
 
 Here is a sample Procfile for a Django app, logging to stderr:
 
