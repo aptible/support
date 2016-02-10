@@ -180,3 +180,5 @@
       url: "account/how-to-view-open-support-tickets"
     - title: "How do I invite a new user to training?"
       url: "account/how-to-invite-training-user"
+    - title: "How do I manage billing and payment for my account?"
+      url: "account/how-to-manage-billing"
