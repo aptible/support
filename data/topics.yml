@@ -106,6 +106,8 @@
       url: "paas/how-to-update-ssl-certificate"
     - title: "How can I use Aptible’s OSS Docker images?"
       url: "paas/aptible-docker-images"
+    - title: "How can I set up New Relic on Aptible?"
+      url: "paas/how-to-setup-application-and-server-monitoring"
 
 
 "Aptible CLI":
