@@ -7,7 +7,7 @@ For billing information, navigate to your account settings in the Aptible dashbo
     - Any billable usage
     - The unit pricing rate per resource type
 
-2. Under the _Plan_ tab you can see you current plan, or upgrade plans.
+2. Under the _Plan_ tab you can view your current plan, or upgrade plans.
 
 3. Under the _Payment Method_ tab you can change or edit your payment method, and view
 
@@ -22,3 +22,4 @@ For billing information, navigate to your account settings in the Aptible dashbo
     - Routing Number
     - Account Number
 
+5. To change the recipient of monthly invoices (automatically sent at time of payment), please [contact support](support@aptible.com).
