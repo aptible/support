@@ -104,6 +104,8 @@
       url: "paas/how-to-serve-s3-media-files"
     - title: "How do I update my SSL certificate on Aptible?"
       url: "paas/how-to-update-ssl-certificate"
+    - title: "How can I use Aptible’s OSS Docker images?"
+      url: "paas/aptible-docker-images"
 
 
 "Aptible CLI":
