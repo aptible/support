@@ -41,7 +41,7 @@ A few guidelines:
 Here is a sample Dockerfile for a conventional Rails app:
 
     # Dockerfile
-    FROM quay.io/aptible/ruby:ruby-2.2
+    FROM quay.io/aptible/ruby:2.3
 
     RUN apt-get update && apt-get -y install build-essential
 
