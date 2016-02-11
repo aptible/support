@@ -22,4 +22,4 @@ For billing information, navigate to your account settings in the Aptible dashbo
     - Routing Number
     - Account Number
 
-5. To change the recipient of monthly invoices (automatically sent at time of payment), please [contact support](support@aptible.com).
+5. To change the recipient of monthly invoices (automatically sent at time of payment), please [contact support](mailto:support@aptible.com).
