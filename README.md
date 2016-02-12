@@ -61,7 +61,7 @@ If you run into an issue that needs documentation, feel free to submit a pull re
 
 ## Copyright
 
-Copyright (c) 2015 [Aptible](https://www.aptible.com). All rights reserved.
+Copyright (c) 2016 [Aptible](https://www.aptible.com). All rights reserved.
 
 [<img src="https://secure.gravatar.com/avatar/566f0093e212d9b808c0cece8a32480e?s=60" style="border-radius: 50%;" alt="@gib" />](https://github.com/gib)
 
