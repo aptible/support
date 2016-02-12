@@ -12,4 +12,4 @@ Then, to see what's possible with the CLI, just run:
 
     aptible help
 
-If you have questions about the CLI, please [contact support](https://aptible.zendesk.com/hc/en-us/requests/new).
+If you have questions about the CLI, please [contact support](http://contact.aptible.com).

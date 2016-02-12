@@ -6,4 +6,4 @@ If you want to point to a subdomain of your app (e.g. "https://www.example.com/"
 
 If you want to point to a "bare" or "apex" domain (e.g. "https://example.com/"), your approach will depend on which DNS provider you use. Some DNS providers provide "ALIAS" records, which allow you to point a bare domain at a hostname. Others only allow A records, which must be set to an IP address.
 
-If you have questions about setting up this CNAME record with your DNS provider, please [contact support](https://aptible.zendesk.com/hc/en-us/requests/new).
+If you have questions about setting up this CNAME record with your DNS provider, please [contact support](http://contact.aptible.com).

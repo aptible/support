@@ -24,7 +24,7 @@ Some examples of Docker images conforming to this specification:
 * [aptible/docker-postgresql](https://github.com/aptible/docker-postgresql)
 * [aptible/docker-mysql](https://github.com/aptible/docker-mysql)
 
-If you have any questions about developing a custom database image, or if you're ready to deploy one that you've created, please [contact support](https://aptible.zendesk.com/hc/en-us/requests/new).
+If you have any questions about developing a custom database image, or if you're ready to deploy one that you've created, please [contact support](http://contact.aptible.com).
 
 ---
 
