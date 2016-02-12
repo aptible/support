@@ -14,6 +14,8 @@ You can also add `--size X` to the above command to provision an X GB database. 
 
 Next, under the "Logging" tab in your environment, add a log drain by selecting "Elasticsearch" as the type and selecting your database.
 
+Note: if you'd like to do some pre-processing of your logs before sending them to ElasticSearch (or would rather send them somewhere else altogether), you should [set up a HTTPS log drain](/topics/paas/how-do-i-setup-a-https-log-drain)
+
 ### Step 3: Set up a Kibana instance
 
 Kibana is an open source, browser-based analytics and search dashboard for Elasticsearch. Follow the instructions in our [aptible/docker-kibana](https://github.com/aptible/docker-kibana) repo to deploy your own instance as an Aptible app.
