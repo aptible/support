@@ -116,6 +116,8 @@
       url: "paas/postgresql-extensions"
     - title: "How do I use Aptible Log Drains to manage application logs?"
       url: "paas/how-to-use-log-drains"
+    - title: "How can I whitelist my app's IP address?"
+      url: "paas/how-can-i-whitelist-my-app-ip"
 
 "Aptible CLI":
   slug: "cli"
