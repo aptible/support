@@ -4,5 +4,5 @@ This error indicates that the private key you specified does not match the certi
 
 2. All characters were copied, including headers like `-----END CERTIFICATE-----`  and  `-----BEGIN CERTIFICATE-----` 
 
-If these are correct and you are still seeing the error, [contact support](mailto:support@aptible.com).
+If these are correct and you are still seeing the error, [contact support](http://contact.aptible.com).
 
