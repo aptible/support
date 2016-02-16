@@ -110,7 +110,8 @@
       url: "paas/how-to-setup-application-and-server-monitoring"
     - title: "How do I setup a HTTPS log drain?"
       url: "paas/how-do-i-setup-a-https-log-drain"
-
+    - title: "How can I automatically restart my app after a crash?"
+      url: "paas/how-to-auto-restart-your-app"
 
 "Aptible CLI":
   slug: "cli"
