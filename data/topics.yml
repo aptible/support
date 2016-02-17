@@ -108,6 +108,8 @@
       url: "paas/aptible-docker-images"
     - title: "How can I set up New Relic on Aptible?"
       url: "paas/how-to-setup-application-and-server-monitoring"
+    - title: "How do I setup a HTTPS log drain?"
+      url: "paas/how-do-i-setup-a-https-log-drain"
 
 
 "Aptible CLI":
