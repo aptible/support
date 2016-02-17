@@ -1,4 +1,4 @@
-Aptible recommends New Relic for application monitoring.
+Aptible recommends New Relic Application Performance Monitoring (APM).
 
 To get this set up, create a New Relic account and follow their language-specific [installation instructions](https://docs.newrelic.com/docs/apm/new-relic-apm/installation-configuration/installing-agent).
 
