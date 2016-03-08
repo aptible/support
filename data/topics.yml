@@ -172,6 +172,8 @@
       url: "troubleshooting/mongodb-connect-failed"
     - title: "How can I get the fastest responses to my support requests?"
       url: "troubleshooting/support-ticket-best-practices"
+    - title: "My log drain stopped. What should I do?"
+      url: "troubleshooting/how-to-restart-your-log-drain"
 
 "Your Aptible Account":
   slug: "account"
