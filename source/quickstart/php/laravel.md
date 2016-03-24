@@ -90,6 +90,9 @@ You can now use these variables in your MySQL config:
           'charset'   => 'utf8',
           'collation' => 'utf8_unicode_ci',
           'prefix'    => '',
+          'options'   => array(
+            PDO::MYSQL_ATTR_SSL_CIPHER => 'DHE-RSA-AES256-SHA'
+          )
         ),
 
 ## 5. Configure a Git Remote
