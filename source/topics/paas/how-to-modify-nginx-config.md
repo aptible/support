@@ -22,18 +22,30 @@ app configuration to the NGiNX proxies:
   environment variable to disable the SSLv3 protocol and the RC4 cipher, both
   of which are otherwise allowed in the default configuration.
 
-Either or both of these configuration options can be enabled by setting the
-environment variables to `true` on the corresponding Aptible app using the
-[Aptible CLI](/topics/cli/how-to-install-cli):
+* `SSL_CIPHERS_OVERRIDE` and `SSL_PROTOCOLS_OVERRIDE`: Users who need more
+  control over the exact cipher suites and protocols offered by their servers
+  can completely override the NGiNX `ssl_ciphers` and `ssl_protocols`
+  directives by setting either or both of these environment variables in their
+  app configuration.
+  Please pay careful attention to the documentation for both
+  [`ssl_ciphers`](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_ciphers)
+  and
+  [`ssl_protocols`](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_protocols)
+  when using these settings as syntax errors in these settings can keep your
+  NGiNX instance from starting.
+
+Either or both of `FORCE_SSL` and `DISABLE_WEAK_CIPHER_SUITES` can be enabled
+by setting the environment variables to `true` on the corresponding Aptible app
+using the [Aptible CLI](/topics/cli/how-to-install-cli):
 
 ```
-aptible config:set FORCE_SSL=true --app $APP_HANDLE
-aptible config:set DISABLE_WEAK_CIPHER_SUITES=true --app $APP_HANDLE
+aptible config:set FORCE_SSL=true DISABLE_WEAK_CIPHER_SUITES=true --app $APP_HANDLE
 ```
 
-After setting either option, you must restart the app to pick up the
-configuration changes:
+`SSL_CIPHERS_OVERRIDE` and `SSL_PROTOCOLS_OVERRIDE` can be used with or without
+`FORCE_SSL` and `DISABLE_WEAK_CIPHER_SUITES`. The following settings will remove
+TLS 1.0 from the allowed protocols in our `DISABLE_WEAK_CIPHER_SUITES` configuration:
 
 ```
-aptible restart --app $APP_HANDLE
+aptible config:set DISABLE_WEAK_CIPHER_SUITES=true SSL_PROTOCOLS_OVERRIDE="TLSv1.1 TLSv1.2" --app $APP_HANDLE
 ```
