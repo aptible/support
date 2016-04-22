@@ -57,7 +57,7 @@ Here is a sample Dockerfile for a conventional Express app:
     ADD . /app
 
     # Run any additional build commands here...
-    # grunt some:task
+    # RUN grunt some:task
 
     ENV PORT 3000
     EXPOSE 3000
