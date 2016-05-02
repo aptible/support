@@ -2,22 +2,19 @@ Some partners or vendors you work with may use a whitelist, requiring you to pro
 
 #### Background 
 
-Your app is hosted in a private network (specifically, an AWS VPC) behind a single NAT gateway; all requests originating from your app will have that NAT's IP.  This is _different_ from the IPs associated with your app's endpoints (VHOSTs) used for _inbound_ requests.  
+Your app is hosted in a private network (specifically, an AWS VPC) behind a single NAT gateway.  All requests originating from your app will have that NAT's IP address.  This is _different_ from the IPs associated with your app's endpoints (VHOSTs) used for _inbound_ requests.
 
-For a given NAT gateway we typically maintain a pool of at least 2 IPs, one associated with it and one left unassociated on reserve. 
 
-Your outbound IP address will generally not change unless Aptible migrates your stack to a new VPC--something we would only do for major release versions of our backend system--or due to a failure of the underlying instance.  
+Your outbound IP address _may_ change for the following reasons:
 
-In the case of a migration, the Aptible ops team will coordinate with you and provide you with new IPs for whitelisting before the migration is performed.  If required, we can also port your existing IP pool. 
+1. If Aptible migrates your stack to a new VPC.  
 
-In the case of an instance failure where we must replace the underlying instance, we will automatically failover to the unassociated IP. 
+2. If there is a failure of the underlying EC2 instance.  
 
-The IPs of your Aptible VHOSTs (what makes your app addressable) work differently.
-
-VHOSTs use AWS Elastic Load Balancers (ELBs) to provide high-availability load balancing across availability zones. The IPs associated with an ELB are _not_ guaranteed to be static.
+In either case, the new IP address will be taken from a pool of pre-defined IP addresses associated with your NAT gateway.  This set will not change.
 
 #### Determining your Aptible stack's outbound IP address
 
-If you have `curl` installed in your Docker image and you want to retrieve this IP yourself, you can `aptible ssh` to your app and run `curl ipinfo.io`.  
+If you have `curl` installed in your Docker image and you want to retrieve your stack's current IP yourself, you can `aptible ssh` to your app and run `curl ipinfo.io`.  
 
-You can also request the IP addresses from [support](contact.aptible.com). 
+For retreiving the other IP(s) in your stack's IP pool, send a request to [support](contact.aptible.com) and we will provide them for you.
