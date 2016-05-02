@@ -114,6 +114,8 @@
       url: "paas/how-to-auto-restart-your-app"
     - title: "How do I use PostgreSQL extensions on Aptible?"
       url: "paas/postgresql-extensions"
+    - title: "How can I whitelist my app's IP address?"
+      url: "paas/how-can-i-whitelist-my-app-ip"
 
 "Aptible CLI":
   slug: "cli"
