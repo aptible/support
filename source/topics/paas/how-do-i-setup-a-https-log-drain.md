@@ -1,4 +1,4 @@
-By default, Aptible lets you ship your logs to a syslog or ElasticSearch
+By default, Aptible lets you ship your logs to a syslog or Elasticsearch
 endpoint, however, if you'd like more control, you can ship your logs to
 an arbitrary HTTPS endpoint instead.
 
@@ -10,7 +10,7 @@ a logging endpoint.
 
 A good choice here is to use Logstash, which lets you pre-process your logs
 (e.g. enrich, filter), and deliver them to an arbitrary destination (which could
-be an ElasticSearch instance deployed on Aptible!).
+be an Elasticsearch instance deployed on Aptible!).
 
 To make this easier, we're providing a pre-configured Logstash instance at
 [aptible/docker-logstash][10], which you can deploy on Aptible. Simply follow
