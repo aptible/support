@@ -1,6 +1,5 @@
-Log Drains let you collect logs from your apps deployed on Aptible, and route
+Log Drains let you collect stdout and stderr logs from your apps deployed on Aptible and route
 them to a log destination.
-
 
 ## What log destinations are supported? ##
 
@@ -11,24 +10,22 @@ Aptible can route your logs over the following protocols:
 Syslog drains forward your logs to an external syslog server. Syslog drains
 are typically used with a hosted syslog service, such as Papertrail.
 
-See our [How do I set up Papertrail for my Aptible apps?][10] guide for more
-information.
+**Note that only syslog over TCP + TLS is supported.**
 
-**Do note that only syslog over TCP + TLS is supported**.
+Also see: [How do I set up Papertrail for my Aptible apps?][10]
 
 ### Elasticsearch ###
 
 Elasticsearch drains forward your logs to an Elasticsearch instance hosted on
 Aptible.
 
-See our [How do I set up my own logging stack?][20] guide for more information.
+Also see: [How do I set up my own logging stack?][20]
 
 ### HTTPS ###
 
 HTTPS log drains forward your logs to an arbitrary host over HTTPS.
 
-See our [How do I setup a HTTPS log drain?][30] guide for more information.
-
+Also see: [How do I setup a HTTPS log drain?][30]
 
 ## What is collected? ##
 
@@ -36,12 +33,11 @@ Aptible collects the `stdout` and `stderr` streams from your containers. This
 has two important implications:
 
 - Anything you write to `stdout` and `stderr` is eventually relayed to your log
-  destination. This means that **unless you are filtering PHI out of your logs,
+  destination. This means that **unless you are filtering sensitive data (such as PHI) out of your logs,
   you must either self-host your log destination (e.g. use ElasticSearch hosted
   on Aptible), or have a BAA in place with your provider**.
 - Log output sent to files is **not** captured by Aptible: if you need something
   to show in your Aptible logs, it **must** be sent to `stdout` or `stderr`.
-
 
 ## How do Log Drains work? ##
 
