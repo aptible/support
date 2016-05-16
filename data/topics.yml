@@ -114,6 +114,8 @@
       url: "paas/how-to-auto-restart-your-app"
     - title: "How do I use PostgreSQL extensions on Aptible?"
       url: "paas/postgresql-extensions"
+    - title: "About Log Drains"
+      url: "paas/about-log-drains"
 
 "Aptible CLI":
   slug: "cli"
