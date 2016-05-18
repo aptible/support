@@ -32,6 +32,7 @@ Here is a sample Dockerfile for a Laravel app:
 
     # Dockerfile
     FROM tutum/apache-php
+    ENV ALLOW_OVERRIDE true
     RUN apt-get update && apt-get install -yq git php5-mcrypt && rm -rf /var/lib/apt/lists/*
 
     RUN php5enmod mcrypt
