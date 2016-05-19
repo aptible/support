@@ -70,7 +70,7 @@ To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-con
 
 Add the following PHP code to your `app/config/database.php` file to extract the MySQL connection info from the `DATABASE_URL` environment config you set in step 3.
 
-    $url = parse_url($_ENV['DATABASE_URL']);
+    $url = parse_url(getenv('DATABASE_URL'));
 
     $host = $url["host"];
     $port = $url["port"];
