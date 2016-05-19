@@ -48,7 +48,7 @@ Here is a sample Dockerfile for a Laravel app:
 Here is a sample Procfile for a Laravel app:
 
     # Procfile
-    web: /run.sh
+    web: (touch /app/storage/logs/laravel.log && tail -F /app/storage/logs/laravel.log &) && /run.sh
 
 ## 3. Provision a Database
 
