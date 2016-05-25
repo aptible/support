@@ -139,8 +139,8 @@
       url: "cli/how-to-configure-sensitive-variables"
     - title: "How can I dump and restore my Aptible database?"
       url: "cli/how-to-dump-and-restore"
-    - title: "How can I create additional mysql schemas?"
-      url: "cli/how-to-create-mysql-schemas"
+    - title: "How can I create additional MySQL databases?"
+      url: "cli/how-to-create-mysql-databases"
 
 "Troubleshooting":
   slug: "troubleshooting"
