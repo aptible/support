@@ -6,6 +6,7 @@ layout: false
 
 %urlset{ xlmns: 'http://www.sitemaps.org/schemas/sitemap/0.9' }
   - sitemap.resources.each do |resource|
+    - next if resource.metadata[:options][:hidden]
     - next unless resource.ext == '.html'
     - next if resource.path =~ /^bower_components/
     %url

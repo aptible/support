@@ -34,7 +34,8 @@ data.topics.each do |title, category|
   end
 
   category.articles.each do |article|
-    page "topics/#{article.url}.html", layout: 'topics.haml' do
+    page "topics/#{article.url}.html",
+         layout: 'topics.haml', hidden: article.hidden do
       @category_url = category_url
       @category_title = title
       @title = article.title
