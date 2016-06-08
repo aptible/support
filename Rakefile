@@ -36,6 +36,7 @@ namespace :deploy do
   desc 'Build and deploy site to support.aptible-staging.com'
   task :staging do
     ENV['BASE_URL'] = 'https://support.aptible-staging.com'
+    ENV['SEGMENTIO_WRITEKEY'] = 'K24Jna8XS0PRiQiISYZ563qC3SfHF241' #Source: support_staging
     ENV['SWIFTYPE_KEY'] = '6oJmuDaosp-WnxZNZcxQ'
     ENV['SWIFTYPE_ENGINE'] = 'omxnF9kXa-PmS4uNyRSC'
     Rake::Task[:deploy].invoke('support.aptible-staging.com')
@@ -44,6 +45,7 @@ namespace :deploy do
   desc 'Build and deploy site to support.aptible.com'
   task :production do
     ENV['BASE_URL'] = 'https://support.aptible.com'
+    ENV['SEGMENTIO_WRITEKEY'] = 'cn8oifbk6o' #Source: support_production
     ENV['SWIFTYPE_KEY'] = 'dsMEc1fYviE2ShXAjYMW'
     ENV['SWIFTYPE_ENGINE'] = 'axuhZ5Lt1ZUziN-DqxnR'
     Rake::Task[:deploy].invoke('support.aptible.com')
