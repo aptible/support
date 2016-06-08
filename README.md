@@ -26,7 +26,7 @@ Finally, start the server. You can access it at http://localhost:4567/
 First, some prerequisites:
 
 * [AWS CLI](http://aws.amazon.com/cli/), installed locally
-* Access to a sufficiently authorized pair of AWS access key credentials
+* A valid `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in your environment
 
 In [production](https://support.aptible.com) and [staging](https://support.aptible-staging.com), the support site is deployed as an S3 website (fronted by CloudFront).
 
