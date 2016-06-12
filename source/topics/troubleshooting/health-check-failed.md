@@ -1,4 +1,4 @@
-Aptible performs a health check on any app service with a domain (VHOST) attached to it. During this health check, we make an HTTP request to the port exposed by your Docker container, and wait for an HTTP response (though not necessarily a successful HTTP status code).
+The Aptible platform performs an automatic health check on any app service with an endpoint attached to it. During this health check, the platform makes an HTTP request to the port exposed by your Docker container, and waits for an HTTP response (though not necessarily a successful HTTP status code).
 
 If the health check fails for your app, it means that this HTTP request failed to respond. There are two common reasons for this:
 

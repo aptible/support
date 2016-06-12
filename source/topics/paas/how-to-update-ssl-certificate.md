@@ -1,11 +1,5 @@
-Aptible recommends a few best practices for SSL renewal. Using your chosen DNS provider,
-
-- Ensure that you have current `WHOIS` information for your domain
-- Apply 30 days in advance your certificate's expiration
-- Generate a new CSR code with a private key of no less than 2048 bits
-
-Once you have renewed your certificate, you'll need to update your vhosts in Aptible by adding the renewed cert.
-
-Log into dashboard, and navigate to your apps' domains tab. Click _Edit_, then _Add new certificate_
+In the Aptible dashboard, find an app that has an endpoint with the certificate you want to update. Under the "Endpoints" tab, near the bottom, choose "Add new certificate." Drag and drop or copy/paste your new certificate bundle and private key.
 
 *Note:* Be sure your certificate bundle is [correctly ordered](https://support.aptible.com/topics/paas/how-to-order-certs/).
+
+If this is the only endpoint you need to update, you are done. If you want to update additional endpoints, find their associated apps, choose the new certificate in the editor under the "Endpoints" tab for each app, then click "Save Endpoint." Repeat this for each endpoint.

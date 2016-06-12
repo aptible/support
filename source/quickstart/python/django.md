@@ -148,19 +148,19 @@ Push to the master branch of the Aptible Git remote:
 
     git push aptible master
 
-If your app deploys successfully, a message will appear near the end of the remote output with a default VHOST:
+If your app deploys successfully, a message will appear near the end of the remote output with a default SSL/TLS endpoint:
 
     VHOST django-quickstart.on-aptible.com provisioned.
 
 In this example, once the ELB provisions you could visit django-quickstart.on-aptible.com to test out your app.
 
-Be sure to add this VHOST to your [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts) in your settings module:
+Be sure to add this endpoint address to your [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts) in your settings module:
 
 ```python
 ALLOWED_HOSTS = ['django-quickstart.on-aptible.com']
 ```
 
-*Note:* Default VHOSTs are only automatically created for apps in development environments.
+*Note:* Default SSL/TLS endpoints are only automatically created for apps in development environments.
 
 Finally, you'll likely want to [SSH into your app](https://support.aptible.com/topics/cli/how-to-ssh-into-app/) and migrate the database:
 

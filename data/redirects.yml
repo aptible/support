@@ -82,3 +82,11 @@
   url: /topics/paas
 - loc: /hc/en-us/articles/202559180-What-happens-when-a-Production-Account-is-provisioned-
   url: /topics/paas
+- loc: /topics/paas/how-to-cname-default-vhosts
+  url: /topics/paas/how-to-cname-default-endpoints
+- loc: /topics/paas/what-is-difference-between-internal-external-domain
+  url: /topics/paas/what-is-difference-between-internal-external-endpoints
+- loc: /topics/paas/how-to-add-internal-or-external-domain
+  url: /topics/paas/how-to-add-internal-or-external-endpoint
+- loc: /topics/troubleshooting/domain-not-responding
+  url: /topics/troubleshooting/endpoint-not-responding

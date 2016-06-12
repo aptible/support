@@ -2,7 +2,7 @@ Some partners or vendors you work with may use a whitelist, requiring you to pro
 
 #### Background
 
-Your app is hosted in a private network (specifically, an AWS VPC) behind a single NAT gateway.  All requests originating from your app will have that NAT's IP address.  This is _different_ from the IPs associated with your app's endpoints (VHOSTs) used for _inbound_ requests.
+Your app is hosted in a private network (specifically, an AWS VPC) behind a single NAT gateway.  All requests originating from your app will have that NAT's IP address.  This is _different_ from the IPs associated with your app's endpoints used for _inbound_ requests.
 
 Your outbound IP address _may_ change for the following reasons:
 

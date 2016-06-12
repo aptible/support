@@ -2,7 +2,7 @@ For billing information, navigate to your account settings in the Aptible dashbo
 
 1. Under the **Overview** tab, you can see:
   - Your current plan and monthly base rate
-  - The number of resources (containers, disk space, and domains) deployed per environment  _(Note: At time of writing, the dashboard does not yet reflect custom [container sizes](https://github.com/aptible/dashboard.aptible.com/issues/516))_
+  - The number of resources (containers, disk space, and endpoints) deployed per environment  _(Note: At time of writing, the dashboard does not yet reflect custom [container sizes](https://github.com/aptible/dashboard.aptible.com/issues/516))_
   - Any billable usage
   - The unit pricing rate per resource type
 

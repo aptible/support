@@ -48,13 +48,13 @@ Push to the master branch of the Aptible Git remote:
 
     git push aptible master
 
-If your app deploys successfully, a message will appear near the end of the remote output with a default VHOST:
+If your app deploys successfully, a message will appear near the end of the remote output with a default SSL/TLS endpoint:
 
     VHOST gorilla-quickstart.on-aptible.com provisioned.
 
 In this example, once the ELB provisions you could access the chat server at gorilla-quickstart.on-aptible.com.
 
-*Note:* Default VHOSTs are only automatically created for apps in development environments.
+*Note:* Default SSL/TLS endpoints are only automatically created for apps in development environments.
 
 ## 6. Additional steps for your apps
 
