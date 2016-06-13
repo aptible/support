@@ -90,14 +90,21 @@ In `config.py`:
 To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-connect-to-database-from-outside/).
 
 ## 5. Deploy Your App
-Push to the master branch of the Aptible Git remote:
+
+Make sure your code is committed, then push to the master branch of the Aptible Git remote:
 
     git push aptible master
 
-If your app deploys successfully, a message will appear near the end of the remote output with a default VHOST:
+Deploy logs will stream to your terminal.
 
-    VHOST flask-quickstart.on-aptible.com provisioned.
+## 6. Add an Endpoint
 
-In this example, once the ELB provisions you could visit flask-quickstart.on-aptible.com to test out your app.
+To expose your app to the Internet, you'll want to add an HTTPS Endpoint. In the Aptible dashboard, select your app, then open the "Endpoints" tab. 
 
-*Note:* Default VHOSTs are only automatically created for apps in development environments.
+1. *Service:* Select the app service you want to expose (often a `web` service).
+2. *Endpoint type:* The quickest option is request a default *.on-aptible.com endpoint address, which will serve the *.on-aptible.com wildcard certificate. With a custom endpoint, you provide a certificate and key for a domain of your choice.
+3. *Type:* External endpoints are exposed to the Internet, meaning their endpoint addresses resolve to public IP addresses. Internal endpoints receive private IP addresses and are only routable from within your stack.
+4. Save the endpoint, wait for it to provision (usually 2-15 minutes), then test the endpoint address. To test internal endpoints, you can `aptible ssh`
+ into your app to spin up an ephemeral container, then `curl` your internal endpoint.
+
+On each subsequent deploy, the Aptible platform will perform a health check on any service with an endpoint. For HTTPS Endpoints, the health check involves making an HTTP request and listening for any response. The service is considered healthy if it responds, regardless of the response status code. Deploys that fail their health checks will not be released.

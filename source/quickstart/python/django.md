@@ -136,40 +136,40 @@ To connect locally, see [the `aptible db:tunnel` command](/topics/cli/how-to-con
 
 ## 5. Deploy Your App
 
-Ensure there is a `requirements.txt` file at the root of your project so Aptible knows this is a Python app:
-
-    # sample requirements.txt
-    Django==1.8.4
-    dj-database-url
-    psycopg2
-    gunicorn
-
-Push to the master branch of the Aptible Git remote:
+Make sure your code is committed, then push to the master branch of the Aptible Git remote:
 
     git push aptible master
 
-If your app deploys successfully, a message will appear near the end of the remote output with a default VHOST:
+Deploy logs will stream to your terminal.
 
-    VHOST django-quickstart.on-aptible.com provisioned.
+## 6. Add an Endpoint
 
-In this example, once the ELB provisions you could visit django-quickstart.on-aptible.com to test out your app.
+To expose your app to the Internet, you'll want to add an HTTPS Endpoint. In the Aptible dashboard, select your app, then open the "Endpoints" tab. 
 
-Be sure to add this VHOST to your [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts) in your settings module:
+1. *Service:* Select the app service you want to expose (often a `web` service).
+2. *Endpoint type:* The quickest option is request a default *.on-aptible.com endpoint address, which will serve the *.on-aptible.com wildcard certificate. With a custom endpoint, you provide a certificate and key for a domain of your choice.
+3. *Type:* External endpoints are exposed to the Internet, meaning their endpoint addresses resolve to public IP addresses. Internal endpoints receive private IP addresses and are only routable from within your stack.
+4. Save the endpoint, wait for it to provision (usually 2-15 minutes), then test the endpoint address. To test internal endpoints, you can `aptible ssh`
+ into your app to spin up an ephemeral container, then `curl` your internal endpoint.
+
+Be sure to add your endpoint address to your [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts) in your settings module, e.g.:
 
 ```python
-ALLOWED_HOSTS = ['django-quickstart.on-aptible.com']
+ALLOWED_HOSTS = ['app-1234.on-aptible.com']
 ```
 
-*Note:* Default VHOSTs are only automatically created for apps in development environments.
+On each subsequent deploy, the Aptible platform will perform a health check on any service with an endpoint. For HTTPS Endpoints, the health check involves making an HTTP request and listening for any response. The service is considered healthy if it responds, regardless of the response status code. Deploys that fail their health checks will not be released.
+
+## 7. Migrate your Database
 
 Finally, you'll likely want to [SSH into your app](https://support.aptible.com/topics/cli/how-to-ssh-into-app/) and migrate the database:
 
     aptible ssh --app $APP_HANDLE
     python manage.py migrate
 
-## 6. Set Up Static Files
+## 8. Set Up Static Files
 
-By default, Django does not support serving static files in production. However, you can use [WhiteNoise](https://warehouse.python.org/project/whitenoise/) for best-practice serving of static assets in production.
+By default, Django does not support serving static files in production. You can use a library such as [WhiteNoise](https://warehouse.python.org/project/whitenoise/) to serve assets.
 
 ### Install Whitenoise:
 

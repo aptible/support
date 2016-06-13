@@ -1,3 +1,3 @@
-To invite new users into your Aptible organization, log into the [Aptible Dashboard](https://dashboard.aptible.com) and click your organization's name in the navigation bar.
+To invite new users into your Aptible organization, log into the [Aptible Dashboard](https://dashboard.aptible.com) and navigate to your organization's settings.
 
-Then, click "Invite New Member" and enter the email address of the new user along with the role to which they should be invited. Once you click "Send Invitation," they'll receive an email with instructions about setting up an Aptible account and joining your organization.
+Under "Members," select "Invite New Member." The invitee will receive an email with instructions to set up an Aptible account and join your organization.
