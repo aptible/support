@@ -30,19 +30,21 @@ First, some prerequisites:
 
 In [production](https://support.aptible.com) and [staging](https://support.aptible-staging.com), the support site is deployed as an S3 website (fronted by CloudFront).
 
-To deploy to production:
+To manually deploy to production, using [Omnivault](https://github.com/aptible/omnivault):
 
-    bundle exec rake deploy:production
+    eval $(aws-creds env default) && bundle exec rake deploy:production
 
-To deploy to staging:
+Staging:
 
-    bundle exec rake deploy:staging
+    eval $(aws-creds env default) && bundle exec rake deploy:staging
 
-To deploy to an arbitrary S3 bucket:
+An arbitrary S3 bucket:
 
-    bundle exec rake deploy[bucket]
+    eval $(aws-creds env default) && bundle exec rake deploy[bucket]
 
-Note that deployment happens automatically (both to staging and production) on every successful merge to master. This requires the encrypted AWS credentials for an authorized user to be stored in the .travis.yml configuration file.
+### Continuous Deployment
+
+Travis CI deploys to both staging and production on every successful merge to master. This requires the encrypted AWS credentials for an authorized user to be stored in the .travis.yml configuration file.
 
 To update these credentials at any time, run:
 
