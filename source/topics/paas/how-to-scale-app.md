@@ -1,3 +1,3 @@
-Scaling an Aptible app is easy! Just visit the [Aptible Dashboard](https://dashboard.aptible.com), navigate to your app, and then you'll see a list of all services associated with your app. (These are the services configured in your app's Procfile.)
+You can easily scale your app, both horizontally and vertically. In the [Aptible Dashboard](https://dashboard.aptible.com), navigate to your app. Your app's services, configured in your app's Procfile, are each listed, along with the service's current container count and RAM footprint per container.
 
-To scale any of these services, adjust the container slider, and click "Scale." We'll immediately scale your app to the new size you've selected. If you want to scale your app back down at a later point, you can use the same slider.
+To scale horizontally, adjust the "Containers" slider. To scale vertically, adjust the "Memory" slider. When you are ready, select "Scale." The Aptible platform will scale your app service to your new specifications. You can use the same process to scale your app down.

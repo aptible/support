@@ -2,4 +2,4 @@ In the Aptible dashboard, find an app that has an endpoint with the certificate 
 
 *Note:* Be sure your certificate bundle is [correctly ordered](https://support.aptible.com/topics/paas/how-to-order-certs/).
 
-If this is the only endpoint you need to update, you are done. If you want to update additional endpoints, find their associated apps, choose the new certificate in the editor under the "Endpoints" tab for each app, then click "Save Endpoint." Repeat this for each endpoint.
+If this is the only endpoint you need to update, you are done. If you want to update additional endpoints, find their associated apps, choose the new certificate in the editor under the "Endpoints" tab for each app, then select "Save Endpoint." Repeat this for each endpoint.

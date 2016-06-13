@@ -96,7 +96,7 @@ Deploy logs will stream to your terminal.
 
 ## 7. Add an Endpoint
 
-To expose your app to the Internet, you'll want to add an HTTPS Endpoint. In the Aptible dashboard, click on your app, then open the "Endpoints" tab. 
+To expose your app to the Internet, you'll want to add an HTTPS Endpoint. In the Aptible dashboard, select your app, then open the "Endpoints" tab. 
 
 1. *Service:* Select the app service you want to expose (often a `web` service).
 2. *Endpoint type:* The quickest option is request a default *.on-aptible.com endpoint address, which will serve the *.on-aptible.com wildcard certificate. With a custom endpoint, you provide a certificate and key for a domain of your choice.
