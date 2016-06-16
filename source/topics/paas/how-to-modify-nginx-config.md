@@ -1,7 +1,4 @@
-Aptible uses [NGiNX proxies](https://github.com/aptible/docker-nginx) to
-terminate SSL for all requests. We offer a few ways to configure the way your
-app handles SSL by forwarding certain environment variables from your Aptible
-app configuration to the NGiNX proxies:
+Aptible endpoints use [NGiNX proxies](https://github.com/aptible/docker-nginx) to terminate SSL for all requests. We offer a few ways to configure the way your app handles SSL by forwarding certain environment variables from your Aptible app configuration to the NGiNX proxies:
 
 * `FORCE_SSL`: By default, an Aptible app responds to both HTTP and HTTPS. Your
   app can detect which protocol is being used by examining a request's
@@ -34,18 +31,22 @@ app configuration to the NGiNX proxies:
   when using these settings as syntax errors in these settings can keep your
   NGiNX instance from starting.
 
+Setting these variables is a two-step process:
+
+1. Set the app variable.
+2. Run `aptible restart` to update the endpoint with your changes.
+
 Either or both of `FORCE_SSL` and `DISABLE_WEAK_CIPHER_SUITES` can be enabled
 by setting the environment variables to `true` on the corresponding Aptible app
 using the [Aptible CLI](/topics/cli/how-to-install-cli):
 
 ```
-aptible config:set FORCE_SSL=true DISABLE_WEAK_CIPHER_SUITES=true --app $APP_HANDLE
+aptible config:set FORCE_SSL=true DISABLE_WEAK_CIPHER_SUITES=true --app $APP_HANDLE && aptible restart --app $APP_HANDLE
 ```
 
 `SSL_CIPHERS_OVERRIDE` and `SSL_PROTOCOLS_OVERRIDE` can be used with or without
-`FORCE_SSL` and `DISABLE_WEAK_CIPHER_SUITES`. The following settings will remove
-TLS 1.0 from the allowed protocols in our `DISABLE_WEAK_CIPHER_SUITES` configuration:
+`FORCE_SSL` and `DISABLE_WEAK_CIPHER_SUITES`. The following settings will remove TLS 1.0 from the allowed protocols in our `DISABLE_WEAK_CIPHER_SUITES` configuration:
 
 ```
-aptible config:set DISABLE_WEAK_CIPHER_SUITES=true SSL_PROTOCOLS_OVERRIDE="TLSv1.1 TLSv1.2" --app $APP_HANDLE
+aptible config:set DISABLE_WEAK_CIPHER_SUITES=true SSL_PROTOCOLS_OVERRIDE="TLSv1.1 TLSv1.2" --app $APP_HANDLE  && aptible restart --app $APP_HANDLE
 ```
