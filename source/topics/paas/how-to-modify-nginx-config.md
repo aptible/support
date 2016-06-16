@@ -41,12 +41,14 @@ by setting the environment variables to `true` on the corresponding Aptible app
 using the [Aptible CLI](/topics/cli/how-to-install-cli):
 
 ```
-aptible config:set FORCE_SSL=true DISABLE_WEAK_CIPHER_SUITES=true --app $APP_HANDLE && aptible restart --app $APP_HANDLE
+aptible config:set FORCE_SSL=true DISABLE_WEAK_CIPHER_SUITES=true --app $APP_HANDLE
+aptible restart --app $APP_HANDLE
 ```
 
 `SSL_CIPHERS_OVERRIDE` and `SSL_PROTOCOLS_OVERRIDE` can be used with or without
 `FORCE_SSL` and `DISABLE_WEAK_CIPHER_SUITES`. The following settings will remove TLS 1.0 from the allowed protocols in our `DISABLE_WEAK_CIPHER_SUITES` configuration:
 
 ```
-aptible config:set DISABLE_WEAK_CIPHER_SUITES=true SSL_PROTOCOLS_OVERRIDE="TLSv1.1 TLSv1.2" --app $APP_HANDLE  && aptible restart --app $APP_HANDLE
+aptible config:set DISABLE_WEAK_CIPHER_SUITES=true SSL_PROTOCOLS_OVERRIDE="TLSv1.1 TLSv1.2" --app $APP_HANDLE
+aptible restart --app $APP_HANDLE
 ```
