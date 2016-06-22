@@ -90,3 +90,5 @@
   url: /topics/paas/how-to-add-internal-or-external-endpoint
 - loc: /topics/troubleshooting/domain-not-responding
   url: /topics/troubleshooting/endpoint-not-responding
+- loc: /topics/paas/how-to-add-external-domain/
+  url: /topics/paas/how-to-add-internal-or-external-endpoint
