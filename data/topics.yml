@@ -100,6 +100,8 @@
       url: "paas/what-kinds-of-isolation-can-aptible-provide"
     - title: "How can I determine the original IP address of an incoming request?"
       url: "paas/how-to-determine-original-ip-address-of-request"
+    - title: "How can I perform a potentially long-running task (such as a migration) without hitting a timeout?"
+      url: "paas/how-to-perform-long-running-tasks"
 
 "Aptible CLI":
   slug: "cli"
