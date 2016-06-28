@@ -1,5 +1,5 @@
 ---
-header_title: Download the Aptible Toolbelt
+header_title: Aptible Toolbelt
 header_subtitle: A command-line interface for your Aptible services
 header_search: false
 layout: layout
@@ -14,7 +14,7 @@ layout: layout
             .category-icon
               = partial "images/icons/osx.svg"
             .category-footer
-              .category-title OSX/macOS
+              .category-title OSX
 
         .col-xs-12.col-sm-4.col-md-3
           %a.category-box{ href: '#debian', class: 'debian' }
@@ -22,7 +22,6 @@ layout: layout
               = partial "images/icons/debian.svg"
             .category-footer
               .category-title Debian
-
 
         .col-xs-12.col-sm-4.col-md-3
           %a.category-box{ href: '#enterprise-linux', class: 'enterprise-linux' }
@@ -45,7 +44,7 @@ layout: layout
           .download-container
             %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.osx['10.9.5'], target: '_blank' }
               %i.fa.fa-download
-              %span Download #{data.toolbelt.version} for OSX/macOS
+              %span Download v#{data.toolbelt.version} for OSX
 
         -# Debian Panel
         .col-xs-12.download-panel.split-panel#debian
@@ -53,16 +52,16 @@ layout: layout
           .download-panel-left
             %h2 Debian 7
             .download-container
-              %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.debian['7.10'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['7.10'], target: '_blank' }
                 %i.fa.fa-download
-                %span Download #{data.toolbelt.version} for Debian 7
+                %span Download v#{data.toolbelt.version} for Debian 7
           -# Debian 8.4
           .download-panel-right
             %h2 Debian 8
             .download-container
-              %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.debian['8.4'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['8.4'], target: '_blank' }
                 %i.fa.fa-download
-                %span Download #{data.toolbelt.version} for Debian 8
+                %span Download v#{data.toolbelt.version} for Debian 8
           .installation-instructions
             %h3 Installation Instructions
             .help-block When the download completes, just run:
@@ -75,16 +74,16 @@ layout: layout
           .download-panel-left
             %h2 Enterprise Linux 6
             .download-container
-              %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.centos['6.7'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['6.7'], target: '_blank' }
                 %i.fa.fa-download
-                %span Download #{data.toolbelt.version} for Enterprise Linux 6.7
+                %span Download v#{data.toolbelt.version} for Enterprise Linux 6.7
           -# Enterprise Linux 8.4
           .download-panel-right
             %h2 Enterprise Linux 8
             .download-container
-              %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.centos['8.4'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['8.4'], target: '_blank' }
                 %i.fa.fa-download
-                %span Download #{data.toolbelt.version} for Enterprise Linux 8.4
+                %span Download v#{data.toolbelt.version} for Enterprise Linux 8.4
           .installation-instructions
             %h3 Installation Instructions
             .help-block When the download completes, just run:
@@ -97,16 +96,16 @@ layout: layout
           .download-panel-left
             %h2 Ubuntu 14.04
             .download-container
-              %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.ubuntu['14.04'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.ubuntu['14.04'], target: '_blank' }
                 %i.fa.fa-download
-                %span Download #{data.toolbelt.version} for Ubuntu 14.04
+                %span Download v#{data.toolbelt.version} for Ubuntu 14.04
           -# Ubuntu 16.04
           .download-panel-right
             %h2 Ubuntu 16.04
             .download-container
-              %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.ubuntu['16.04'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.ubuntu['16.04'], target: '_blank' }
                 %i.fa.fa-download
-                %span Download #{data.toolbelt.version} for Ubuntu 16.04
+                %span Download v#{data.toolbelt.version} for Ubuntu 16.04
           .installation-instructions
             %h3 Installation Instructions
             .help-block When the download completes, just run:

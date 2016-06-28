@@ -13,6 +13,10 @@
   position: relative;
 }
 
+.category-box.enterprise-linux .category-icon {
+  margin-top: 36px;
+}
+
 .download-panel {
   @extend %aptible-panel;
   opacity: 0;
@@ -89,5 +93,25 @@
       margin: 15px 0;
     }
   }
+}
 
+.active #osx-shape {
+  fill: url(#osx-hover);
+  /*fill: linear-gradient(-180deg, #58B0E3 15%, #F44C26 85%);*/
+}
+
+.active #debian-shape {
+  fill: #A80030;
+}
+
+.active #enterprise-linux-shape .filled {
+  fill: $color-bright-blue;
+}
+
+.active #enterprise-linux-shape .stroked {
+  stroke: $color-bright-blue;
+}
+
+.active #ubuntu-shape {
+  fill: #DD4814;
 }
