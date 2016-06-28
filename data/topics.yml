@@ -84,7 +84,7 @@
       url: "paas/aptible-docker-images"
     - title: "How can I set up New Relic on Aptible?"
       url: "paas/how-to-setup-application-and-server-monitoring"
-    - title: "How do I setup a HTTPS log drain?"
+    - title: "How do I set up an HTTPS log drain?"
       url: "paas/how-do-i-setup-a-https-log-drain"
     - title: "How can I automatically restart my app after a crash?"
       url: "paas/how-to-auto-restart-your-app"
@@ -94,6 +94,14 @@
       url: "paas/how-to-use-log-drains"
     - title: "How can I whitelist my app's IP address?"
       url: "paas/how-can-i-whitelist-my-app-ip"
+    - title: "How should I configure DNS for my Aptible endpoints?"
+      url: "paas/how-to-configure-dns-for-aptible-endpoints"
+    - title: "What kinds of isolation can Aptible provide?"
+      url: "paas/what-kinds-of-isolation-can-aptible-provide"
+    - title: "How can I determine the original IP address of an incoming request?"
+      url: "paas/how-to-determine-original-ip-address-of-request"
+    - title: "How can I perform a potentially long-running task (such as a migration) without hitting a timeout?"
+      url: "paas/how-to-perform-long-running-tasks"
 
 "Aptible CLI":
   slug: "cli"
@@ -154,6 +162,10 @@
       url: "troubleshooting/support-ticket-best-practices"
     - title: "My log drain stopped. What should I do?"
       url: "troubleshooting/how-to-restart-your-log-drain"
+    - title: "I'm getting a 'permission denied' error when I try to push. What should I do?"
+      url: "troubleshooting/permission-denied-git-push"
+    - title: "I'm seeing unexpected requests in my app logs. What should I do?"
+      url: "troubleshooting/unexpected-requests-in-app-logs"
 
 "Your Aptible Account":
   slug: "account"
@@ -173,3 +185,5 @@
       url: "account/how-to-invite-training-user"
     - title: "How do I manage billing and payment for my account?"
       url: "account/how-to-manage-billing"
+    - title: "How do 2-factor authentication work on Aptible?"
+      url: "account/how-2fa-works-on-aptible"
