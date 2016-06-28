@@ -21,3 +21,10 @@ a:hover {
 a.btn {
   padding: 10px 16px;
 }
+
+.nav-primary {
+  > li > a:active, > li > a:focus {
+    background-color: transparent;
+    outline: none;
+  }
+}
