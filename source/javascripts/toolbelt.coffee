@@ -1,6 +1,18 @@
 $(document).ready () =>
-  buttons = $('.download-buttons a.category-box')
+  buttons = $('.os-panels a.category-box')
   panels = $('.download-panels .download-panel')
+  download_buttons = $('.download-button')
+
+  download_buttons.each (index, button) =>
+    button = $(button)
+    button.on 'click', (e) =>
+      panel = button.parents('.download-panel')
+      pre = panel.find('pre')
+      path = button.attr('href').split('/')
+      path = path[path.length-1]
+
+      instruction = "sudo dpkg -i #{path}"
+      pre.text(instruction)
 
   buttons.each (index, button) =>
     button = $(button)

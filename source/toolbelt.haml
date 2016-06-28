@@ -8,7 +8,7 @@ layout: layout
 .documentation-main
   .container
     .categories
-      .row.download-buttons
+      .row.os-panels
         .col-xs-12.col-sm-4.col-md-3
           %a.category-box.active{ href: '#osx', class: 'osx' }
             .category-icon
@@ -42,7 +42,7 @@ layout: layout
         .col-xs-12.download-panel.active#osx
           %h2 OSX Yosemite
           .download-container
-            %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.osx['10.9.5'], target: '_blank' }
+            %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.osx['10.9.5'] }
               %i.fa.fa-download
               %span Download v#{data.toolbelt.version} for OSX
 
@@ -52,21 +52,21 @@ layout: layout
           .download-panel-left
             %h2 Debian 7
             .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['7.10'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['7.10'] }
                 %i.fa.fa-download
                 %span Download v#{data.toolbelt.version} for Debian 7
           -# Debian 8.4
           .download-panel-right
             %h2 Debian 8
             .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['8.4'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['8.4'] }
                 %i.fa.fa-download
                 %span Download v#{data.toolbelt.version} for Debian 8
           .installation-instructions
             %h3 Installation Instructions
             .help-block When the download completes, just run:
             %pre
-              sudo dpkg -i aptible-toolbelt_0.6.9+20160530101625~ubuntu.14.04-1_amd64.deb
+              sudo dpkg -i #{data.toolbelt.os.debian['7.10'].split('/').last }
 
         -# Enterprise Linux Panel
         .col-xs-12.download-panel.split-panel#enterprise-linux
@@ -74,21 +74,21 @@ layout: layout
           .download-panel-left
             %h2 Enterprise Linux 6
             .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['6.7'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['6.7'] }
                 %i.fa.fa-download
-                %span Download v#{data.toolbelt.version} for Enterprise Linux 6.7
+                %span Download v#{data.toolbelt.version} for Enterprise Linux 6
           -# Enterprise Linux 8.4
           .download-panel-right
             %h2 Enterprise Linux 8
             .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['8.4'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['8.4'] }
                 %i.fa.fa-download
-                %span Download v#{data.toolbelt.version} for Enterprise Linux 8.4
+                %span Download v#{data.toolbelt.version} for Enterprise Linux 8
           .installation-instructions
             %h3 Installation Instructions
             .help-block When the download completes, just run:
             %pre
-              sudo dpkg -i aptible-toolbelt_0.6.9+20160530101625~ubuntu.14.04-1_amd64.deb
+              sudo dpkg -i #{data.toolbelt.os.centos['6.7'].split('/').last }
 
         -# Ubuntu Panel
         .col-xs-12.download-panel.split-panel#ubuntu
@@ -96,21 +96,21 @@ layout: layout
           .download-panel-left
             %h2 Ubuntu 14.04
             .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.ubuntu['14.04'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.ubuntu['14.04'] }
                 %i.fa.fa-download
                 %span Download v#{data.toolbelt.version} for Ubuntu 14.04
           -# Ubuntu 16.04
           .download-panel-right
             %h2 Ubuntu 16.04
             .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.ubuntu['16.04'], target: '_blank' }
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.ubuntu['16.04'] }
                 %i.fa.fa-download
                 %span Download v#{data.toolbelt.version} for Ubuntu 16.04
           .installation-instructions
             %h3 Installation Instructions
             .help-block When the download completes, just run:
             %pre
-              sudo dpkg -i aptible-toolbelt_0.6.9+20160530101625~ubuntu.14.04-1_amd64.deb
+              sudo dpkg -i #{data.toolbelt.os.ubuntu['14.04'].split('/').last }
 
   .container.markdown-document
     %h2 Getting Started With Aptible Toolbelt
