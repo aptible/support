@@ -17,6 +17,13 @@ layout: layout
               .category-title OSX
 
         .col-xs-12.col-sm-4.col-md-3
+          %a.category-box{ href: '#ubuntu', class: 'ubuntu' }
+            .category-icon
+              = partial "images/icons/ubuntu.svg"
+            .category-footer
+              .category-title Ubuntu
+
+        .col-xs-12.col-sm-4.col-md-3
           %a.category-box{ href: '#debian', class: 'debian' }
             .category-icon
               = partial "images/icons/debian.svg"
@@ -30,65 +37,17 @@ layout: layout
             .category-footer
               .category-title Enterprise Linux
 
-        .col-xs-12.col-sm-4.col-md-3
-          %a.category-box{ href: '#ubuntu', class: 'ubuntu' }
-            .category-icon
-              = partial "images/icons/ubuntu.svg"
-            .category-footer
-              .category-title Ubuntu
-
       .row.download-panels
         -# OSX Panel
         .col-xs-12.download-panel.active#osx
           %h2 OSX Yosemite
           .download-container
-            %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.osx['10.9.5'] }
+            %a.btn.btn-primary.btn-lg{ href: data.toolbelt.os.osx }
               %i.fa.fa-download
               %span Download v#{data.toolbelt.version} for OSX
-
-        -# Debian Panel
-        .col-xs-12.download-panel.split-panel#debian
-          -# Debian 7.10
-          .download-panel-left
-            %h2 Debian 7
-            .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['7.10'] }
-                %i.fa.fa-download
-                %span Download v#{data.toolbelt.version} for Debian 7
-          -# Debian 8.4
-          .download-panel-right
-            %h2 Debian 8
-            .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['8.4'] }
-                %i.fa.fa-download
-                %span Download v#{data.toolbelt.version} for Debian 8
           .installation-instructions
             %h3 Installation Instructions
-            .help-block When the download completes, just run:
-            %pre
-              sudo dpkg -i #{data.toolbelt.os.debian['7.10'].split('/').last }
-
-        -# Enterprise Linux Panel
-        .col-xs-12.download-panel.split-panel#enterprise-linux
-          -# Enterprise Linux 6.7
-          .download-panel-left
-            %h2 Enterprise Linux 6
-            .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['6.7'] }
-                %i.fa.fa-download
-                %span Download v#{data.toolbelt.version} for Enterprise Linux 6
-          -# Enterprise Linux 8.4
-          .download-panel-right
-            %h2 Enterprise Linux 8
-            .download-container
-              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['8.4'] }
-                %i.fa.fa-download
-                %span Download v#{data.toolbelt.version} for Enterprise Linux 8
-          .installation-instructions
-            %h3 Installation Instructions
-            .help-block When the download completes, just run:
-            %pre
-              sudo dpkg -i #{data.toolbelt.os.centos['6.7'].split('/').last }
+            .help-block When the download completes, double click the downloaded package and follow the installation instructions.
 
         -# Ubuntu Panel
         .col-xs-12.download-panel.split-panel#ubuntu
@@ -108,9 +67,75 @@ layout: layout
                 %span Download v#{data.toolbelt.version} for Ubuntu 16.04
           .installation-instructions
             %h3 Installation Instructions
-            .help-block When the download completes, just run:
-            %pre
-              sudo dpkg -i #{data.toolbelt.os.ubuntu['14.04'].split('/').last }
+            .help-block When the download completes, use your package manager (graphical or command line) and install the package. You'll need to use sudo to elevate your permissions.
+
+            %h4 Download URLs
+            %ul.download-urls
+              %li
+                %strong Ubuntu 14.04
+                %span= data.toolbelt.os.ubuntu['14.04']
+              %li
+                %strong Ubuntu 16.04
+                %span= data.toolbelt.os.ubuntu['16.04']
+
+
+        -# Debian Panel
+        .col-xs-12.download-panel.split-panel#debian
+          -# Debian 7.10
+          .download-panel-left
+            %h2 Debian 7
+            .download-container
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['7'] }
+                %i.fa.fa-download
+                %span Download v#{data.toolbelt.version} for Debian 7
+          -# Debian 8.4
+          .download-panel-right
+            %h2 Debian 8
+            .download-container
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.debian['8'] }
+                %i.fa.fa-download
+                %span Download v#{data.toolbelt.version} for Debian 8
+          .installation-instructions
+            %h3 Installation Instructions
+            .help-block When the download completes, use your package manager (graphical or command line) and install the package. You'll need to use sudo to elevate your permissions.
+
+            %h4 Download URLs
+            %ul.download-urls
+              %li
+                %strong Debian 7
+                %span= data.toolbelt.os.debian['7']
+              %li
+                %strong Debian 8
+                %span= data.toolbelt.os.debian['8']
+
+        -# Enterprise Linux Panel
+        .col-xs-12.download-panel.split-panel#enterprise-linux
+          -# Enterprise Linux 6.7
+          .download-panel-left
+            %h2 Enterprise Linux 6
+            .download-container
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['6'] }
+                %i.fa.fa-download
+                %span Download v#{data.toolbelt.version} for Enterprise Linux 6
+          -# Enterprise Linux 8.4
+          .download-panel-right
+            %h2 Enterprise Linux 7
+            .download-container
+              %a.btn.btn-primary.btn-lg.download-button{ href: data.toolbelt.os.centos['7'] }
+                %i.fa.fa-download
+                %span Download v#{data.toolbelt.version} for Enterprise Linux 7
+          .installation-instructions
+            %h3 Installation Instructions
+            .help-block When the download completes, use your package manager (graphical or command line) and install the package. You'll need to use sudo to elevate your permissions.
+
+            %h4 Download URLs
+            %ul.download-urls
+              %li
+                %strong EL 6
+                %span= data.toolbelt.os.centos['6']
+              %li
+                %strong EL 7
+                %span= data.toolbelt.os.centos['7']
 
   .container.markdown-document
     %h2 Getting Started With Aptible Toolbelt

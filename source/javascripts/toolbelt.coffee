@@ -9,7 +9,7 @@ $(document).ready () =>
       panel = button.parents('.download-panel')
       pre = panel.find('pre')
       path = button.attr('href').split('/')
-      path = path[path.length-1]
+      path = decodeURIComponent(path[path.length-1])
 
       instruction = "sudo dpkg -i #{path}"
       pre.text(instruction)
