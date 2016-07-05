@@ -287,9 +287,6 @@ layout: layout
         %p
           Additional documentation for using the Toolbelt is available on the
           %a{ href: '/topics/cli' } Aptible Toolbelt topic page.
-
-
-      .col-xs-6
         %ul.additional-topics
           - data.topics["Aptible CLI"].articles.each do |article|
             - next if article.hidden
@@ -297,3 +294,11 @@ layout: layout
               %a.category-article{ href: "/topics/#{article.url}" }= article.title
 
 
+      .col-xs-6
+        %h3 Aptible Toolbelt on GitHub
+        %p The Aptible Toolbelt is open source and available on GitHub
+        %ul.additional-topics
+          %li
+            %a.category-article{ href: 'https://github.com/aptible/omnibus-aptible-toolbelt'} https://github.com/aptible/omnibus-aptible-toolbelt
+          %li
+            %a.category-article{ href: 'https://github.com/aptible/aptible-cli'} https://github.com/aptible/aptible-cli
