@@ -1,0 +1,13 @@
+os:
+  centos:
+    '6': https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/test-alt-branch/81/pkg/aptible-toolbelt-0.7.1+20160707153841~centos.6.7-1.el6.x86_64.rpm
+    '7': https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/test-alt-branch/81/pkg/aptible-toolbelt-0.7.1+20160707154003~centos.7.2.1511-1.el7.x86_64.rpm
+  debian:
+    '7': https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/test-alt-branch/81/pkg/aptible-toolbelt_0.7.1+20160707152916~debian.7.10-1_amd64.deb
+    '8': https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/test-alt-branch/81/pkg/aptible-toolbelt_0.7.1+20160707153032~debian.8.4-1_amd64.deb
+  osx: https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/test-alt-branch/81/pkg/aptible-toolbelt-0.7.1+20160707153725-mac-os-x.10.9.5-1.pkg
+  ubuntu:
+    '14.04': https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/test-alt-branch/81/pkg/aptible-toolbelt_0.7.1+20160707152942~ubuntu.14.04-1_amd64.deb
+    '16.04': https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/test-alt-branch/81/pkg/aptible-toolbelt_0.7.1+20160707152951~ubuntu.16.04-1_amd64.deb
+version: v0.7.1
+

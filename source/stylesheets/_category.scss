@@ -54,6 +54,18 @@ $go: #6AD7E5;
       color: $color-primary;
     }
   }
+
+  &.active {
+    background: #fafafa;
+    @include box-shadow(inset 0 2px 5px 0 rgba(black, .05));
+    border: 1px solid #dfdfdf;
+
+    .category-footer {
+      background: none;
+      box-shadow: none;
+      border: none;
+    }
+  }
 }
 
 .category-box:hover {
