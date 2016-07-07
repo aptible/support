@@ -1,4 +1,4 @@
-version: '0.7.0'
+version: 'v0.7.0'
 os:
   osx: 'https://s3.amazonaws.com/omnibus-aptible-toolbelt/aptible/omnibus-aptible-toolbelt/75/pkg/aptible-toolbelt-0.7.0%2B20160621111122-mac-os-x.10.9.5-1.pkg'
   ubuntu:
