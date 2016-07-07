@@ -1,0 +1,30 @@
+/* aptible-sass should die */
+$color-bright-blue: #347EFF;
+$color-dark-blue: #1157CF;
+
+.btn.btn-primary {
+  background-color: $color-bright-blue;
+
+  &:hover {
+    background-color: $color-dark-blue;
+  }
+}
+
+a, a:link, a:visited {
+  color: $color-bright-blue;
+}
+
+a:hover {
+  color: $color-dark-blue;
+}
+
+a.btn {
+  padding: 10px 16px;
+}
+
+.nav-primary {
+  > li > a:active, > li > a:focus {
+    background-color: transparent;
+    outline: none;
+  }
+}
