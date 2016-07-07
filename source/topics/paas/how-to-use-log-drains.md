@@ -54,12 +54,13 @@ Note that [you can restart the collector and its associated log forwarders at
 any time via your Dashboard][40].
 
 
-### Legacy Aptible "v1" stacks ###
+### Aptible legacy infrastructure ###
 
-On Aptible legacy "v1" stacks, there is only one collector for all your Log
+On Aptible legacy infrastructure, there is only one collector for all your Log
 Drains. This can cause log routing to crash if one log destination is
-unavailable. If you are still using a v1 stack, we recommend upgrading to a v2
-stack, where log forwarding is more reliable.
+unavailable. If you are still running on legacy infrastructure, we recommend
+scheduling an upgrade to our current infrastructure, where log forwarding is
+more reliable.
 
 
   [10]: /topics/paas/how-to-set-up-papertrail/
