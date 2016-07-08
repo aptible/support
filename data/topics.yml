@@ -185,5 +185,5 @@
       url: "account/how-to-invite-training-user"
     - title: "How do I manage billing and payment for my account?"
       url: "account/how-to-manage-billing"
-    - title: "How do 2-factor authentication work on Aptible?"
+    - title: "How does 2-factor authentication work on Aptible?"
       url: "account/how-2fa-works-on-aptible"
