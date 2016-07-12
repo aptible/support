@@ -1,4 +1,4 @@
-In the Aptible dashboard, find an app that has an endpoint with the certificate you want to update. Under the "Endpoints" tab, near the bottom, choose "Add new certificate." Drag and drop or copy/paste your new certificate bundle and private key.
+In the Aptible dashboard, find an app that has an endpoint with the certificate you want to update. Under the "Endpoints" tab, find the endpoint you want to update and click "Edit." Then, near the bottom of the page, choose "Add new certificate." Drag and drop or copy/paste your new certificate bundle and private key.
 
 *Note:* Be sure your certificate bundle is [correctly ordered](https://support.aptible.com/topics/paas/how-to-order-certs/).
 
