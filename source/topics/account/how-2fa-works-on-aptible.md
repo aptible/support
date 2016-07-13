@@ -13,7 +13,7 @@ Aptible 2FA protects logins, not individual requests. Making authenticated reque
 
 After enabling 2FA:
 
-- You may need to update your Aptible CLI client (`gem install -N aptible-cli`) to use `aptible login`.
+- You may need to update your Aptible CLI client (get the latest [Aptible Toolbelt](/toolbelt) or `gem install -N aptible-cli`) to use `aptible login`.
 - If you have an existing token, it will continue to work until it expires.
 - You will periodically be prompted for a 2FA code when your current token expires. The current maximum token lifetime is 7 days.
 

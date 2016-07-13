@@ -1,16 +1,3 @@
-"Migrating to Aptible":
-  slug: "migrating"
-  svg: "aptible.svg"
-  articles:
-    - title: "How can I use the Heroku build process with my Aptible app?"
-      url: "migrating/how-to-use-heroku-build-process"
-    - title: "How do I import my existing Heroku PostgreSQL database?"
-      url: "migrating/how-to-import-heroku-postgresql-database"
-    # - title: "How do I import my existing MongoDB database?"
-    #   url: "migrating/how-to-import-mongodb-database"
-    # - title: "How do I import my existing MySQL database?"
-    #   url: "migrating/how-to-import-mysql-database"
-
 "The Aptible Platform":
   slug: "paas"
   svg: "paas.svg"
@@ -60,7 +47,7 @@
       url: "paas/how-to-set-up-npm-caching"
     - title: "How do I set up caching for pip?"
       url: "paas/how-to-set-up-pip-caching"
-    - title: "How do I restore from an Aptible database backup?"
+    - title: "How can I restore a database from an Aptible backup?"
       url: "paas/how-to-restore-from-database-backup"
     - title: "How do I install private Ruby/Node dependencies for my app?"
       url: "paas/how-to-install-private-dependencies"
@@ -102,6 +89,8 @@
       url: "paas/how-to-determine-original-ip-address-of-request"
     - title: "How can I perform a potentially long-running task (such as a migration) without hitting a timeout?"
       url: "paas/how-to-perform-long-running-tasks"
+    - title: "How can I download a backup of an Aptible database?"
+      url: "paas/how-to-download-database-backup"
 
 "Aptible CLI":
   slug: "cli"
@@ -127,6 +116,27 @@
       url: "cli/how-to-dump-and-restore"
     - title: "How can I create additional MySQL databases?"
       url: "cli/how-to-create-mysql-databases"
+
+"Your Aptible Account":
+  slug: "account"
+  svg: "account.svg"
+  articles:
+    - title: "How do I invite a new user to Aptible?"
+      url: "account/how-to-invite-new-user"
+    - title: "How do I get ready for Aptible HIPAA training?"
+      url: "account/how-to-prepare-for-training"
+    - title: "What different plans does Aptible offer?"
+      url: "account/what-plans-does-aptible-offer"
+    - title: "How do I set up a separate staging environment for my apps and databases?"
+      url: "account/how-to-set-up-separate-staging-environment"
+    - title: "How do I view my open support tickets?"
+      url: "account/how-to-view-open-support-tickets"
+    - title: "How do I invite a new user to training?"
+      url: "account/how-to-invite-training-user"
+    - title: "How do I manage billing and payment for my account?"
+      url: "account/how-to-manage-billing"
+    - title: "How does 2-factor authentication work on Aptible?"
+      url: "account/how-2fa-works-on-aptible"
 
 "Troubleshooting":
   slug: "troubleshooting"
@@ -166,24 +176,21 @@
       url: "troubleshooting/permission-denied-git-push"
     - title: "I'm seeing unexpected requests in my app logs. What should I do?"
       url: "troubleshooting/unexpected-requests-in-app-logs"
+    - title: "What is a CSR and how do generate one for an SSL/TLS certificate?"
+      url: "troubleshooting/what-is-a-csr"
 
-"Your Aptible Account":
-  slug: "account"
-  svg: "account.svg"
+"Migrating to Aptible":
+  slug: "migrating"
+  svg: "aptible.svg"
   articles:
-    - title: "How do I invite a new user to Aptible?"
-      url: "account/how-to-invite-new-user"
-    - title: "How do I get ready for Aptible HIPAA training?"
-      url: "account/how-to-prepare-for-training"
-    - title: "What different plans does Aptible offer?"
-      url: "account/what-plans-does-aptible-offer"
-    - title: "How do I set up a separate staging environment for my apps and databases?"
-      url: "account/how-to-set-up-separate-staging-environment"
-    - title: "How do I view my open support tickets?"
-      url: "account/how-to-view-open-support-tickets"
-    - title: "How do I invite a new user to training?"
-      url: "account/how-to-invite-training-user"
-    - title: "How do I manage billing and payment for my account?"
-      url: "account/how-to-manage-billing"
-    - title: "How does 2-factor authentication work on Aptible?"
-      url: "account/how-2fa-works-on-aptible"
+    - title: "How can I use the Heroku build process with my Aptible app?"
+      url: "migrating/how-to-use-heroku-build-process"
+    - title: "How do I import my existing Heroku PostgreSQL database?"
+      url: "migrating/how-to-import-heroku-postgresql-database"
+
+"Compliance":
+  slug: "compliance"
+  svg: "hipaa.svg"
+  articles:
+    - title: "How long should we retain audit logs?"
+      url: "compliance/how-long-should-we-retain-audit-logs"
