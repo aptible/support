@@ -1,4 +1,4 @@
-document.addEventListener 'DOMContentLoaded', ->
+$(document).on 'turbolinks:load', ->
   results = document.getElementById('st-results-large-container')
   return unless results
 

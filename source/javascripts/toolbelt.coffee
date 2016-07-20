@@ -1,4 +1,4 @@
-$(document).ready () =>
+$(document).on 'turbolinks:load', ->
   buttons = $('.os-panels a.category-box')
   panels = $('.download-panels .download-panel')
   download_buttons = $('.download-button')
@@ -22,8 +22,6 @@ $(document).ready () =>
       targetAnchor = button.attr('href')
       window.location.hash = 'download-' + targetAnchor.replace('#', '')
       target = $(targetAnchor)
-
-      console.log(targetAnchor, button, target)
 
       buttons.removeClass('active')
       panels.removeClass('active')
