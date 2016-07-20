@@ -24,3 +24,4 @@ gem 'capybara'
 gem 'middleman-s3_redirect'
 gem 'aptible-tasks'
 gem 'middleman-jquery'
+gem "turbolinks", require: false
