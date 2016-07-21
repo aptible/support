@@ -1,4 +1,4 @@
-document.addEventListener 'DOMContentLoaded', ->
+$(document).on 'turbolinks:load', ->
   form = document.getElementById('search-form')
   field = form.getElementsByTagName('input')[0]
   return unless form && field

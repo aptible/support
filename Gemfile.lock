@@ -262,6 +262,9 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
+    turbolinks (5.0.0)
+      turbolinks-source (~> 5)
+    turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uber (0.0.12)
@@ -289,6 +292,7 @@ DEPENDENCIES
   rake
   redcarpet
   rspec
+  turbolinks
   tzinfo-data
   wdm (~> 0.1.0)
 

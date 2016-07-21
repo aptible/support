@@ -11,14 +11,30 @@
 
     %meta{ property: 'og:site_name', content: 'Aptible Support' }
     %meta{ property: 'og:image', content: 'https://www.aptible.com/assets/images/aptible-og.png'}
-
     %script{ type: 'text/javascript', src: '//use.typekit.net/hen3udh.js' }
-    %link{ rel: "shortcut icon", href: "/images/favicon.ico" }
-    :javascript
-      window.swiftypeEngineKey = '#{swiftype_engine}';
-
     = stylesheet_link_tag 'main'
     = javascript_include_tag  'all'
+
+    :javascript
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+      analytics.load("#{segmentio_writekey}");
+      }}();
+
+
+
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+      try{Typekit.load();}catch(e){}
+
+      $(document).on('turbolinks:load', function() {
+        _st('install','#{swiftype_key}');
+        analytics.page();
+      });
+
+    %link{ rel: "shortcut icon", href: "/images/favicon.ico" }
 
   %body{ class: page_classes }
     %header.primary-header
@@ -44,22 +60,3 @@
       = yield
 
     = partial 'footer'
-
-    :javascript
-      try{Typekit.load();}catch(e){}
-
-      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-      })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
-
-      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
-      analytics.load("#{segmentio_writekey}");
-      analytics.page();
-      }}();
-
-      _st('install','#{swiftype_key}');
-
-
-
-
