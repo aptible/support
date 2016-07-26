@@ -71,9 +71,10 @@ Here's an alternate Dockerfile, specifically for Python 3. (Thanks [JP Bader](ht
 
     # Dockerfile specifically for python3
     FROM python:3-wheezy
-    You can do python version this way (uncomment to configure):
-    RUN apt-install python3-minimal
-    RUN ln -s python3 /usr/bin/python
+
+    # You can do python version this way (uncomment to configure):
+    # RUN apt-install python3-minimal
+    # RUN ln -s python3 /usr/bin/python
 
     # See http://wiki.postgresql.org/wiki/Apt
     ENV PG_VERSION=9.3 \
@@ -112,7 +113,7 @@ Here's an alternate Dockerfile, specifically for Python 3. (Thanks [JP Bader](ht
     # WORKDIR /app/YOUR_APP
 
 
-Here is a sample Procfile for a Django app, logging to stderr:
+Here is a sample Procfile for a Django app, logging to stderr (note: `gunicorn` should be added to your `requirements.txt`):
 
     # Procfile
     web: gunicorn myproject.wsgi --log-file - --bind="0.0.0.0:$PORT"
