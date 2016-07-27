@@ -15,11 +15,11 @@ To use Whenever in your app, take the following steps. In our example, we will a
     # Inherit all ENV variables
     ENV.each { |k, v| env(k, v) }
 
-    # Define a custom job type that will pull in your app's environment - replace
-    # APP_DIR below with your app's working directory. For images based on
-    # quay.io/aptible/autobuild, APP_DIR will be "/app". For others, it should match
-    # the definition of the WORKDIR in your Dockerfile.
-    job_type :aptible_rake, 'cd APP_DIR && set -a && . .aptible.env && bundle exec rake :task --silent :output'
+    # Define a custom job type - replace APP_DIR below with your app's
+    # working directory. For images based on
+    # quay.io/aptible/autobuild, APP_DIR will be "/app". For others, it
+    # should match the definition of the WORKDIR in your Dockerfile.
+    job_type :aptible_rake, 'cd APP_DIR && bundle exec rake :task --silent :output'
 
     every 1.day, at: '2:00 am' do
       aptible_rake 'db:awesome'
@@ -41,7 +41,5 @@ To use Whenever in your app, take the following steps. In our example, we will a
 
         web: # ...
         cron: sh start-cron.sh
-
-Alternatively, you can write the crontab inside the Dockerfile (`RUN whenever -w`). If you do so, just make sure you're [appropriately accessing ENV variables](/topics/paas/how-to-access-environment-variables-inside-dockerfile) inside the Dockerfile. Also, remove `whenever -w` from your `start-cron.sh` file.
 
 **Note:** If you receive the error `No such file or directory - crontab (Errno::ENOENT)` after attempting to write your crontab with `whenever -w`, then your image is missing `cron.` To install `cron`, you'll need to add `cron` as an apt dependency in your`Dockerfile`: `RUN apt-get update && apt-get -y install cron`.
