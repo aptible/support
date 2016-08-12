@@ -5,7 +5,7 @@
     .container
       %ol.breadcrumb
         %li
-          %a{ href: '/topics' }Support
+          %a{ href: '/support/topics' }Support
         - if @category_url
           %li
             %a{ href: @category_url }= @category_title
@@ -32,4 +32,4 @@
             - if @category_title
               %a{ href: @category_url }← Back to #{@category_title}
             - else
-              %a{ href: '/topics' }← Back to all support topics
+              %a{ href: '/support/topics' }← Back to all support topics

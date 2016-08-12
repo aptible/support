@@ -21,21 +21,21 @@ activate :directory_indexes
 
 # Documentation
 # TODO: Enable documentation section
-# page '/documentation/*', layout: 'documentation.haml'
+# page '/support/documentation/*', layout: 'documentation.haml'
 
 # Topics (Support)
 data.topics.each do |title, category|
-  category_url = "/topics/#{category.slug}"
+  category_url = "/support/topics/#{category.slug}"
   page "#{category_url}/index.html", layout: 'topics.haml'
   proxy "#{category_url}/index.html",
-        'topics/category.html',
+        'support/topics/category.html',
         locals: { category: category, title: title },
         ignore: true do
     @description = "Aptible support questions about #{title}"
   end
 
   category.articles.each do |article|
-    page "topics/#{article.url}.html",
+    page "support/topics/#{article.url}.html",
          layout: 'topics.haml', hidden: article.hidden do
       @category_url = category_url
       @category_title = title
@@ -50,9 +50,9 @@ end
 # Middleman Data Files: https://middlemanapp.com/advanced/data_files/
 data.quickstart.each do |language_name, language_data|
   language_data[:name] = language_name
-  language_url = "/quickstart/#{language_data.slug}"
+  language_url = "/support/quickstart/#{language_data.slug}"
   proxy "#{language_url}/index.html",
-        'quickstart/category.html',
+        'support/quickstart/category.html',
         locals: { language: language_data },
         ignore: true do
     @title = "#{language_data.name} Quickstart Guides"
@@ -61,7 +61,7 @@ data.quickstart.each do |language_name, language_data|
   end
 
   language_data.articles.each do |article|
-    page "quickstart/#{article.url}.html", layout: 'quickstart.haml' do
+    page "support/quickstart/#{article.url}.html", layout: 'quickstart.haml' do
       @framework = article.framework
       @language = language_data
       @title = "#{@framework} Quickstart"
