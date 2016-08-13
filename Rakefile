@@ -33,22 +33,22 @@ task :redirect, [:bucket] do |_t, args|
 end
 
 namespace :deploy do
-  desc 'Build and deploy site to support.aptible-staging.com'
+  desc 'Build and deploy site to www.aptible-staging.com'
   task :staging do
-    ENV['BASE_URL'] = 'https://support.aptible-staging.com'
+    ENV['BASE_URL'] = 'https://www.aptible-staging.com'
     ENV['SEGMENTIO_WRITEKEY'] = 'K24Jna8XS0PRiQiISYZ563qC3SfHF241'
     ENV['SWIFTYPE_KEY'] = '6oJmuDaosp-WnxZNZcxQ'
     ENV['SWIFTYPE_ENGINE'] = 'omxnF9kXa-PmS4uNyRSC'
-    Rake::Task[:deploy].invoke('support.aptible-staging.com')
+    Rake::Task[:deploy].invoke('www.aptible-staging.com')
   end
 
-  desc 'Build and deploy site to support.aptible.com'
+  desc 'Build and deploy site to www.aptible.com'
   task :production do
-    ENV['BASE_URL'] = 'https://support.aptible.com'
+    ENV['BASE_URL'] = 'https://www.aptible.com'
     ENV['SEGMENTIO_WRITEKEY'] = 'cn8oifbk6o'
     ENV['SWIFTYPE_KEY'] = 'dsMEc1fYviE2ShXAjYMW'
     ENV['SWIFTYPE_ENGINE'] = 'axuhZ5Lt1ZUziN-DqxnR'
-    Rake::Task[:deploy].invoke('support.aptible.com')
+    Rake::Task[:deploy].invoke('www.aptible.com')
   end
 end
 

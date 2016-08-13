@@ -14,7 +14,7 @@ set :partials_dir, 'partials'
 set :segmentio_writekey, ENV['SEGMENTIO_WRITEKEY'] || 'cn8oifbk6o'
 set :swiftype_key, ENV['SWIFTYPE_KEY'] || 'dsMEc1fYviE2ShXAjYMW'
 set :swiftype_engine, ENV['SWIFTYPE_ENGINE'] || 'axuhZ5Lt1ZUziN-DqxnR'
-set :base_url, ENV['BASE_URL'] || 'https://support.aptible.com'
+set :base_url, ENV['BASE_URL'] || 'https://www.aptible.com'
 
 activate :syntax, line_numbers: true
 activate :directory_indexes
