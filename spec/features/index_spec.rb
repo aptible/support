@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'index', type: :feature do
   before do
-    visit '/'
+    visit '/support'
   end
 
   it 'has a large search bar' do
