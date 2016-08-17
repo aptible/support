@@ -1,4 +1,0 @@
-.category-article-list
-  - (category.articles || []).each do |article|
-    - next if article.hidden
-    %a.category-article{ href: "/topics/#{article.url}" }= article.title
