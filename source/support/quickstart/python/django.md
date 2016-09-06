@@ -163,7 +163,7 @@ On each subsequent deploy, the Aptible platform will perform a health check on a
 
 ## 7. Migrate your Database
 
-Finally, you'll likely want to [SSH into your app](https://support.aptible.com/support/topics/cli/how-to-ssh-into-app/) and migrate the database:
+Finally, you'll likely want to [SSH into your app](/support/topics/cli/how-to-ssh-into-app/) and migrate the database:
 
     aptible ssh --app $APP_HANDLE
     python manage.py migrate
