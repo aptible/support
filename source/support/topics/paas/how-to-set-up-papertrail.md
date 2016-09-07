@@ -2,15 +2,15 @@ Papertrail is easy to configure as a logging destination for your Aptible apps.
 
 First, sign up for a Papertrail account. In your account, find the "Log Destinations" tab. Select "Create a Log Destination," then "Create":
 
-![](/images/support/topics/paas/how-to-set-up-papertrail/account.png)
+![](/images/topics/paas/how-to-set-up-papertrail/account.png)
 
-![](/images/support/topics/paas/how-to-set-up-papertrail/log-destinations.png)
+![](/images/topics/paas/how-to-set-up-papertrail/log-destinations.png)
 
-![](/images/support/topics/paas/how-to-set-up-papertrail/create-log-destination.png)
+![](/images/topics/paas/how-to-set-up-papertrail/create-log-destination.png)
 
 Upon creation, Papertrail will display a host and port for your new log destination:
 
-![](/images/support/topics/paas/how-to-set-up-papertrail/destination-created.png)
+![](/images/topics/paas/how-to-set-up-papertrail/destination-created.png)
 
 Note the host and port.
 
