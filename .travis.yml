@@ -12,3 +12,4 @@ install:
 - pip install --user awscli
 script:
 - bundle exec rake
+- PATH=$HOME/.local/bin:$PATH script/travis-deploy.sh
