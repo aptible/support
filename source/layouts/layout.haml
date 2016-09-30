@@ -21,7 +21,6 @@
       }}();
 
 
-
       (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
       (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
       e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
@@ -30,7 +29,11 @@
       try{Typekit.load();}catch(e){}
 
       $(document).on('turbolinks:load', function() {
-        _st('install','#{swiftype_key}');
+        var swiftUrl = "//s.swiftypecdn.com/install/c/widget.js?install=#{swiftype_key}"
+        var callback = function() {
+          Swiftype.resultPageURL = '/support/search'
+        }
+        _st('loadScript', swiftUrl, callback);
         analytics.page();
       });
 
