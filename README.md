@@ -2,9 +2,6 @@
 
 _Deprecated: For current documentation, visit https://www.aptible.com/documentation; for documentation source, see [aptible/docs](https://github.com/aptible/docs). We're keeping this repo around for historical support requests opened as GitHub issues. If you have a support request, please visit http://contact.aptible.com or check for an answer to your question on https://community.aptible.com._
 
-[![Build Status](https://travis-ci.org/aptible/support.png?branch=master)](https://travis-ci.org/aptible/support)
-[![Roadmap](https://badge.waffle.io/aptible/support.svg?label=ready&title=roadmap)](http://waffle.io/aptible/support)
-
 Aptible's Support and Documentation Site
 
 ## Running Locally
